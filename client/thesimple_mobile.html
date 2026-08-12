@@ -737,863 +737,1063 @@ html{background:#050507}body{background:#050507}body.v5-entering{overflow:hidden
 }
 </style>
 
-<!-- =========================================================
-   UNIFIED RESPONSIVE SYSTEM (V14, V15, V21 Merged)
+
+<style id="v14-adaptive-system">
+/* =========================================================
+   V14 — DEVICE-SPECIFIC ART DIRECTION
    Desktop >=1180 | Tablet 768–1179 | Mobile <=767
-========================================================= -->
-<style id="unified-responsive-system">
-:root {
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-right: env(safe-area-inset-right, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-left: env(safe-area-inset-left, 0px);
+   ========================================================= */
+
+:root{
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-right:env(safe-area-inset-right,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+  --safe-left:env(safe-area-inset-left,0px);
 }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
-body { min-width: 320px; overflow-x: hidden!important; }
-button, a, [role="button"], input, textarea, select { touch-action: manipulation; }
-canvas { max-width: 100%; }
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:320px}
+button,a,[role="button"],input,textarea,select{touch-action:manipulation}
+canvas{max-width:100%}
 
 /* ---------- DESKTOP ART DIRECTION ---------- */
-@media(min-width: 1180px) {
-  .wrap { width: min(1580px, calc(100% - 72px)); }
-  .heroGrid { grid-template-columns: minmax(0, 1.42fr) minmax(280px, .42fr); }
-  .premiumChar { transform-origin: 50% 85%; }
-  .pc-hero { right: 6vw!important; bottom: 5.5vh!important; }
-  .pc-belief { left: 4.5vw!important; bottom: 8vh!important; }
-  .pc-work { right: 5vw!important; bottom: 54px!important; }
-  .pc-system { left: 4.5vw!important; top: 95px!important; }
-  .pc-lab { right: 4vw!important; top: 44%!important; }
-  .pc-studio { left: 4.5vw!important; bottom: 76px!important; }
-  .pc-arcade { right: 4vw!important; top: 112px!important; }
-  .pc-care { left: 6vw!important; bottom: 5vw!important; }
-  .pc-process { right: 5vw!important; bottom: 42px!important; }
-  .pc-final { right: 7vw!important; top: 18vh!important; }
-  .studioGrid, .arcadeGrid, .steps { grid-template-columns: repeat(3, minmax(0, 1fr))!important; }
-  .studioCard, .arcadeCard, .step { min-width: 0!important; }
+@media(min-width:1180px){
+  .wrap{width:min(1580px,calc(100% - 72px))}
+  .heroGrid{grid-template-columns:minmax(0,1.42fr) minmax(280px,.42fr)}
+  .premiumChar{transform-origin:50% 85%}
+  .pc-hero{right:6vw!important;bottom:5.5vh!important}
+  .pc-belief{left:4.5vw!important;bottom:8vh!important}
+  .pc-work{right:5vw!important;bottom:54px!important}
+  .pc-system{left:4.5vw!important;top:95px!important}
+  .pc-lab{right:4vw!important;top:44%!important}
+  .pc-studio{left:4.5vw!important;bottom:76px!important}
+  .pc-arcade{right:4vw!important;top:112px!important}
+  .pc-care{left:6vw!important;bottom:5vw!important}
+  .pc-process{right:5vw!important;bottom:42px!important}
+  .pc-final{right:7vw!important;top:18vh!important}
 }
 
-/* ---------- TABLET ART DIRECTION ---------- */
-@media(min-width: 768px) and (max-width: 1179px) {
-  .wrap { width: min(100% - 44px, 1060px); }
-  .nav { width: calc(100% - 28px); height: 60px; padding-left: 18px; }
-  .navlinks { display: none!important; }
-  .menu { display: block!important; }
-  .navCta { display: block!important; padding: 13px 17px; }
-  .mobileNav { padding: 105px 34px 40px; }
-  .mobileNav a, .mobileNav button { font-size: clamp(38px, 6vw, 62px); }
-  #v5SoundDock { left: 16px; bottom: 16px; width: 280px; min-width: 0; padding: 11px 12px; border-radius: 18px; }
-  #v5SectionRail { display: none; }
-  .hero { height: 128svh; min-height: 900px; }
-  .heroSticky { align-items: flex-end; padding: 110px 0 70px; }
-  .heroGrid { grid-template-columns: 1fr; max-width: 780px; margin-right: auto; }
-  .hero h1 { font-size: clamp(74px, 12.5vw, 128px); line-height: .79; }
-  .heroMeta { display: none!important; }
-  .heroCopy { max-width: 620px; }
-  .heroCinema:before { width: 92vw; height: 92vw; right: -38vw; top: 8vh; opacity: .82; }
-  .pc-hero { width: 225px!important; right: 3vw!important; bottom: 8vh!important; opacity: .84; }
-  .belief { height: 178vh; }
-  .beliefGrid { grid-template-columns: 1fr; gap: 38px; }
-  .beliefAside { max-width: 520px; position: relative; z-index: 8; }
-  .beliefText { font-size: clamp(54px, 8.8vw, 88px); max-width: 840px; }
-  .meaningOrb { width: 68vw; height: 68vw; right: -26vw; opacity: .42; }
-  .pc-belief { left: auto!important; right: 2vw!important; bottom: 7vh!important; width: 150px!important; opacity: .72; }
-  .headGrid, .systemIntro, .labHead, .studioHead, .processHead, .faqHead { grid-template-columns: 1fr!important; gap: 20px!important; }
-  .work, .system, .lab, .studio, .arcade, .careTeaser, .process { padding-top: 110px; padding-bottom: 125px; }
-  .case { grid-template-columns: 50px minmax(0, 1fr) 56px; padding: 28px 22px; min-height: 150px; }
-  .caseMeta, .casePreview { display: none!important; }
-  .case h3 { font-size: clamp(31px, 5.5vw, 49px); }
-  .pc-work { right: 18px!important; top: 72px!important; bottom: auto!important; width: 145px!important; opacity: .58; }
-  .usModel { margin-top: 45px; border-radius: 32px; }
-  .usModelIntro { padding: 34px 30px 28px; }
-  .usPrinciples { grid-template-columns: 1fr 1fr; }
-  .usPrinciple { min-height: 205px; }
-  .usPrinciple:nth-child(2) { border-right: 0; }
-  .usPrinciple:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.1); }
-  .usFlow { padding: 30px; }
-  .usFlowLine { grid-template-columns: repeat(5, 1fr); gap: 6px; }
-  .us90 { grid-template-columns: repeat(3, 1fr); }
-  .pc-system { left: auto!important; right: 12px!important; top: 70px!important; width: 140px!important; opacity: .52; }
-  .toolGrid { grid-template-columns: 1fr 1fr!important; }
-  .toolCard { min-height: 480px; }
-  .toolGrid .toolCard:last-child { grid-column: 1/-1; min-height: 400px; }
-  .pc-lab { right: 10px!important; top: 58px!important; width: 135px!important; opacity: .55; }
-  .clientKitGrid { grid-template-columns: 1fr 1fr; }
-  .clientKitCard { min-height: 300px; }
-  .clientKitCard:nth-child(2) { border-right: 0; }
-  .clientKitCard:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.1); }
-  .clientKitBottom { grid-template-columns: 1fr 1fr 1fr; }
-  .pc-studio { left: auto!important; right: 14px!important; top: 60px!important; bottom: auto!important; width: 138px!important; opacity: .54; }
-  .arcadeGrid { grid-template-columns: 1fr 1fr!important; }
-  .arcadeCard:nth-child(3) { grid-column: 1/-1; max-width: 70%; justify-self: center; width: 100%; }
-  .pc-arcade { right: 14px!important; top: 58px!important; width: 140px!important; opacity: .58; }
-  .careTeaserGrid { grid-template-columns: 1fr 1fr; gap: 6vw; }
-  .carePortal { height: 520px; }
-  .pc-care { left: 10px!important; bottom: 32px!important; width: 140px!important; opacity: .58; }
-  .steps { grid-template-columns: 1fr 1fr!important; }
-  .step { min-height: 285px; }
-  .steps .step:last-child { grid-column: 1/-1; max-width: 50%; width: 100%; justify-self: center; }
-  .pc-process { right: 10px!important; bottom: 26px!important; width: 135px!important; opacity: .55; }
-  .footerGrid { grid-template-columns: 1fr 1fr!important; }
-  .castFinale { min-height: 470px; width: min(100% - 36px, 1040px); }
-  .castStage { inset: 78px 20px 20px; }
-  .castMember { width: 96px!important; }
-  .castMember:nth-child(1) { left: 3%; bottom: 175px; }
-  .castMember:nth-child(2) { left: 22%; bottom: 192px; }
-  .castMember:nth-child(3) { left: 41%; bottom: 173px; }
-  .castMember:nth-child(4) { left: 60%; bottom: 190px; }
-  .castMember:nth-child(5) { left: 79%; bottom: 172px; }
-  .castMember:nth-child(6) { left: 3%; bottom: 22px; }
-  .castMember:nth-child(7) { left: 22%; bottom: 38px; }
-  .castMember:nth-child(8) { left: 41%; bottom: 20px; }
-  .castMember:nth-child(9) { left: 60%; bottom: 37px; }
-  .castMember:nth-child(10) { left: 80%; bottom: 22px; top: auto; }
+/* ---------- TABLET: intentionally recomposed ---------- */
+@media(min-width:768px) and (max-width:1179px){
+  .wrap{width:min(100% - 44px,1060px)}
+  .nav{width:calc(100% - 28px);height:60px;padding-left:18px}
+  .navlinks{display:none!important}.menu{display:block!important}
+  .navCta{display:block!important;padding:13px 17px}
+  .mobileNav{padding:105px 34px 40px}
+  .mobileNav a,.mobileNav button{font-size:clamp(38px,6vw,62px)}
+
+  #v5SoundDock{
+    left:16px;bottom:16px;width:280px;min-width:0;
+    padding:11px 12px;border-radius:18px
+  }
+  #v5SectionRail{display:none}
+
+  .hero{height:128svh;min-height:900px}
+  .heroSticky{align-items:flex-end;padding:110px 0 70px}
+  .heroGrid{grid-template-columns:1fr;max-width:780px;margin-right:auto}
+  .hero h1{font-size:clamp(74px,12.5vw,128px);line-height:.79}
+  .heroMeta{display:none!important}
+  .heroCopy{max-width:620px}
+  .heroCinema:before{width:92vw;height:92vw;right:-38vw;top:8vh;opacity:.82}
+  .pc-hero{width:225px!important;right:3vw!important;bottom:8vh!important;opacity:.84}
+
+  .belief{height:178vh}
+  .beliefGrid{grid-template-columns:1fr;gap:38px}
+  .beliefAside{max-width:520px;position:relative;z-index:8}
+  .beliefText{font-size:clamp(54px,8.8vw,88px);max-width:840px}
+  .meaningOrb{width:68vw;height:68vw;right:-26vw;opacity:.42}
+  .pc-belief{left:auto!important;right:2vw!important;bottom:7vh!important;width:150px!important;opacity:.72}
+
+  .headGrid,.systemIntro,.labHead,.studioHead,.processHead,.faqHead{
+    grid-template-columns:1fr!important;gap:20px!important
+  }
+  .work,.system,.lab,.studio,.arcade,.careTeaser,.process{padding-top:110px;padding-bottom:125px}
+
+  .case{
+    grid-template-columns:50px minmax(0,1fr) 56px;
+    padding:28px 22px;min-height:150px
+  }
+  .caseMeta{display:none}.case h3{font-size:clamp(31px,5.5vw,49px)}
+  .casePreview{display:none!important}
+  .pc-work{right:18px!important;top:72px!important;bottom:auto!important;width:145px!important;opacity:.58}
+
+  .usModel{margin-top:45px;border-radius:32px}
+  .usModelIntro{padding:34px 30px 28px}
+  .usPrinciples{grid-template-columns:1fr 1fr}
+  .usPrinciple{min-height:205px}.usPrinciple:nth-child(2){border-right:0}
+  .usPrinciple:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}
+  .usFlow{padding:30px}
+  .usFlowLine{grid-template-columns:repeat(5,1fr);gap:6px}
+  .us90{grid-template-columns:repeat(3,1fr)}
+  .pc-system{left:auto!important;right:12px!important;top:70px!important;width:140px!important;opacity:.52}
+
+  .toolGrid{grid-template-columns:1fr 1fr!important}
+  .toolCard{min-height:480px}
+  .toolGrid .toolCard:last-child{grid-column:1/-1;min-height:400px}
+  .pc-lab{right:10px!important;top:58px!important;width:135px!important;opacity:.55}
+
+  .clientKitGrid{grid-template-columns:1fr 1fr}
+  .clientKitCard{min-height:300px}
+  .clientKitCard:nth-child(2){border-right:0}
+  .clientKitCard:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}
+  .clientKitBottom{grid-template-columns:1fr 1fr 1fr}
+  .pc-studio{left:auto!important;right:14px!important;top:60px!important;bottom:auto!important;width:138px!important;opacity:.54}
+
+  .arcadeGrid{grid-template-columns:1fr 1fr!important}
+  .arcadeCard:nth-child(3){grid-column:1/-1;max-width:70%;justify-self:center;width:100%}
+  .pc-arcade{right:14px!important;top:58px!important;width:140px!important;opacity:.58}
+
+  .careTeaserGrid{grid-template-columns:1fr 1fr;gap:6vw}
+  .carePortal{height:520px}
+  .pc-care{left:10px!important;bottom:32px!important;width:140px!important;opacity:.58}
+
+  .steps{grid-template-columns:1fr 1fr!important}
+  .step{min-height:285px}
+  .steps .step:last-child{grid-column:1/-1;max-width:50%;width:100%;justify-self:center}
+  .pc-process{right:10px!important;bottom:26px!important;width:135px!important;opacity:.55}
+
+  .footerGrid{grid-template-columns:1fr 1fr!important}
+
+  /* Cast finale becomes a two-row ensemble on tablet */
+  .castFinale{min-height:470px;width:min(100% - 36px,1040px)}
+  .castStage{inset:78px 20px 20px}
+  .castMember{width:96px!important}
+  .castMember:nth-child(1){left:3%;bottom:175px}
+  .castMember:nth-child(2){left:22%;bottom:192px}
+  .castMember:nth-child(3){left:41%;bottom:173px}
+  .castMember:nth-child(4){left:60%;bottom:190px}
+  .castMember:nth-child(5){left:79%;bottom:172px}
+  .castMember:nth-child(6){left:3%;bottom:22px}
+  .castMember:nth-child(7){left:22%;bottom:38px}
+  .castMember:nth-child(8){left:41%;bottom:20px}
+  .castMember:nth-child(9){left:60%;bottom:37px}
+  .castMember:nth-child(10){left:80%;bottom:22px;top:auto}
 }
 
-/* ---------- MOBILE ART DIRECTION ---------- */
-@media(max-width: 767px) {
-  .wrap { width: calc(100% - 28px); }
-  .grain { display: none!important; }
-  .nav { top: calc(9px + var(--safe-top)); height: 56px; width: calc(100% - 18px); padding: 0 9px 0 16px; border-radius: 22px; }
-  .brand { font-size: 17px; }
-  .navlinks, .dayBtn, .navCta { display: none!important; }
-  .menu { display: block!important; font-size: 20px; padding: 8px; }
-  .mobileNav { padding: calc(92px + var(--safe-top)) 22px calc(28px + var(--safe-bottom)); gap: 8px; }
-  .mobileNav a, .mobileNav button { font-size: clamp(36px, 12vw, 52px); line-height: .98; }
-  #v5SoundDock { left: 10px; bottom: calc(10px + var(--safe-bottom)); width: 205px; min-width: 0; padding: 9px 10px; border-radius: 16px; grid-template-columns: 30px 1fr 30px; gap: 8px; }
-  .v5SoundOrb { width: 30px; height: 30px; }
-  .v5SoundText b { font-size: 9px; }
-  .v5SoundText span { max-width: 110px; font-size: 7px; }
-  .v5Volume, .v10AudioBadge, #v5SectionRail { display: none!important; }
-  
+/* ---------- MOBILE: a different experience, not compressed desktop ---------- */
+@media(max-width:767px){
+  .wrap{width:calc(100% - 28px)}
+  .grain{display:none!important}
+  .nav{
+    top:calc(9px + var(--safe-top));height:56px;width:calc(100% - 18px);
+    padding:0 9px 0 16px;border-radius:22px
+  }
+  .brand{font-size:17px}.navlinks,.dayBtn,.navCta{display:none!important}
+  .menu{display:block!important;font-size:20px;padding:8px}
+  .mobileNav{
+    padding:calc(92px + var(--safe-top)) 22px calc(28px + var(--safe-bottom));
+    gap:8px
+  }
+  .mobileNav a,.mobileNav button{font-size:clamp(36px,12vw,52px);line-height:.98}
+
+  #v5SoundDock{
+    left:10px;bottom:calc(10px + var(--safe-bottom));
+    width:205px;min-width:0;padding:9px 10px;border-radius:16px;
+    grid-template-columns:30px 1fr 30px;gap:8px
+  }
+  .v5SoundOrb{width:30px;height:30px}
+  .v5SoundText b{font-size:9px}.v5SoundText span{max-width:110px;font-size:7px}
+  .v5Volume,.v10AudioBadge{display:none!important}
+  #v5SectionRail{display:none!important}
+
   /* Entrance */
-  #v5Gate { align-items: flex-end; padding: 0 0 calc(22px + var(--safe-bottom)); }
-  .v5GateInner { width: calc(100% - 28px); display: block; }
-  .v5GateInner h1 { font-size: 17vw; line-height: .8; margin: 16px 0 24px; }
-  .v5GateRight p { font-size: 14px; line-height: 1.55; }
-  .v5GateActions { display: grid; grid-template-columns: 1fr; gap: 8px; }
-  .v5Enter { width: 100%; padding: 15px; }
-  .v5GateFog { filter: blur(18px); }
+  #v5Gate{align-items:flex-end;padding:0 0 calc(22px + var(--safe-bottom))}
+  .v5GateInner{width:calc(100% - 28px);display:block}
+  .v5GateInner h1{font-size:17vw;line-height:.8;margin:16px 0 24px}
+  .v5GateRight p{font-size:14px;line-height:1.55}
+  .v5GateActions{display:grid;grid-template-columns:1fr;gap:8px}
+  .v5Enter{width:100%;padding:15px}
+  .v5GateFog{filter:blur(18px)}
 
   /* Hero */
-  .hero { height: 118svh; min-height: 760px; }
-  .heroSticky { height: 100svh; align-items: flex-end; padding: 94px 0 calc(64px + var(--safe-bottom)); }
-  .heroGrid { display: block; }
-  .hero h1 { font-size: 17vw; line-height: .8; margin: 20px 0 24px; max-width: 95%; }
-  .hero h1 .line:nth-child(2), .hero h1 .line:nth-child(3) { margin-left: 0!important; }
-  .heroCopy { font-size: 15px; line-height: 1.55; max-width: 88%; }
-  .heroActions { display: grid; gap: 8px; max-width: 280px; }
-  .wowBtn { width: 100%; text-align: center; }
-  .heroMeta { display: none!important; }
-  .heroCinema:before { width: 145vw; height: 145vw; right: -76vw; top: 8vh; opacity: .72; }
-  .heroCinema:after { display: none; }
-  .orbRing { opacity: .35; }
-  .pc-hero { width: 128px!important; right: -18px!important; bottom: 24vh!important; opacity: .68!important; }
+  .hero{height:118svh;min-height:760px}
+  .heroSticky{height:100svh;align-items:flex-end;padding:94px 0 calc(64px + var(--safe-bottom))}
+  .heroGrid{display:block}
+  .hero h1{font-size:17vw;line-height:.8;margin:20px 0 24px;max-width:95%}
+  .hero h1 .line:nth-child(2),.hero h1 .line:nth-child(3){margin-left:0!important}
+  .heroCopy{font-size:15px;line-height:1.55;max-width:88%}
+  .heroActions{display:grid;gap:8px;max-width:280px}
+  .wowBtn{width:100%;text-align:center}
+  .heroMeta{display:none!important}
+  .heroCinema:before{width:145vw;height:145vw;right:-76vw;top:8vh;opacity:.72}
+  .heroCinema:after{display:none}
+  .orbRing{opacity:.35}
+  .pc-hero{
+    width:128px!important;right:-18px!important;bottom:24vh!important;
+    opacity:.68!important
+  }
+
+  /* On touch, character name is shown by tapping, not hover */
+  .premiumChar{pointer-events:auto}
+  .premiumChar .charIdentity{display:block!important;bottom:-11px;transform:translate(-50%,4px) scale(.9)}
+  .premiumChar.touch-open .charIdentity{opacity:1;transform:translate(-50%,0) scale(1)}
+  .premiumChar.touch-open{z-index:40;scale:1.045}
+  .premiumChar .charIdentity b{font-size:7px}.premiumChar .charIdentity span{display:none}
 
   /* Belief */
-  .belief { height: auto; min-height: 118svh; padding: 110px 0 90px; }
-  .beliefSticky { height: auto; min-height: 0; position: relative; display: block; overflow: hidden; }
-  .beliefGrid { grid-template-columns: 1fr!important; gap: 40px; }
-  .beliefAside { padding-right: 46px; }
-  .beliefAside h3 { font-size: 31px; }
-  .beliefAside p { font-size: 14px; }
-  .beliefProof { grid-template-columns: 1fr; gap: 8px; }
-  .beliefText { font-size: 12.8vw; line-height: .99; position: relative; z-index: 4; }
-  .meaningOrb { width: 80vw; height: 80vw; right: -48vw; top: 56%; opacity: .26; }
-  .pc-belief { width: 92px!important; left: auto!important; right: -20px!important; bottom: auto!important; top: 90px!important; opacity: .52!important; }
+  .belief{height:auto;min-height:118svh;padding:110px 0 90px}
+  .beliefSticky{height:auto;min-height:0;position:relative;display:block;overflow:hidden}
+  .beliefGrid{grid-template-columns:1fr!important;gap:40px}
+  .beliefAside{padding-right:46px}
+  .beliefAside h3{font-size:31px}.beliefAside p{font-size:14px}
+  .beliefProof{grid-template-columns:1fr;gap:8px}
+  .beliefText{font-size:12.8vw;line-height:.99;position:relative;z-index:4}
+  .meaningOrb{width:80vw;height:80vw;right:-48vw;top:56%;opacity:.26}
+  .pc-belief{width:92px!important;left:auto!important;right:-20px!important;bottom:auto!important;top:90px!important;opacity:.52!important}
 
-  /* Sections */
-  .work, .system, .lab, .studio, .arcade, .process { padding: 92px 0 112px; }
-  .headGrid, .systemIntro, .labHead, .studioHead, .processHead, .faqHead { grid-template-columns: 1fr!important; gap: 20px; }
-  .headGrid h2, .systemIntro h2, .labHead h2, .studioHead h2, .processHead h2, .faqHead h2 { font-size: 13vw; }
-  
-  /* Cards & Layout */
-  .caseList { gap: 8px; }
-  .case { grid-template-columns: 30px minmax(0, 1fr) 38px; gap: 8px; min-height: 120px; padding: 18px 12px; border-radius: 20px; }
-  .caseNo { font-size: 8px; }
-  .caseMeta, .casePreview { display: none!important; }
-  .caseArrow { width: 36px; height: 36px; }
-  .case h3 { font-size: 25px; line-height: 1.02; }
-  .case:hover { padding-left: 12px; transform: none; }
-  .pc-work { width: 82px!important; right: -18px!important; top: 38px!important; bottom: auto!important; opacity: .38!important; }
+  /* Work */
+  .work{padding:92px 0 112px}
+  .headGrid{grid-template-columns:1fr!important;gap:20px}
+  .headGrid h2{font-size:13vw}
+  .caseList{gap:8px}
+  .case{
+    grid-template-columns:30px minmax(0,1fr) 38px;
+    gap:8px;min-height:120px;padding:18px 12px;border-radius:20px
+  }
+  .caseNo{font-size:8px}.caseMeta{display:none}.caseArrow{width:36px;height:36px}
+  .case h3{font-size:25px;line-height:1.02}
+  .casePreview{display:none!important}
+  .case:hover{padding-left:12px;transform:none}
+  .pc-work{width:82px!important;right:-18px!important;top:38px!important;bottom:auto!important;opacity:.38!important}
 
-  /* Client Kits / System */
-  .usModel, .clientKit { margin-top: 36px; border-radius: 24px; }
-  .usModelIntro, .clientKitIntro { grid-template-columns: 1fr; padding: 26px 18px 22px; gap: 14px; }
-  .usModelIntro h3, .clientKitIntro h3 { font-size: 36px; }
-  .usPrinciples, .clientKitGrid { grid-template-columns: 1fr; }
-  .usPrinciple, .clientKitCard { min-height: auto; padding: 22px 18px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); }
-  .usFlow { padding: 24px 18px 28px; }
-  .usFlowTop, .usFlowTop b { display: block; margin-top: 7px; }
-  .usFlowLine { grid-template-columns: 1fr; gap: 13px; margin-top: 24px; }
-  .usFlowLine:before { left: 21px; right: auto; top: 7%; bottom: 7%; width: 2px; height: auto; transform: scaleY(0); transform-origin: top; }
-  .usFlowStep { display: grid; grid-template-columns: 44px 1fr; gap: 11px; text-align: left; align-items: center; }
-  .usFlowStep i, .usFlowStep b { margin: 0; }
-  .us90, .clientKitBottom { grid-template-columns: 1fr; gap: 8px; }
-  
-  /* Tools & Arcade */
-  .toolGrid, .arcadeGrid, .steps { grid-template-columns: 1fr!important; gap: 10px; }
-  .toolCard { min-height: 420px; border-radius: 24px; padding: 18px; }
-  .toolCard:hover, .arcadeCard:hover, .step:hover { transform: none!important; }
-  .arcadeCard { min-height: 330px; border-radius: 24px; }
-  .arcadeCard h3 { font-size: 46px; margin-top: 100px; }
-  .step { min-height: 230px; border-radius: 22px; padding: 20px; }
-  
-  /* PC Characters Mobile Resizing */
-  .pc-system { width: 82px!important; right: -18px!important; top: 36px!important; opacity: .36!important; }
-  .pc-lab { width: 80px!important; right: -18px!important; top: 40px!important; opacity: .36!important; }
-  .pc-studio { width: 78px!important; right: -17px!important; top: 38px!important; opacity: .34!important; }
-  .pc-arcade { width: 82px!important; right: -18px!important; top: 40px!important; opacity: .38!important; }
-  .pc-care { width: 88px!important; left: -20px!important; bottom: 22px!important; opacity: .44!important; }
-  .pc-process { width: 82px!important; right: -18px!important; bottom: 26px!important; opacity: .38!important; }
-  .pc-final { width: 92px!important; right: -18px!important; top: 40px!important; opacity: .45!important; }
+  /* How simple works */
+  .system{padding:92px 0 110px}
+  .systemIntro{grid-template-columns:1fr!important;gap:20px}
+  .systemIntro h2{font-size:13vw}
+  .usModel{margin-top:36px;border-radius:24px}
+  .usModelIntro{grid-template-columns:1fr;padding:26px 18px 22px;gap:14px}
+  .usModelIntro h3{font-size:36px}
+  .usModelIntro p{font-size:13px}
+  .usPrinciples{grid-template-columns:1fr}
+  .usPrinciple{min-height:auto;padding:22px 18px;border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .usPrinciple h4{font-size:21px;margin:18px 0 9px}
+  .usFlow{padding:24px 18px 28px}
+  .usFlowTop{display:block}.usFlowTop b{display:block;margin-top:7px}
+  .usFlowLine{grid-template-columns:1fr;gap:13px;margin-top:24px}
+  .usFlowLine:before{
+    left:21px;right:auto;top:7%;bottom:7%;width:2px;height:auto;
+    transform:scaleY(0);transform-origin:top
+  }
+  .usModel.in .usFlowLine:before{transform:scaleY(1)}
+  .usFlowStep{display:grid;grid-template-columns:44px 1fr;gap:11px;text-align:left;align-items:center}
+  .usFlowStep i{margin:0}.usFlowStep b{margin:0}.usFlowStep span{grid-column:2}
+  .us90{grid-template-columns:1fr;gap:8px}
+  .pc-system{width:82px!important;left:auto!important;right:-18px!important;top:36px!important;opacity:.36!important}
 
-  /* Final Cast */
-  .castFinale { width: 100%; min-height: 565px; margin-top: 38px; border-radius: 24px; }
-  .castFinaleHeader { left: 18px; top: 18px; right: 18px; }
-  .castStage { inset: 70px 6px 12px; }
-  .castMember { width: 72px!important; touch-action: manipulation; }
-  .castMember:nth-child(1) { left: 1%; bottom: 232px; }
-  .castMember:nth-child(2) { left: 20%; bottom: 246px; }
-  .castMember:nth-child(3) { left: 39%; bottom: 230px; }
-  .castMember:nth-child(4) { left: 58%; bottom: 245px; }
-  .castMember:nth-child(5) { left: 77%; bottom: 229px; }
-  .castMember:nth-child(6) { left: 1%; bottom: 62px; }
-  .castMember:nth-child(7) { left: 20%; bottom: 75px; }
-  .castMember:nth-child(8) { left: 39%; bottom: 60px; }
-  .castMember:nth-child(9) { left: 58%; bottom: 74px; }
-  .castMember:nth-child(10) { left: 78%; bottom: 59px; top: auto; }
-  .castMember .castName { font-size: 7px; padding: 6px 8px; }
-  .castMember.touch-open .castName { opacity: 1; transform: translate(-50%, 0); }
+  /* Open lab */
+  .lab{padding:92px 0 115px}
+  .labHead{grid-template-columns:1fr!important;gap:20px}
+  .labHead h2{font-size:13vw}
+  .labValueBar{grid-template-columns:1fr;gap:12px;padding:16px}
+  .toolGrid{grid-template-columns:1fr!important;gap:10px}
+  .toolCard{min-height:420px;border-radius:24px;padding:18px}
+  .toolCard:hover{transform:none}
+  .toolVisual{height:170px}
+  .pc-lab{width:80px!important;right:-18px!important;top:40px!important;opacity:.36!important}
 
-  /* Modals / Games */
-  .modal { padding: 8px; }
-  .modalBox { width: 100%; max-height: calc(100svh - 16px); border-radius: 22px; padding: 18px; }
-  .formGrid, .analysisGrid { grid-template-columns: 1fr!important; }
-  .musicDeck { grid-template-columns: 1fr 1fr; }
-  .gameCanvas, .cityCanvas { height: 52svh; min-height: 360px; pointer-events: auto!important; touch-action: none!important; }
-  
-  /* Touch target safety */
-  a, button, .case, .toolCard, .arcadeCard, .clientKitCard, .usPrinciple, .step, .faqQ { min-height: 44px; position: relative; cursor: pointer; }
-  .wowBtn:before, .navCta:before, .case:before, .toolCard:before, .arcadeCard:before, .studioCard:before { pointer-events: none!important; }
+  /* Client outputs */
+  .studio{padding:92px 0 110px}
+  .studioHead{grid-template-columns:1fr!important;gap:18px}
+  .studioHead h2{font-size:13vw}
+  .clientKit{margin-top:36px;border-radius:24px}
+  .clientKitIntro{grid-template-columns:1fr;padding:24px 18px;gap:12px}
+  .clientKitIntro h3{font-size:34px}
+  .clientKitGrid{grid-template-columns:1fr}
+  .clientKitCard{min-height:auto;padding:22px 18px;border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .clientKitCard h4{font-size:23px;margin:20px 0 9px}
+  .clientKitCard>p{min-height:0}
+  .clientKitBottom{grid-template-columns:1fr;padding:18px}
+  .pc-studio{width:78px!important;left:auto!important;right:-17px!important;top:38px!important;bottom:auto!important;opacity:.34!important}
+
+  /* Arcade */
+  .arcade{padding:95px 0 115px}
+  .arcadeGrid{grid-template-columns:1fr!important;gap:10px}
+  .arcadeCard{min-height:330px;border-radius:24px;transform:none!important}
+  .arcadeCard h3{font-size:46px;margin-top:100px}
+  .arcadeCard:hover{transform:none!important}
+  .pc-arcade{width:82px!important;right:-18px!important;top:40px!important;opacity:.38!important}
+
+  /* Care */
+  .careTeaser{padding:95px 0 105px}
+  .careTeaserGrid{grid-template-columns:1fr!important;gap:35px}
+  .careTeaser h2{font-size:13vw}
+  .carePortal{height:390px;border-radius:190px 190px 24px 24px}
+  .pc-care{width:88px!important;left:-20px!important;right:auto!important;bottom:22px!important;opacity:.44!important}
+
+  /* Process */
+  .process{padding:92px 0 110px}
+  .processHead{grid-template-columns:1fr!important;gap:18px}
+  .processHead h2{font-size:13vw}
+  .steps{grid-template-columns:1fr!important;gap:8px}
+  .step{min-height:230px;border-radius:22px;padding:20px}
+  .step:hover,.step.open{transform:none}
+  .step h3{font-size:27px}
+  .pc-process{width:82px!important;right:-18px!important;bottom:26px!important;opacity:.38!important}
+
+  /* FAQ */
+  .faq{padding:90px 0 100px}
+  .faqHead{grid-template-columns:1fr!important;gap:18px}
+  .faqHead h2{font-size:13vw}
+  .faqQ{font-size:16px;padding:22px 0}
+  .faqItem.open .faqA{padding:0 10px 22px 0}
+
+  /* Final */
+  .final{height:auto;min-height:118svh;padding:90px 0 calc(70px + var(--safe-bottom))}
+  .finalSticky{height:auto;min-height:0;position:relative;display:block}
+  .finalInner h2{font-size:15vw}
+  .finalInner p{font-size:15px}
+  .pc-final{width:92px!important;right:-18px!important;top:40px!important;opacity:.45!important}
+
+  /* Cast finale becomes a compact ensemble, not a desktop stage squeezed down */
+  .castFinale{
+    width:100%;min-height:565px;margin-top:38px;border-radius:24px
+  }
+  .castFinaleHeader{left:18px;top:18px;right:18px}
+  .castFinaleHeader b{font-size:15px;max-width:240px}
+  .castStage{inset:70px 6px 12px}
+  .castMember{width:72px!important}
+  .castMember:nth-child(1){left:1%;bottom:232px}
+  .castMember:nth-child(2){left:20%;bottom:246px}
+  .castMember:nth-child(3){left:39%;bottom:230px}
+  .castMember:nth-child(4){left:58%;bottom:245px}
+  .castMember:nth-child(5){left:77%;bottom:229px}
+  .castMember:nth-child(6){left:1%;bottom:62px}
+  .castMember:nth-child(7){left:20%;bottom:75px}
+  .castMember:nth-child(8){left:39%;bottom:60px}
+  .castMember:nth-child(9){left:58%;bottom:74px}
+  .castMember:nth-child(10){left:78%;bottom:59px;top:auto}
+  .castMember .castName{font-size:7px;padding:6px 8px}
+  .castMember.touch-open .castName{opacity:1;transform:translate(-50%,0)}
+  .castMember:hover{transform:none!important}
+
+  /* Footer */
+  footer{padding-bottom:calc(28px + var(--safe-bottom))}
+  .footerGrid{grid-template-columns:1fr!important}
+  .footerBottom{flex-direction:column;gap:7px}
+
+  /* Modal / games / tools */
+  .modal{padding:8px}
+  .modalBox{
+    width:100%;max-height:calc(100svh - 16px);border-radius:22px;padding:18px;
+    overscroll-behavior:contain
+  }
+  .modal h2{font-size:12vw}
+  .formGrid,.analysisGrid{grid-template-columns:1fr!important}
+  .musicDeck{grid-template-columns:1fr 1fr}
+  .signaturePad{height:240px}
+  .gameCanvas,.cityCanvas{height:52svh;min-height:360px}
+  .gameHud{flex-wrap:wrap;gap:8px}
+  .gameIntro{grid-template-columns:1fr}
+  .piano{height:140px}
+  .pageBack{top:calc(12px + var(--safe-top));left:12px}
+  .carePageContent{width:calc(100% - 28px);padding:100px 0 50px}
+  .carePageContent>h1{font-size:17vw}
+  .careChoices{grid-template-columns:1fr}
+  .careChoices button{min-height:140px}
 }
 
-/* ---------- TOUCH FEEDBACK & SAFETY (All Touch Devices) ---------- */
-@media(pointer: coarse) {
-  .cursor, .cursorDot, .cursorLabel { display: none!important; }
-  .premiumChar, .premiumChar .charIdentity, .heroCinema, .meaningOrb, .futureFrames, .futurePortal, .storyPath, .finalGlow, #v5WorldWash, #v5Atmosphere, .v6ChapterFlash { pointer-events: none!important; }
-  .wowBtn:hover:before, .navCta:hover:before { transform: translate(-50%, -50%) scale(0); }
-  .case:after, .toolCard:after { display: none; }
-  
-  /* Prevent interaction layers from blocking touch */
-  .mobileNav:not(.open), .dayMenu:not(.open), .modal:not(.open), .pageExperience:not(.open), #v5Gate.out { pointer-events: none!important; }
-  .mobileNav.open, .dayMenu.open, .modal.open, .pageExperience.open, #v5Gate:not(.out) { pointer-events: auto!important; }
-  
-  /* Layering Safety */
-  .nav { z-index: 5000!important; }
-  .mobileNav { z-index: 4900!important; }
-  #v5SoundDock { z-index: 4800!important; }
-  .modal { z-index: 3000!important; }
-  .pageExperience { z-index: 2900!important; }
-  
-  /* Tap Highlights */
-  .case, .toolCard, .arcadeCard, .studioCard, .clientKitCard, .usPrinciple, .wowBtn, .miniBtn, .soundPad { -webkit-tap-highlight-color: transparent; }
-  
-  /* Touch Activation visual state */
-  .toolCard.touchActive, .clientKitCard.touchActive, .studioCard.touchActive, .arcadeCard.touchActive, .usPrinciple.touchActive, .step.touchActive, .case.touchActive {
-    transform: scale(.985)!important; filter: brightness(1.04);
-  }
+/* Touch devices: never depend on hover for understanding */
+@media(pointer:coarse){
+  .cursor,.cursorDot,.cursorLabel{display:none!important}
+  .premiumChar:hover,.case:hover,.toolCard:hover,.arcadeCard:hover,.studioCard:hover{transform:none}
+  .wowBtn:hover:before,.navCta:hover:before{transform:translate(-50%,-50%) scale(0)}
+  .case:after,.toolCard:after{display:none}
+}
 
-  /* Scroll-into-view hover parity: mirrors the desktop :hover treatment for
-     the same cards, triggered by IntersectionObserver (see unified-touch-controller)
-     instead of a stuck :hover state. Declared last so it wins the cascade tie
-     against the earlier :hover rules for these selectors. */
-  .case.inView { padding-left: 40px; transform: scale(1.015); border-color: rgba(223,255,67,.45); }
-  .case.inView:before { opacity: 1; }
-  .case.inView h3 { transform: translateX(10px); }
-  .case.inView:after { opacity: .5; transform: none; }
-
-  .toolCard.inView { transform: translateY(-12px); border-color: rgba(255,255,255,.45); box-shadow: 0 40px 100px rgba(0,0,0,.34); }
-  .toolCard.inView:before { transform: scale(1.4) translate(-40px,40px); }
-  .toolCard.inView .toolOpen { background: white; color: #000; transform: rotate(45deg); }
-
-  .arcadeCard.inView { transform: translateY(-18px) scale(1.025)!important; box-shadow: 0 45px 120px rgba(0,0,0,.48); border-color: var(--v5-acid); }
-  .arcadeCard.inView:before { transform: scale(1.35) translate(-25px,25px); }
-  .arcadeCard.inView:after { background: var(--v5-acid); color: #060609; transform: rotate(10deg) scale(1.08); }
-
-  .step.inView { background: #09090d; color: white; transform: translateY(-12px); }
-  .step.inView:before { opacity: .28; }
-  .step.inView .plus { background: var(--v5-acid); color: #08080b; }
-
-  .studioCard.inView { transform: translateY(-13px) rotate(-.6deg); background: #0c0c10; color: white; }
-  .studioCard.inView:before { opacity: .18; }
-
-  .usPrinciple.inView { background: rgba(255,255,255,.035); transform: translateY(-5px); }
-  .usPrinciple.inView:before { opacity: .13; }
-
-  .clientKitCard.inView { background: rgba(255,255,255,.035); transform: translateY(-6px); }
+/* ultra-small phones */
+@media(max-width:380px){
+  .wrap{width:calc(100% - 22px)}
+  .hero h1{font-size:16.5vw}
+  .case h3{font-size:22px}
+  .premiumChar{scale:.9}
+  #v5SoundDock{width:190px}
+  .musicDeck{grid-template-columns:1fr}
+  .castMember{width:66px!important}
 }
 </style>
 
-<script id="unified-touch-controller">
-(()=>{
-  const init = () => {
-  if(matchMedia('(pointer:coarse)').matches){
-    document.querySelectorAll('.toolCard, .clientKitCard, .studioCard, .arcadeCard, .usPrinciple, .step, .case').forEach(card => {
-      card.addEventListener('pointerdown', () => card.classList.add('touchActive'), {passive: true});
-      const off = () => card.classList.remove('touchActive');
-      card.addEventListener('pointerup', off, {passive: true});
-      card.addEventListener('pointercancel', off, {passive: true});
-    });
-    
-    // Character touch revealing logic
-    document.querySelectorAll('.premiumChar, .castMember').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const open = !el.classList.contains('touch-open');
-        document.querySelectorAll('.premiumChar.touch-open, .castMember.touch-open').forEach(x => { if(x !== el) x.classList.remove('touch-open'); });
-        el.classList.toggle('touch-open', open);
-      });
-    });
-    document.addEventListener('click', () => {
-      document.querySelectorAll('.premiumChar.touch-open, .castMember.touch-open').forEach(x => x.classList.remove('touch-open'));
-    });
 
-    // Scroll-into-view hover parity: on touch, replay the desktop hover
-    // treatment as each card crosses the vertical center of the viewport,
-    // instead of leaving it stuck after a tap.
-    const hoverCards = document.querySelectorAll('.toolCard, .clientKitCard, .studioCard, .arcadeCard, .usPrinciple, .step, .case');
-    if (hoverCards.length && 'IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          entry.target.classList.toggle('inView', entry.isIntersecting);
-        });
-      }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
-      hoverCards.forEach(card => io.observe(card));
-    }
+<style id="v14-touch-feedback">
+.touch-press{transform:scale(.985)!important;transition:transform .12s ease!important}
+@media(pointer:coarse){
+  .case,.toolCard,.arcadeCard,.studioCard,.clientKitCard,.usPrinciple,.wowBtn,.miniBtn,.soundPad{
+    -webkit-tap-highlight-color:transparent
   }
-  };
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
-
-<style id="unified-swipe-carousels">
-/* Shared native swipe container logic */
-.v21Swipe {
-  overflow-x: auto !important;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
-.v21Swipe::-webkit-scrollbar { display: none; }
-.v21Swipe > * { scroll-snap-align: center; }
+</style>
 
-/* Mobile (<= 767px) - Full width swipe cards */
-@media (max-width: 767px) {
-  .usPrinciples, .usFlowLine, .us90, .toolGrid, .clientKitGrid, .clientKitBottom, .studioGrid, .arcadeGrid, .steps {
-    display: grid !important;
-    grid-auto-flow: column !important;
-    grid-template-columns: none !important;
+
+<style id="v15-touch-interaction-fix">
+/* =========================================================
+   V15 — TOUCH INTERACTION FIX
+   ========================================================= */
+
+/* decorative characters must never sit on top of real controls */
+@media(pointer:coarse){
+  .premiumChar{
+    pointer-events:none!important;
   }
-  .usPrinciples { grid-auto-columns: 84% !important; padding: 0 17px 13px !important; margin: 0 !important; }
-  .usFlowLine { grid-auto-columns: 72% !important; gap: 8px !important; margin-top: 20px !important; }
-  .us90 { grid-auto-columns: 82% !important; gap: 8px !important; }
-  .toolGrid { grid-auto-columns: 87% !important; gap: 10px !important; margin: 28px -28px 0 !important; padding: 0 28px 14px !important; }
-  .clientKitGrid { grid-auto-columns: 86% !important; gap: 9px !important; padding: 0 17px 13px !important; }
-  .clientKitBottom { grid-auto-columns: 82% !important; gap: 8px !important; padding: 17px !important; }
-  .studioGrid { grid-auto-columns: 86% !important; gap: 10px !important; margin: 26px -28px 0 !important; padding: 0 28px 14px !important; }
-  .arcadeGrid { grid-auto-columns: 87% !important; gap: 10px !important; margin: 0 -28px !important; padding: 0 28px 14px !important; }
-  .steps { grid-auto-columns: 84% !important; gap: 9px !important; margin: 0 -28px !important; padding: 0 28px 14px !important; border-top: 0 !important; }
-}
-
-/* Tablet (768px - 1179px) - Half width swipe cards */
-@media (min-width: 768px) and (max-width: 1179px) {
-  .usPrinciples, .usFlowLine, .us90, .toolGrid, .clientKitGrid, .clientKitBottom, .studioGrid, .arcadeGrid, .steps {
-    display: grid !important;
-    grid-auto-flow: column !important;
-    grid-template-columns: none !important;
+  .premiumChar .charIdentity{
+    pointer-events:none!important;
   }
-  .usPrinciples { grid-auto-columns: 47% !important; }
-  .usFlowLine { grid-auto-columns: 36% !important; gap: 10px !important; }
-  .us90 { grid-auto-columns: 48% !important; gap: 10px !important; }
-  .toolGrid { grid-auto-columns: 56% !important; margin: 36px -44px 0 !important; padding: 0 44px 16px !important; }
-  .clientKitGrid { grid-auto-columns: 48% !important; padding: 0 25px 16px !important; }
-  .clientKitBottom { grid-auto-columns: 48% !important; gap: 10px !important; }
-  .studioGrid { grid-auto-columns: 48% !important; margin: 32px -44px 0 !important; padding: 0 44px 16px !important; }
-  .arcadeGrid { grid-auto-columns: 53% !important; margin: 0 -44px !important; padding: 0 44px 16px !important; }
-  .steps { grid-auto-columns: 47% !important; gap: 10px !important; margin: 0 -44px !important; padding: 0 44px 16px !important; border-top: 0 !important; }
-}
-
-/* Active card press feedback */
-@media(pointer: coarse) {
-  .toolCard.touchActive, .clientKitCard.touchActive, .studioCard.touchActive,
-  .arcadeCard.touchActive, .usPrinciple.touchActive, .step.touchActive, .case.touchActive {
-    transform: scale(.985) !important;
-    filter: brightness(1.04);
+  .castMember{
+    pointer-events:auto!important;
   }
 }
 
+/* inactive full-screen layers can never block taps */
+.mobileNav:not(.open),
+.dayMenu:not(.open),
+.modal:not(.open),
+.pageExperience:not(.open),
+#v5Gate.out{
+  pointer-events:none!important;
+}
+.mobileNav.open,
+.dayMenu.open,
+.modal.open,
+.pageExperience.open,
+#v5Gate:not(.out){
+  pointer-events:auto!important;
+}
+
+/* ensure the functional UI sits above decorative scene art */
+.nav{z-index:1600!important}
+.mobileNav{z-index:1550!important}
+#v5SoundDock{z-index:1580!important}
+.modal{z-index:3000!important}
+.pageExperience{z-index:2900!important}
+.pageBack{z-index:2910!important}
+.heroGrid,.caseList,.usModel,.toolGrid,.clientKit,.arcadeGrid,.careTeaserGrid,.steps,.faqGrid,.finalInner,.castFinale{
+  position:relative;
+  z-index:20;
+}
+
+/* decorative/canvas layers cannot swallow touch unless intentionally interactive */
+.heroCinema,.meaningOrb,.futureFrames,.futurePortal,.storyPath,.finalGlow,
+#v5WorldWash,#v5Atmosphere,.v6ChapterFlash,
+.pc-hero,.pc-belief,.pc-work,.pc-system,.pc-lab,.pc-studio,.pc-arcade,.pc-care,.pc-process,.pc-final{
+  pointer-events:none!important;
+}
+
+/* only game/tool canvases that need touch should accept pointer events */
+#journeyCanvas,#finalCanvas,#v5GateCanvas,#careCanvas{
+  pointer-events:none!important;
+}
+.gameCanvas,.cityCanvas,.signaturePad{
+  pointer-events:auto!important;
+  touch-action:none!important;
+}
+
+/* proper mobile target sizes */
+@media(max-width:767px){
+  a,button,.case,.toolCard,.arcadeCard,.clientKitCard,.usPrinciple,.step,.faqQ{
+    min-height:44px;
+  }
+  .menu{
+    min-width:44px;min-height:44px;display:grid!important;place-items:center;
+    position:relative;z-index:5
+  }
+  .mobileNav{
+    transform:translate3d(0,-105%,0)!important;
+    visibility:hidden;
+    pointer-events:none!important;
+    transition:transform .55s cubic-bezier(.16,1,.3,1),visibility .55s;
+  }
+  .mobileNav.open{
+    transform:translate3d(0,0,0)!important;
+    visibility:visible;
+    pointer-events:auto!important;
+  }
+  .mobileNav a,.mobileNav button{
+    display:block;width:100%;min-height:54px;
+    pointer-events:auto!important;
+  }
+
+  .wowBtn,.miniBtn,.v5Enter,.gameActions button,.roomChoices button,
+  .clientKitCard,.toolCard,.arcadeCard,.case,.step,.faqQ{
+    cursor:pointer;
+    position:relative;
+  }
+
+  /* prevent transformed decorative pseudo-elements from covering text/buttons */
+  .wowBtn:before,.navCta:before,.case:before,.toolCard:before,.arcadeCard:before,.studioCard:before{
+    pointer-events:none!important;
+  }
+
+  /* when a modal opens, keep its controls above everything */
+  .modal.open .modalBox,
+  .pageExperience.open > *{
+    pointer-events:auto!important;
+  }
+
+  /* character cast names use tap, but only the finale characters are tappable */
+  .castMember{
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  /* Safari fixes */
+  input,textarea,select,button{
+    font-size:16px;
+  }
+  button{
+    -webkit-appearance:none;
+    appearance:none;
+  }
+}
+
+/* tablet touch targets and overlay safety */
+@media(min-width:768px) and (max-width:1179px) and (pointer:coarse){
+  .premiumChar{pointer-events:none!important}
+  .menu{min-width:44px;min-height:44px}
+  .mobileNav a,.mobileNav button{min-height:58px}
+  .toolCard,.arcadeCard,.case,.clientKitCard,.usPrinciple{touch-action:manipulation}
+}
 </style>
 
-<!-- --- FIX: Swipeable Flow Line & Connecting Gradient --- -->
-<style id="us-flow-line-fix">
-  @media (max-width: 1179px) {
-    /* 1. Force the container to become a native horizontal swipe carousel */
-    .usFlowLine {
-      position: relative !important;
-      overflow-x: auto !important;
-      overscroll-behavior-inline: contain !important;
-      scroll-snap-type: x mandatory !important;
-      scrollbar-width: none !important;
-      -webkit-overflow-scrolling: touch !important;
-    }
-    .usFlowLine::-webkit-scrollbar { display: none !important; }
-    .usFlowLine > * { scroll-snap-align: center !important; }
 
-    /* 2. Base styles for the connecting horizontal gradient line */
-    .usFlowLine:before {
-      content: "" !important;
-      display: block !important;
-      position: absolute !important;
-      top: 22px !important; /* Passes exactly through the center of the 44px circles */
-      height: 2px !important;
-      background: linear-gradient(90deg, var(--acid), var(--cyan), var(--violet)) !important;
-      box-shadow: 0 0 15px rgba(223, 255, 67, 0.4) !important;
-      z-index: 1 !important;
-      transform: none !important;
-      opacity: 1 !important;
-    }
-    .usFlowStep {
-      position: relative !important;
-      z-index: 2 !important;
-    }
-  }
-
- /* 3. TABLET: Specific Line Width */
-  @media (min-width: 768px) and (max-width: 1179px) {
-    .usFlowLine:before {
-      left: 18% !important; 
-      /* 4 cards * 36% + 4 gaps * 10px */
-      width: calc(144% + 40px) !important; 
-    }
-  }
-
-  /* 4. MOBILE: Specific Line Width & Restored Centered Layout */
-  @media (max-width: 767px) {
-    .usFlowStep {
-      display: flex !important;
-      flex-direction: column !important;
-      text-align: center !important;
-      align-items: center !important;
-    }
-    .usFlowStep i { margin: 0 auto 12px !important; }
-    .usFlowStep b { margin: 0 0 5px !important; }
-    
-    .usFlowLine:before {
-      left: 36% !important; 
-      /* 4 cards * 72% + 4 gaps * 8px */
-      width: calc(288% + 32px) !important; 
-    }
-  }
+<style id="v18-desktop-stability">
+.studioGrid,.arcadeGrid,.steps{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.studioCard,.arcadeCard,.step{min-width:0!important}
+.studioCard h3,.arcadeCard h3,.step h3{word-break:normal!important;overflow-wrap:normal!important}
+.final{height:auto!important;min-height:0!important}.finalSticky{position:relative!important;height:auto!important;min-height:760px!important}
+.futureFrames{opacity:.28!important}.finalInner{position:relative!important;z-index:10!important}.castFinale{position:relative!important;margin:0 auto!important}
 </style>
 
+<style id="v21-faithful-shared">
+/* V21: desktop-faithful touch adaptation. No section content is replaced. */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden!important}
+*{box-sizing:border-box}
+.casePreview,.cursor,.cursorDot,.cursorLabel,#v5SectionRail{display:none!important}
+.nav{z-index:5000!important}
+.mobileNav{z-index:4900!important}
+#v5SoundDock{z-index:4800!important}
 
-
-
-<style id="fix-faq-toggle-circle">
-  /* 1. Ensure the base circle dimensions and flex centering are fixed */
-  .faqQ b {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    min-height: 38px !important;
-    border-radius: 50% !important;
-    border: 1px solid var(--line) !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-    box-sizing: border-box !important;
-    transition: transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease) !important;
+/* Never let a decorative character swallow a functional touch target */
+@media(pointer:coarse){
+  .premiumChar{pointer-events:none!important}
+  .case:hover,.toolCard:hover,.clientKitCard:hover,.studioCard:hover,.arcadeCard:hover,.step:hover,.usPrinciple:hover{
+    transform:none!important
   }
-
-  /* 2. When opened: keep exact same 38px outer dimensions, fill black, rotate smoothly */
-  .faqItem.open .faqQ b {
-    transform: rotate(45deg) !important;
-    background: var(--ink) !important;
-    color: var(--white) !important;
-    border-color: var(--ink) !important;
-    width: 38px !important;
-    height: 38px !important;
+  button,a,.case,.toolCard,.clientKitCard,.studioCard,.arcadeCard,.step,.usPrinciple{
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation
   }
+  button:active,a:active,.case:active,.toolCard:active,.clientKitCard:active,.studioCard:active,.arcadeCard:active,.step:active,.usPrinciple:active{
+    transform:scale(.985)!important
+  }
+}
+
+/* Touch animation equivalent: characters briefly acknowledge section arrival. */
+.premiumChar.v21Hello svg{animation:v21Hello .75s cubic-bezier(.16,1,.3,1)}
+.premiumChar.v21Name .charIdentity{opacity:1!important;transform:translate(-50%,0) scale(1)!important}
+@keyframes v21Hello{
+  0%,100%{transform:translateY(0) rotate(0)}
+  40%{transform:translateY(-8px) rotate(-3deg)}
+  72%{transform:translateY(-2px) rotate(2deg)}
+}
+
+/* Swipe groups keep desktop cards/content/colours exactly, only change geometry. */
+.v21Swipe{
+  overflow-x:auto!important;
+  overscroll-behavior-inline:contain;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.v21Swipe::-webkit-scrollbar{display:none}
+.v21Swipe>*{scroll-snap-align:center}
+
+/* Mobile/tablet audio is intentionally small, but the exact desktop audio engine remains. */
+#v5SoundDock{
+  min-width:0!important;
+  width:46px!important;height:46px!important;
+  padding:6px!important;border-radius:50%!important;
+  grid-template-columns:1fr!important;gap:0!important
+}
+#v5SoundDock .v5SoundText,
+#v5SoundDock .v5Volume,
+#v5SoundDock .v10AudioBadge,
+#v5SoundDock .v5SoundToggle{display:none!important}
+#v5SoundDock .v5SoundOrb{width:34px!important;height:34px!important}
+
+/* Closed fullscreen layers are never allowed to block touch. */
+.mobileNav:not(.open),.modal:not(.open),.pageExperience:not(.open),.dayMenu:not(.open){
+  pointer-events:none!important
+}
+.mobileNav.open,.modal.open,.pageExperience.open,.dayMenu.open{
+  pointer-events:auto!important
+}
 </style>
 
-<style id="ultimate-hover-restore">
-  @media (pointer: coarse), (max-width: 1179px) {
-    /* 1. Make characters clickable and interactive again */
-    .premiumChar, .premiumChar .charIdentity, .castMember {
-      pointer-events: auto !important;
-    }
+<style id="v21-mobile-390">
+html,body{
+  width:390px!important;min-width:390px!important;max-width:390px!important;
+  margin:0 auto!important
+}
+:root{--v21-x:28px}
+.wrap{
+  width:calc(100% - (var(--v21-x)*2))!important;
+  max-width:none!important;margin-left:auto!important;margin-right:auto!important
+}
 
-    /* 2. Force the hover/tap lift animations for all cards */
-    .case:hover, .case:active, .case.touchActive,
-    .toolCard:hover, .toolCard:active, .toolCard.touchActive,
-    .studioCard:hover, .studioCard:active, .studioCard.touchActive,
-    .clientKitCard:hover, .clientKitCard:active, .clientKitCard.touchActive,
-    .usPrinciple:hover, .usPrinciple:active, .usPrinciple.touchActive,
-    .step:hover, .step:active, .step.touchActive {
-      transform: translateY(-8px) scale(1.02) !important;
-      border-color: var(--acid) !important;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3) !important;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
-    }
+/* NAV: exact desktop navigation identity, mobile geometry */
+.nav{
+  display:grid!important;
+  top:14px!important;left:18px!important;right:18px!important;
+  width:354px!important;height:56px!important;
+  transform:none!important;border-radius:20px!important;
+  grid-template-columns:1fr auto!important;
+  padding:0 9px 0 15px!important
+}
+.brand{font-size:18px!important}
+.navlinks,.dayBtn,.navCta{display:none!important}
+.menu{
+  display:grid!important;place-items:center!important;
+  width:42px!important;height:42px!important;font-size:20px!important
+}
+.mobileNav{padding:90px 24px 30px!important}
+.mobileNav a,.mobileNav button{font-size:39px!important;line-height:1!important}
+#v5SoundDock{left:16px!important;bottom:16px!important}
 
-    /* 3. Show "View Story" / "Open Tool" badges inside cards on tap */
-    .case:hover:after, .case:active:after, .case.touchActive:after,
-    .toolCard:hover:after, .toolCard:active:after, .toolCard.touchActive:after {
-      opacity: 1 !important;
-      transform: none !important;
-      display: block !important;
-    }
+/* HERO — preserve desktop hero animation/word cycle and visual world */
+.hero{
+  height:844px!important;min-height:844px!important;
+  overflow:hidden!important
+}
+.heroSticky{
+  height:844px!important;min-height:844px!important;
+  position:relative!important;top:auto!important;
+  align-items:flex-end!important;
+  padding:92px 0 42px!important
+}
+.heroCinema:before{
+  width:510px!important;height:510px!important;
+  right:-305px!important;top:72px!important;
+  opacity:.9!important
+}
+.heroCinema:after{
+  width:330px!important;height:86px!important;
+  right:-80px!important;bottom:92px!important
+}
+.orbRing{
+  width:500px!important;height:500px!important;
+  right:-260px!important;top:40px!important
+}
+.heroGrid{
+  grid-template-columns:1fr!important;
+  gap:14px!important;align-items:end!important
+}
+.kicker{
+  font-size:8px!important;line-height:1.45!important;
+  max-width:305px!important;gap:8px!important
+}
+.kicker:before{width:24px!important}
+.hero h1{
+  font-size:55px!important;line-height:.81!important;
+  letter-spacing:-.075em!important;
+  margin:14px 0 18px!important;max-width:332px!important
+}
+.hero h1 .line:nth-child(2),
+.hero h1 .line:nth-child(3){margin-left:0!important}
+.wordStage{min-width:5.2em!important}
+.heroCopy{
+  max-width:320px!important;
+  font-size:13.5px!important;line-height:1.48!important
+}
+.heroActions{
+  margin-top:18px!important;
+  display:grid!important;grid-template-columns:1fr!important;
+  gap:8px!important;width:100%!important
+}
+.heroActions .wowBtn{
+  width:100%!important;min-height:46px!important;
+  padding:13px 14px!important;font-size:11.5px!important;
+  white-space:nowrap!important;text-align:center!important
+}
+.heroMeta{
+  position:relative!important;
+  margin:4px 0 0!important;
+  padding:13px 88px 13px 14px!important;
+  min-height:118px!important;
+  border:1px solid rgba(255,255,255,.13)!important;
+  border-left:1px solid rgba(255,255,255,.13)!important;
+  border-radius:20px!important;
+  background:rgba(255,255,255,.04)!important
+}
+.heroMeta b{font-size:23px!important;margin:8px 0!important}
+.heroMeta p{font-size:10.5px!important;line-height:1.45!important;max-width:220px!important}
+.pc-hero{
+  width:74px!important;
+  right:7px!important;bottom:9px!important;top:auto!important;
+  opacity:.92!important
+}
 
-    /* 4. Rotate the arrow buttons on tap */
-    .case:hover .caseArrow, .case:active .caseArrow, .case.touchActive .caseArrow,
-    .toolCard:hover .toolOpen, .toolCard:active .toolOpen, .toolCard.touchActive .toolOpen {
-      background: var(--acid) !important;
-      color: #000 !important;
-      border-color: var(--acid) !important;
-      transform: rotate(45deg) scale(1.08) !important;
-    }
-  }
+/* 01 — preserve desktop sticky highlight interaction */
+.belief{
+  height:165vh!important;
+  min-height:1180px!important
+}
+.beliefSticky{
+  height:100vh!important;min-height:844px!important;
+  position:sticky!important;top:0!important;
+  align-items:center!important
+}
+.beliefGrid{
+  grid-template-columns:1fr!important;
+  gap:26px!important;
+  align-items:center!important
+}
+.beliefAside{
+  position:relative!important;
+  padding-right:58px!important;
+  max-width:none!important
+}
+.beliefAside .sectionNo{font-size:8px!important}
+.beliefAside h3{
+  font-size:33px!important;line-height:1.01!important;
+  letter-spacing:-.055em!important;
+  margin:15px 0!important;
+  max-width:286px!important
+}
+.beliefAside p{
+  font-size:13px!important;line-height:1.55!important;
+  max-width:305px!important
+}
+.beliefProof{
+  grid-template-columns:1fr 1fr!important;
+  gap:8px!important;margin-top:18px!important;
+  max-width:none!important
+}
+.beliefProof span{
+  padding:13px!important;min-height:88px!important;
+  border-radius:16px!important
+}
+.beliefText{
+  font-size:39px!important;line-height:.98!important;
+  letter-spacing:-.06em!important;
+  max-width:328px!important;
+  position:relative!important;z-index:3!important
+}
+.meaningOrb{
+  width:255px!important;height:255px!important;
+  right:-145px!important;top:56%!important;
+  opacity:.48!important
+}
+.orbCaption{display:none!important}
+.pc-belief{
+  width:56px!important;
+  right:12px!important;top:85px!important;
+  left:auto!important;bottom:auto!important;
+  opacity:.72!important
+}
+
+/* 02 WORK — exact desktop colour and row language */
+.work{padding:76px 0 82px!important;overflow:hidden!important}
+.headGrid{
+  grid-template-columns:1fr!important;gap:14px!important
+}
+.headGrid h2{
+  font-size:43px!important;line-height:.93!important;
+  letter-spacing:-.06em!important;max-width:320px!important
+}
+.headGrid p{font-size:13.5px!important;line-height:1.55!important}
+.caseList{gap:8px!important;margin-top:24px!important}
+.case{
+  grid-template-columns:27px 1fr 34px!important;
+  gap:8px!important;padding:14px 11px!important;
+  min-height:102px!important;border-radius:18px!important
+}
+.caseNo{font-size:7px!important}
+.caseMeta{display:none!important}
+.case h3{font-size:21px!important;line-height:1.03!important}
+.caseArrow{width:32px!important;height:32px!important}
+.pc-work{
+  width:54px!important;right:10px!important;top:32px!important;
+  bottom:auto!important;opacity:.6!important
+}
+
+/* 03 SYSTEM — NOTHING REMOVED. Existing desktop model simply becomes touch geometry. */
+.system{padding:76px 0 82px!important;overflow:hidden!important}
+.systemIntro{
+  grid-template-columns:1fr!important;gap:14px!important
+}
+.systemIntro h2{
+  font-size:42px!important;line-height:.93!important;
+  max-width:315px!important
+}
+.systemIntro p{font-size:13.5px!important;line-height:1.55!important}
+.usModel{
+  margin-top:28px!important;border-radius:23px!important;
+  overflow:hidden!important
+}
+.usModelIntro{
+  grid-template-columns:1fr!important;
+  gap:12px!important;padding:22px 17px!important
+}
+.usModelIntro h3{font-size:31px!important;line-height:.98!important}
+.usModelIntro p{font-size:12.5px!important;line-height:1.55!important}
+.usPrinciples{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:84%!important;
+  grid-template-columns:none!important;
+  gap:9px!important;
+  padding:0 17px 13px!important;
+  margin:0!important;
+}
+.usPrinciples.v21Swipe{display:grid!important}
+.usPrinciple{
+  min-height:235px!important;
+  padding:18px!important;border:1px solid rgba(255,255,255,.1)!important;
+  border-radius:20px!important
+}
+.usPrinciple h4{font-size:24px!important;line-height:1!important;margin:22px 0 10px!important}
+.usPrinciple p{font-size:12px!important;line-height:1.5!important}
+.usFlow{padding:22px 17px 18px!important}
+.usFlowTop{display:block!important}
+.usFlowTop b{display:block!important;margin-top:7px!important}
+.usFlowLine{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:72%!important;grid-template-columns:none!important;
+  gap:8px!important;margin-top:20px!important;
+  overflow-x:auto!important;scroll-snap-type:x mandatory!important;
+  scrollbar-width:none!important
+}
+.usFlowLine::-webkit-scrollbar{display:none}
+.usFlowLine:before{display:none!important}
+.usFlowStep{
+  min-height:115px!important;
+  border:1px solid rgba(255,255,255,.1)!important;
+  border-radius:17px!important;
+  padding:14px!important;
+  text-align:left!important
+}
+.usFlowStep i{margin:0 0 14px!important}
+.usFlowStep b{display:block!important;margin:0 0 6px!important}
+.us90{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:82%!important;grid-template-columns:none!important;
+  gap:8px!important;
+  overflow-x:auto!important;scroll-snap-type:x mandatory!important;
+  scrollbar-width:none!important
+}
+.us90::-webkit-scrollbar{display:none}
+.us90 article{min-height:145px!important;padding:16px!important;border-radius:17px!important}
+.pc-system{
+  width:56px!important;right:10px!important;top:34px!important;
+  left:auto!important;bottom:auto!important;opacity:.62!important
+}
+
+/* 04 OPEN LAB — exact desktop cards, swipe instead of stack */
+.lab{padding:76px 0 82px!important;overflow:hidden!important}
+.labHead{grid-template-columns:1fr!important;gap:14px!important}
+.labHead h2{font-size:43px!important;line-height:.93!important}
+.labHead p{font-size:13.5px!important;line-height:1.55!important}
+.labValueBar{grid-template-columns:1fr!important;gap:8px!important;padding:14px!important}
+.toolGrid{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:87%!important;grid-template-columns:none!important;
+  gap:10px!important;
+  margin:28px -28px 0!important;padding:0 28px 14px!important
+}
+.toolCard{
+  min-height:405px!important;padding:18px!important;
+  border-radius:22px!important
+}
+.toolCard h3{font-size:39px!important;line-height:.96!important}
+.toolVisual{height:145px!important}
+.labNote{grid-template-columns:1fr!important}
+.pc-lab{
+  width:54px!important;right:10px!important;top:34px!important;
+  left:auto!important;bottom:auto!important;opacity:.6!important
+}
+
+/* 05 CLIENT KIT — preserve desktop colours/content */
+.studio{padding:76px 0 82px!important;overflow:hidden!important}
+.studioHead{grid-template-columns:1fr!important;gap:14px!important}
+.studioHead h2{font-size:43px!important;line-height:.93!important}
+.studioHead p{font-size:13.5px!important;line-height:1.55!important}
+.clientKit{
+  margin-top:28px!important;border-radius:23px!important;overflow:hidden!important
+}
+.clientKitIntro{
+  grid-template-columns:1fr!important;gap:12px!important;
+  padding:22px 17px!important
+}
+.clientKitIntro h3{font-size:31px!important;line-height:.98!important}
+.clientKitIntro p{font-size:12.5px!important;line-height:1.55!important}
+.clientKitGrid{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:86%!important;grid-template-columns:none!important;
+  gap:9px!important;padding:0 17px 13px!important
+}
+.clientKitCard{
+  min-height:300px!important;padding:18px!important;
+  border:1px solid rgba(255,255,255,.1)!important;border-radius:20px!important
+}
+.clientKitCard h4{font-size:24px!important;line-height:1!important}
+.clientKitCard>p{font-size:12px!important;line-height:1.5!important;min-height:0!important}
+.clientKitList{gap:6px!important}
+.clientKitBottom{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:82%!important;grid-template-columns:none!important;
+  gap:8px!important;padding:17px!important;
+  overflow-x:auto!important;scroll-snap-type:x mandatory!important;scrollbar-width:none!important
+}
+.clientKitBottom::-webkit-scrollbar{display:none}
+.studioWhy{
+  margin-top:56px!important;
+  grid-template-columns:1fr!important;gap:12px!important
+}
+.studioWhy h2{font-size:41px!important;line-height:.94!important}
+.studioWhy p{font-size:13.5px!important;line-height:1.55!important}
+.studioGrid{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:86%!important;grid-template-columns:none!important;
+  gap:10px!important;
+  margin:26px -28px 0!important;padding:0 28px 14px!important
+}
+.studioCard{
+  min-height:315px!important;padding:19px!important;border-radius:22px!important
+}
+.studioCard h3{font-size:27px!important;line-height:.99!important}
+.studioCard p{font-size:12.5px!important;line-height:1.55!important}
+.pc-studio{
+  width:54px!important;right:9px!important;top:33px!important;
+  left:auto!important;bottom:auto!important;opacity:.58!important
+}
+
+/* ARCADE — desktop content/colour, horizontal touch carousel */
+.arcade{padding:76px 0 82px!important;overflow:hidden!important}
+.arcadeHead{
+  grid-template-columns:1fr!important;gap:12px!important;
+  margin-bottom:24px!important
+}
+.arcadeHead h2{font-size:43px!important;line-height:.93!important}
+.arcadeHead p{font-size:13.5px!important;line-height:1.55!important}
+.arcadeGrid{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:87%!important;grid-template-columns:none!important;
+  gap:10px!important;
+  margin:0 -28px!important;padding:0 28px 14px!important
+}
+.arcadeCard,.arcadeCard.city{
+  width:auto!important;max-width:none!important;
+  min-height:310px!important;padding:19px!important;
+  border-radius:22px!important;transform:none!important
+}
+.arcadeCard h3{font-size:38px!important;line-height:.96!important;margin:90px 0 12px!important}
+.arcadeCard p{font-size:13px!important;line-height:1.5!important}
+.pc-arcade{
+  width:54px!important;right:11px!important;top:31px!important;
+  left:auto!important;bottom:auto!important;opacity:.62!important
+}
+
+/* CARE — exact desktop functional portal, only reflowed */
+.careTeaser{padding:76px 0 82px!important;overflow:hidden!important}
+.careTeaserGrid{
+  grid-template-columns:1fr!important;gap:28px!important
+}
+.careTeaserGrid>div:first-child{padding-right:0!important}
+.careTeaser h2{font-size:43px!important;line-height:.93!important;margin:14px 0 16px!important}
+.careTeaser p{font-size:13.5px!important;line-height:1.58!important}
+.careTeaser .wowBtn{
+  white-space:nowrap!important;width:auto!important;min-width:170px!important
+}
+.carePortal{
+  height:330px!important;
+  border-radius:165px 165px 24px 24px!important;
+  margin-top:2px!important
+}
+.pc-care{
+  width:58px!important;left:12px!important;right:auto!important;
+  bottom:18px!important;top:auto!important;opacity:.66!important
+}
+
+/* PROCESS — same cards/expansion, less vertical space via horizontal scroll */
+.process{padding:76px 0 82px!important;overflow:hidden!important}
+.processHead{
+  grid-template-columns:1fr!important;gap:12px!important;
+  margin-bottom:24px!important
+}
+.processHead h2{font-size:43px!important;line-height:.93!important}
+.steps{
+  display:grid!important;grid-auto-flow:column!important;
+  grid-auto-columns:84%!important;grid-template-columns:none!important;
+  gap:9px!important;
+  overflow-x:auto!important;scroll-snap-type:x mandatory!important;
+  scrollbar-width:none!important;border-top:0!important;
+  margin:0 -28px!important;padding:0 28px 14px!important
+}
+.steps::-webkit-scrollbar{display:none}
+.step{
+  min-height:245px!important;padding:18px!important;
+  border:1px solid rgba(10,10,14,.13)!important;border-radius:20px!important
+}
+.step h3{font-size:24px!important;line-height:1!important}
+.stepText{font-size:12px!important;line-height:1.5!important}
+.pc-process{
+  width:54px!important;right:11px!important;top:30px!important;
+  left:auto!important;bottom:auto!important;opacity:.6!important
+}
+
+/* FAQ + FINAL kept visually faithful, just fitted */
+.faq{padding:72px 0 78px!important}
+.faqHead{grid-template-columns:1fr!important;gap:12px!important}
+.faqHead h2{font-size:42px!important;line-height:.94!important}
+.faqQ{font-size:15px!important;padding:18px 0!important}
+
+.final{
+  height:auto!important;min-height:0!important;
+  padding:0 0 68px!important;overflow:hidden!important
+}
+.finalSticky{
+  position:relative!important;top:auto!important;height:auto!important;min-height:0!important;
+  padding:76px 0 56px!important
+}
+.futureFrames{display:none!important}
+.finalInner{text-align:left!important;max-width:none!important}
+.finalInner h2{
+  font-size:46px!important;line-height:.89!important;
+  max-width:326px!important;margin:16px 0 20px!important
+}
+.finalInner p{
+  font-size:13.5px!important;line-height:1.55!important;
+  max-width:300px!important;margin:0 0 20px!important
+}
+.finalInner .wowBtn{
+  width:100%!important;white-space:nowrap!important;
+  padding:14px 12px!important;font-size:11.5px!important
+}
+.pc-final{
+  width:56px!important;right:10px!important;top:28px!important;
+  left:auto!important;bottom:auto!important;opacity:.6!important
+}
+.castFinale{
+  width:calc(100% - 56px)!important;
+  min-height:0!important;height:auto!important;
+  margin:0 auto!important;padding:22px 15px!important;
+  border-radius:22px!important
+}
+.castFinaleHeader{
+  position:relative!important;left:auto!important;top:auto!important;
+  margin-bottom:22px!important
+}
+.castFinaleHeader b{font-size:18px!important}
+.castStage{
+  position:relative!important;inset:auto!important;
+  display:grid!important;grid-template-columns:repeat(3,1fr)!important;
+  gap:18px 8px!important
+}
+.castMember,.castMember:nth-child(n){
+  position:relative!important;left:auto!important;right:auto!important;
+  top:auto!important;bottom:auto!important;width:68px!important;
+  max-width:68px!important;margin:auto!important;
+  opacity:1!important;transform:none!important
+}
+.castMember:nth-child(10){grid-column:2!important}
 </style>
-
-<!-- --- FIX: Restore Mobile Animations & Fix Click Teleporting --- -->
-<style id="ultimate-touch-and-click-fix">
-  @media (pointer: coarse), (max-width: 1179px) {
-    /* 1. Re-enable interactive pointer events for characters */
-    .premiumChar, .premiumChar .charIdentity, .castMember {
-      pointer-events: auto !important;
-    }
-
-    /* 2. Enable smooth transitions for all hover/active states */
-    .case, .toolCard, .arcadeCard, .studioCard, .clientKitCard, .usPrinciple, .step, .premiumChar {
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, filter 0.35s ease !important;
-    }
-
-    /* 3. Re-enable the hover/lift effects on tap, and crucially:
-          PRESERVE the translateY coordinates so the element doesn't teleport 
-          away from the user's finger and cancel the click event! */
-    
-    .case:active, .case.touchActive { transform: scale(0.98) !important; filter: brightness(1.05) !important; }
-    .case.inView:active, .case.inView.touchActive { transform: scale(1.0) !important; }
-
-    .toolCard:active, .toolCard.touchActive { transform: scale(0.98) !important; filter: brightness(1.05) !important; }
-    .toolCard.inView:active, .toolCard.inView.touchActive { transform: translateY(-12px) scale(0.98) !important; }
-
-    .arcadeCard:active, .arcadeCard.touchActive { transform: scale(0.98) !important; filter: brightness(1.05) !important; }
-    /* This line stops the card from dropping 18px when tapped: */
-    .arcadeCard.inView:active, .arcadeCard.inView.touchActive { transform: translateY(-18px) scale(1.0) !important; }
-
-    .studioCard:active, .studioCard.touchActive { transform: scale(0.98) !important; filter: brightness(1.05) !important; }
-    .studioCard.inView:active, .studioCard.inView.touchActive { transform: translateY(-13px) rotate(-0.6deg) scale(0.98) !important; }
-
-    .clientKitCard:active, .clientKitCard.touchActive,
-    .usPrinciple:active, .usPrinciple.touchActive { transform: scale(0.98) !important; filter: brightness(1.05) !important; }
-    
-    .clientKitCard.inView:active, .clientKitCard.inView.touchActive,
-    .usPrinciple.inView:active, .usPrinciple.inView.touchActive { transform: translateY(-5px) scale(0.98) !important; }
-
-    .step:active, .step.touchActive { transform: scale(0.98) !important; filter: brightness(1.05) !important; }
-    .step.inView:active, .step.inView.touchActive { transform: translateY(-12px) scale(0.98) !important; }
-
-    /* 4. Show the interactive badges and arrows on tap */
-    .case:active:after, .case.touchActive:after, 
-    .toolCard:active:after, .toolCard.touchActive:after, 
-
-    .case:active .caseArrow, .case.touchActive .caseArrow, 
-    .toolCard:active .toolOpen, .toolCard.touchActive .toolOpen {
-      background: var(--acid) !important;
-      color: #000 !important;
-      border-color: var(--acid) !important;
-      transform: rotate(45deg) scale(1.08) !important;
-    }
-
-    /* 5. Ensure characters react to taps and pop up their names */
-    .premiumChar:active, .premiumChar.touch-open,
-    .castMember:active, .castMember.touch-open {
-      transform: translateY(-10px) scale(1.08) !important;
-      z-index: 30 !important;
-    }
-    .premiumChar.touch-open .charIdentity, .castMember.touch-open .castName {
-      opacity: 1 !important;
-      transform: translate(-50%, 0) scale(1) !important;
-    }
-  }
-</style>
-
-<style id="scroll-axis-fix">
-  /* Ensure horizontal carousels never swallow vertical page scrolling */
-  .v21Swipe {
-    touch-action: pan-y pan-x !important;
-  }
-</style>
-
-<style id="arcade-final-polish">
-  /* 1. Hide the redundant "Play / Drive" text at the bottom */
-  .arcadeCard i {
-    display: none !important;
-  }
-
-  /* 2. Restore the top-right neon buttons */
-  .arcadeCard:after {
-    content: "PLAY" !important;
-    position: absolute !important;
-    right: 24px !important;
-    top: 22px !important;
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 50% !important;
-    display: grid !important;
-    place-items: center !important;
-    border: 1px solid rgba(255, 255, 67, 0.25) !important;
-    background: rgba(223, 255, 67, 0.05) !important;
-    color: var(--v5-acid, #dfff43) !important;
-    font: 500 8px 'DM Mono' !important;
-    letter-spacing: 0.1em !important;
-    z-index: 5 !important;
-    opacity: 1 !important;
-  }
-  .arcadeCard.city:after {
-    content: "DRIVE" !important;
-  }
-
-  /* 3. Push cards down and adjust mobile badge size */
-  @media (max-width: 1179px) {
-    .arcadeGrid { 
-      margin-top: 50px !important; 
-    }
-    .arcadeCard:after {
-      width: 48px !important; height: 48px !important;
-      right: 18px !important; top: 18px !important;
-      font-size: 7px !important;
-    }
-    .arcadeCard h3 { 
-      margin-top: 50px !important; /* Prevents text from hitting the badge */
-    }
-  }
-
-  /* 4. Completely disable hover/tap animations for Arcade cards and badges */
-  .arcadeCard, .arcadeCard:after {
-    transition: none !important;
-  }
-  
-  .arcadeCard:hover, .arcadeCard:active, .arcadeCard.touchActive {
-    transform: none !important;
-    border-color: rgba(255, 255, 255, 0.14) !important; /* Keeps default border */
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.08) !important; /* Keeps default inner glow */
-  }
-
-  .arcadeCard:hover:after, .arcadeCard:active:after, .arcadeCard.touchActive:after {
-    transform: none !important;
-    background: rgba(223, 255, 67, 0.05) !important;
-    color: var(--v5-acid, #dfff43) !important;
-    box-shadow: none !important;
-  }
-  
-  /* Maintain the mobile layout shift without adding visual hover effects */
-  @media (pointer: coarse) {
-    .arcadeCard.inView, .arcadeCard.inView:active, .arcadeCard.inView.touchActive {
-      transform: translateY(-18px) !important;
-      border-color: rgba(255, 255, 255, 0.14) !important;
-      box-shadow: inset 0 1px rgba(255, 255, 255, 0.08) !important;
-    }
-  }
-</style>
-
-<style id="arcade-final-polish">
-  /* 1. Hide the redundant "Play / Drive" text at the bottom */
-  .arcadeCard i { 
-    display: none !important; 
-  }
-
-  /* 2. Restore the top-right neon buttons */
-  .arcadeCard:after {
-    content: "PLAY" !important;
-    position: absolute !important;
-    right: 24px !important;
-    top: 22px !important;
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 50% !important;
-    display: grid !important;
-    place-items: center !important;
-    border: 1px solid rgba(255, 255, 67, 0.25) !important;
-    background: rgba(223, 255, 67, 0.05) !important;
-    color: var(--v5-acid, #dfff43) !important;
-    font: 500 8px 'DM Mono' !important;
-    letter-spacing: 0.1em !important;
-    z-index: 5 !important;
-    opacity: 1 !important;
-  }
-  
-  /* Specific label override for the 3rd card ("Night Drive") */
-  .arcadeCard.city:after {
-    content: "DRIVE" !important;
-  }
-
-  /* 3. Push cards down and adjust mobile badge size */
-  @media (max-width: 1179px) {
-    .arcadeGrid { 
-      margin-top: 50px !important; 
-    }
-    .arcadeCard:after {
-      width: 48px !important; 
-      height: 48px !important;
-      right: 18px !important; 
-      top: 18px !important;
-      font-size: 7px !important;
-    }
-    .arcadeCard h3 { 
-      margin-top: 60px !important; /* Prevents title from hitting the badge */
-    }
-  }
-
-  /* 4. CRITICAL FIX: Completely freeze hover/tap animations for Arcade cards 
-        to prevent the mobile "Teleporting Click" bug and input lag. */
-  .arcadeCard, .arcadeCard:after {
-    transition: none !important;
-  }
-  
-  .arcadeCard:hover, .arcadeCard:active, .arcadeCard.touchActive, 
-  .arcadeCard.inView, .arcadeCard.inView:active, .arcadeCard.inView.touchActive {
-    transform: none !important;
-    border-color: rgba(255, 255, 255, 0.14) !important;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.08) !important;
-  }
-  
-  .arcadeCard:hover:after, .arcadeCard:active:after, .arcadeCard.touchActive:after, 
-  .arcadeCard.inView:after {
-    transform: none !important;
-    background: rgba(223, 255, 67, 0.05) !important;
-    color: var(--v5-acid, #dfff43) !important;
-    box-shadow: none !important;
-  }
-</style>
-
-<style id="fix-swipe-distortion">
-  @media (max-width: 1179px) {
-    /* Reset the leftover desktop centering rules for the last card in all horizontal tracks */
-    .toolGrid .toolCard:last-child,
-    .arcadeGrid .arcadeCard:last-child,
-    .arcadeCard:nth-child(3),
-    .steps .step:last-child {
-      grid-column: auto !important;
-      max-width: none !important;
-      width: 100% !important;
-      justify-self: auto !important;
-    }
-  }
-</style>
-
-<style id="restore-clean-tool-text">
-  /* 1. Strip away any rogue backgrounds, borders, or sticker dimensions */
-  .toolCard:after {
-    content: "OPEN TOOL" !important;
-    position: absolute !important;
-    right: 86px !important;
-    bottom: 39px !important;
-    width: auto !important;
-    height: auto !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    color: rgba(255, 255, 255, 0.4) !important;
-    border: none !important;
-    font: 500 8px 'DM Mono' !important;
-    letter-spacing: 0.12em !important;
-    padding: 0 !important;
-    opacity: 0 !important;
-    /* Start slightly to the right for a clean slide-in effect */
-    transform: translateX(8px) !important; 
-    z-index: 5 !important;
-  }
-
-  /* 2. Reveal purely horizontally on hover/tap (blocks any rotation) */
-  .toolCard:hover:after, 
-  .toolCard:active:after, 
-  .toolCard.touchActive:after, 
-  .toolCard.inView:after {
-    opacity: 1 !important;
-    /* Snaps to 0 rotation and 0 offset */
-    transform: translateX(0) !important; 
-    background: transparent !important;
-    color: rgba(255, 255, 255, 0.4) !important;
-    box-shadow: none !important;
-  }
-</style>
-
-<style id="clean-cast-and-footer-fix">
-  /* 1. Remove the strict height locks so the section expands naturally */
-  section.final, .final {
-    height: auto !important;
-    min-height: 100vh !important;
-    overflow: visible !important;
-    padding-bottom: 80px !important;
-  }
-  
-  /* 2. Un-stick the text container so the character card stacks cleanly below it */
-  .finalSticky {
-    height: auto !important;
-    position: relative !important;
-    padding-top: 15vh !important;
-    padding-bottom: 5vh !important;
-  }
-
-  /* 3. Hide floating text pills on mobile to prevent overlapping */
-  @media (max-width: 767px) {
-    .futurePortal, .futureFrames, .futureThought {
-      display: none !important;
-    }
-    .castFinale {
-      margin-bottom: 20px !important;
-    }
-  }
-</style>
-
-<script id="session-score-fix">
-  (function() {
-    // Save the original storage functions
-    const originalSet = Storage.prototype.setItem;
-    const originalGet = Storage.prototype.getItem;
-    
-    // The specific data keys used by the 3 arcade games
-    const gameKeys = [
-      'signalBestV3', 'signalDailyStreak', 'signalLastDay',
-      'constellationBest', 'constellationStreak', 'constellationDay',
-      'cityBest', 'nightDriveV4Board'
-    ];
-
-    // Intercept 'Save' requests
-    Storage.prototype.setItem = function(key, value) {
-      if (this === window.localStorage && gameKeys.includes(key)) {
-        return window.sessionStorage.setItem(key, value); // Force to current tab only
-      }
-      return originalSet.apply(this, arguments);
-    };
-
-    // Intercept 'Load' requests
-    Storage.prototype.getItem = function(key) {
-      if (this === window.localStorage && gameKeys.includes(key)) {
-        return window.sessionStorage.getItem(key); // Load from current tab only
-      }
-      return originalGet.apply(this, arguments);
-    };
-  })();
-</script>
 
 </head>
 <body>
@@ -1815,7 +2015,7 @@ canvas { max-width: 100%; }
 <path d="M104 155 Q130 170 156 155" fill="none" stroke="#5a4fc0" stroke-width="5" stroke-linecap="round"/>
 
 </svg>
-</div><div class="beliefSticky"><div class="meaningOrb" id="meaningOrb"><div class="orbShell"><i></i><i></i><i></i></div></div><div class="wrap beliefGrid"><aside class="beliefAside"><div class="sectionNo">01 / what changes when we join</div><h3>Good products do not come from better-looking screens alone.</h3><p>They come from one clear idea shared by business, design and technology. We help teams find that idea, prove it and build it without losing it between departments.</p><div class="beliefProof"><span><b>Before</b>Opinions, handoffs, rework</span><span><b>After</b>One direction, faster decisions</span></div></aside><h2 class="beliefText" id="beliefText"><span class="word">We turn</span> <span class="word">scattered inputs</span> <span class="word">into one clear</span> <span class="word">product direction</span> <span class="word">that teams can</span> <span class="word">understand, build</span> <em>and believe in.</em></h2></div></div></section>
+</div><div class="beliefSticky"><div class="meaningOrb" id="meaningOrb"><div class="orbShell"><i></i><i></i><i></i></div><div class="orbCaption" id="orbCaption">01 · scattered inputs</div></div><div class="wrap beliefGrid"><aside class="beliefAside"><div class="sectionNo">01 / what changes when we join</div><h3>Good products do not come from better-looking screens alone.</h3><p>They come from one clear idea shared by business, design and technology. We help teams find that idea, prove it and build it without losing it between departments.</p><div class="beliefProof"><span><b>Before</b>Opinions, handoffs, rework</span><span><b>After</b>One direction, faster decisions</span></div></aside><h2 class="beliefText" id="beliefText"><span class="word">We turn</span> <span class="word">scattered inputs</span> <span class="word">into one clear</span> <span class="word">product direction</span> <span class="word">that teams can</span> <span class="word">understand, build</span> <em>and believe in.</em></h2></div></div></section>
 <section class="work" id="work"><div class="premiumChar pc-work" aria-hidden="true"><span class="charLedge"></span><span class="charIdentity"><b>Miso</b><span>Craft · investigates the detail</span></span>
 <svg viewBox="0 0 300 260" role="img" aria-label="Curious raccoon studying project details">
 
@@ -2890,7 +3090,7 @@ const toast=m=>{const t=$('#toast');if(!t)return;t.textContent=m;t.classList.add
 let rafs=[],audioCtx=null,audioNodes=[];
 function stopAll(){rafs.forEach(cancelAnimationFrame);rafs=[];audioNodes.forEach(n=>{try{n.stop?.();n.disconnect?.()}catch{}});audioNodes=[];if(audioCtx){audioCtx.close().catch(()=>{});audioCtx=null}}
 function openModal(m){if(!m)return;m.classList.add('open');document.body.classList.add('lock')}
-function closeAll(){$$('.modal').forEach(m=>m.classList.remove('open'));document.body.classList.remove('lock');stopAll();window.__gameCleanup?.()}
+function closeAll(){$$('.modal').forEach(m=>m.classList.remove('open'));document.body.classList.remove('lock');stopAll()}
 $$('[data-close]').forEach(b=>b.onclick=closeAll);$$('.modal').forEach(m=>m.onclick=e=>{if(e.target===m)closeAll()});addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 // nav, progress, reveal
 const nav=$('#nav');function scrollUI(){const d=document.documentElement,y=scrollY,p=$('#progress');if(p)p.style.transform=`scaleX(${Math.max(0,Math.min(1,y/Math.max(1,d.scrollHeight-innerHeight)))})`;if(nav){const work=$('#work'),system=$('#system'),lab=$('#lab'),final=$('.final');nav.classList.toggle('light',!!work&&!!system&&!!lab&&!!final&&((y>innerHeight*1.1&&y<work.offsetTop-80)||(y>system.offsetTop-80&&y<lab.offsetTop-80)||(y>($('.process')?.offsetTop||1e9)-80&&y<final.offsetTop-80)))}}addEventListener('scroll',scrollUI,{passive:true});scrollUI();
@@ -2907,7 +3107,7 @@ const rt=$('#ribbonTrack');if(rt&&!rt.children.length){const items=['Product str
 // belief
 const belief=$('#belief'),bw=$$('#beliefText .word'),orb=$('#meaningOrb'),cap=$('#orbCaption');function beliefMotion(){if(!belief)return;const r=belief.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/Math.max(1,r.height-innerHeight)));bw.forEach((w,i)=>w.classList.toggle('active',p>(i+1)/(bw.length+2)));if(orb){orb.style.setProperty('--orb-y',p*220-90+'px');orb.style.setProperty('--orb-r',p*145+'deg')}if(cap)cap.textContent=p<.28?'01 · scattered inputs':p<.58?'02 · one shared direction':p<.82?'03 · decisions align':'04 · product becomes clear'}addEventListener('scroll',beliefMotion,{passive:true});beliefMotion();
 // contact + cases
-$$('[data-contact]').forEach(b=>b.onclick=()=>openModal($('#contactModal')));const form=$('#contactForm');if(form)form.onsubmit=async e=>{e.preventDefault();const f=new FormData(form);const payload={name:f.get('name'),email:f.get('email'),type:f.get('type'),budget:f.get('budget'),challenge:f.get('challenge')};const btn=$('.wowBtn',form);if(btn)btn.disabled=true;try{const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||'Request failed');toast(j.message||'Thanks — we got it.');form.reset();closeAll()}catch(err){console.error('[contact] backend unreachable, falling back to email',err);toast('Could not reach the server — opening email instead.');location.href=`mailto:projects@thesimple.design?subject=${encodeURIComponent('Project conversation — '+payload.type)}&body=${encodeURIComponent('Name: '+payload.name+'\nEmail: '+payload.email+'\n\n'+payload.challenge)}`}finally{if(btn)btn.disabled=false}};
+$$('[data-contact]').forEach(b=>b.onclick=()=>openModal($('#contactModal')));const form=$('#contactForm');if(form)form.onsubmit=e=>{e.preventDefault();const f=new FormData(form);location.href=`mailto:projects@thesimple.design?subject=${encodeURIComponent('Project conversation — '+f.get('type'))}&body=${encodeURIComponent('Name: '+f.get('name')+'\nEmail: '+f.get('email')+'\n\n'+f.get('challenge'))}`};
 const caseData={finance:['Financial intelligence redesigned around decisions.','We reorganised a dense enterprise environment around the decisions analysts needed to make, creating one coherent product language across data, workflows and risk.'],ai:['GenAI that behaves like a dependable colleague.','We designed AI as a reasoning layer inside expert work—explainable, contextual and useful without asking users to surrender judgement.'],health:['Medical learning rebuilt around clinical pressure.','A connected learning system across web and mobile supports visual recall, focused practice and confident application.'],workforce:['Distributed work made visible, accountable and human.','We simplified critical journeys across people, work, evidence and payments so every role could understand operational status.']};const prev=$('#casePreview'),pc=prev?$('.previewCanvas',prev):null;$$('.case').forEach(c=>{c.onpointerenter=()=>{prev?.classList.add('show');if(pc)pc.className='previewCanvas '+c.dataset.case};c.onpointerleave=()=>prev?.classList.remove('show');c.onpointermove=e=>{if(prev){prev.style.left=e.clientX+'px';prev.style.top=e.clientY+'px'}};c.onclick=()=>{const d=caseData[c.dataset.case];if(!d)return;$('#caseTitle').textContent=d[0];$('#caseBody').textContent=d[1];openModal($('#caseModal'))}});
 // Connected advantage
 const jdata=[
@@ -3011,20 +3211,11 @@ $$('[data-room]').forEach(b=>b.addEventListener('click',()=>{$$('[data-room]').f
 .futurePortal{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2}.futureRing{position:absolute;left:50%;top:50%;width:min(72vw,1050px);height:min(72vw,1050px);border:1px solid rgba(255,255,255,.12);border-radius:50%;transform:translate(-50%,-50%);animation:futureSpin 24s linear infinite}.futureRing:nth-child(2){width:min(54vw,760px);height:min(54vw,760px);animation-direction:reverse;animation-duration:17s;border-style:dashed}.futureRing:nth-child(3){width:min(36vw,520px);height:min(36vw,520px);animation-duration:11s}.futureRing:before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--acid);box-shadow:0 0 35px var(--acid);left:12%;top:13%}.futureThought{position:absolute;padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(8,8,12,.55);backdrop-filter:blur(12px);font:9px 'DM Mono';color:rgba(255,255,255,.55);animation:thoughtDrift 8s ease-in-out infinite alternate}.futureThought.t1{left:8%;top:22%}.futureThought.t2{right:8%;top:30%;animation-delay:-2s}.futureThought.t3{left:16%;bottom:18%;animation-delay:-4s}.futureThought.t4{right:14%;bottom:17%;animation-delay:-6s}
 @keyframes futureSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes thoughtDrift{to{transform:translateY(-24px);color:white;border-color:rgba(223,255,67,.35)}}
 @media(max-width:1100px){.journeyWorld{grid-template-columns:1fr}.journeyVisual{min-height:520px}.capabilityStory{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}}
-
-/* --- FIX: Keep Modals and Full-Screen Experiences Above Nav Bar --- */
-.modal { z-index: 6000 !important; }
-.pageExperience { z-index: 6000 !important; }
-.pageBack { z-index: 6010 !important; }
-#toast { z-index: 7000 !important; } /* Ensures notifications still show on top */
-
-
 </style>
 <script id="v3-functional-patch">
 (()=>{'use strict';
 const $=(s,p=document)=>p.querySelector(s),$$=(s,p=document)=>Array.from(p.querySelectorAll(s));
 const modal=$('#toolModal'),content=$('#toolContent');let activeCleanup=()=>{};
-window.__gameCleanup=()=>{activeCleanup();activeCleanup=()=>{}};
 function toast(m){const t=$('#toast');if(!t)return;t.textContent=m;t.classList.add('show');clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove('show'),2400)}
 function openShell(html){activeCleanup();activeCleanup=()=>{};content.innerHTML='<button class="modalClose" id="v3Close">×</button>'+html;modal.classList.add('open');document.body.classList.add('lock');$('#v3Close').onclick=closeShell}
 function closeShell(){activeCleanup();activeCleanup=()=>{};modal.classList.remove('open');document.body.classList.remove('lock')}
@@ -3427,68 +3618,270 @@ addEventListener('pointermove',e=>{if(!ctx||!active)return;const x=e.clientX/inn
 })();
 </script>
 
-<script id="v21-swipe-initializer">
+
+<script id="v14-device-adaptive-js">
 (()=>{
-  // Finds the specific grid containers and turns them into horizontal swipe lanes
-  const swipeContainers = [
-    '.usPrinciples', '.usFlowLine', '.us90', '.toolGrid', 
-    '.clientKitGrid', '.clientKitBottom', '.studioGrid', 
-    '.arcadeGrid', '.steps'
+  const root=document.documentElement;
+  const body=document.body;
+
+  function setDeviceMode(){
+    const w=innerWidth;
+    const mode=w<=767?'mobile':w<=1179?'tablet':'desktop';
+    root.dataset.device=mode;
+    body.dataset.device=mode;
+  }
+  setDeviceMode();
+  let resizeTimer=0;
+  addEventListener('resize',()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(()=>{
+      setDeviceMode();
+      // Let responsive canvases update without triggering repeated resize storms.
+      dispatchEvent(new CustomEvent('simple:adaptive-resize',{detail:{width:innerWidth,height:innerHeight}}));
+    },120);
+  },{passive:true});
+
+  // Touch replacement for hover-only character naming.
+  if(matchMedia('(pointer:coarse)').matches){
+    const closeAll=except=>{
+      document.querySelectorAll('.premiumChar.touch-open,.castMember.touch-open').forEach(el=>{
+        if(el!==except)el.classList.remove('touch-open');
+      });
+    };
+    document.querySelectorAll('.premiumChar,.castMember').forEach(el=>{
+      el.addEventListener('click',e=>{
+        e.stopPropagation();
+        const open=!el.classList.contains('touch-open');
+        closeAll(el);
+        el.classList.toggle('touch-open',open);
+      });
+    });
+    document.addEventListener('click',()=>closeAll(null));
+
+    // Touch cards get deliberate press feedback instead of fake hover.
+    document.querySelectorAll('.case,.toolCard,.arcadeCard,.studioCard,.clientKitCard,.usPrinciple').forEach(el=>{
+      el.addEventListener('pointerdown',()=>el.classList.add('touch-press'),{passive:true});
+      const off=()=>el.classList.remove('touch-press');
+      el.addEventListener('pointerup',off,{passive:true});
+      el.addEventListener('pointercancel',off,{passive:true});
+    });
+  }
+
+  // Mobile viewport height handling for browser chrome changes.
+  const updateVH=()=>root.style.setProperty('--app-vh',(innerHeight*.01)+'px');
+  updateVH();
+  addEventListener('resize',updateVH,{passive:true});
+  if(window.visualViewport){
+    visualViewport.addEventListener('resize',updateVH,{passive:true});
+  }
+
+  // Pause decorative character CSS animation when section is far offscreen.
+  const sections=[...document.querySelectorAll('.hero,.belief,.work,.system,.lab,.studio,.arcade,.careTeaser,.process,.final')];
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      const char=e.target.querySelector(':scope > .premiumChar');
+      if(char) char.style.animationPlayState=e.isIntersecting?'running':'paused';
+      e.target.querySelectorAll(':scope > .premiumChar *').forEach(node=>{
+        node.style.animationPlayState=e.isIntersecting?'running':'paused';
+      });
+    });
+  },{rootMargin:'30% 0px 30% 0px',threshold:0});
+  sections.forEach(s=>observer.observe(s));
+
+  // Give canvas games a clean redraw hint after orientation changes.
+  addEventListener('orientationchange',()=>{
+    setTimeout(()=>{
+      dispatchEvent(new Event('resize'));
+    },260);
+  },{passive:true});
+})();
+</script>
+
+
+<script id="v15-touch-controller">
+(()=>{
+'use strict';
+const q=(s,p=document)=>p.querySelector(s);
+const qa=(s,p=document)=>[...p.querySelectorAll(s)];
+const coarse=matchMedia('(pointer:coarse)').matches;
+if(!coarse)return;
+
+const menu=q('#menu'), mobileNav=q('#mobileNav');
+function setMenu(open){
+  if(!menu||!mobileNav)return;
+  mobileNav.classList.toggle('open',open);
+  menu.setAttribute('aria-expanded',String(open));
+  menu.textContent=open?'×':'☰';
+}
+if(menu&&mobileNav){
+  menu.setAttribute('aria-expanded','false');
+  menu.addEventListener('pointerup',e=>{
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    setMenu(!mobileNav.classList.contains('open'));
+  },true);
+}
+
+/* Track touch movement so scrolling never accidentally triggers a card. */
+let down=null;
+document.addEventListener('pointerdown',e=>{
+  if(e.pointerType==='mouse')return;
+  down={x:e.clientX,y:e.clientY,target:e.target,time:performance.now()};
+},{passive:true,capture:true});
+
+function isTap(e){
+  if(!down)return true;
+  return Math.hypot(e.clientX-down.x,e.clientY-down.y)<12 && performance.now()-down.time<850;
+}
+
+/* A safe action router for the site's important touch targets. */
+document.addEventListener('pointerup',e=>{
+  if(e.pointerType==='mouse'||!isTap(e)){down=null;return;}
+  const target=e.target.closest(
+    '#mobileNav a,#mobileNav button,'+
+    '[data-contact],[data-page],[data-page-close],[data-quick],'+
+    '[data-tool],[data-game-open],.case,.roadmapCard,.faqQ,.step,'+
+    '.v5Enter,#v5SoundToggle,.castMember'
+  );
+  down=null;
+  if(!target)return;
+
+  /* menu children should close after their own action fires */
+  if(target.closest('#mobileNav')){
+    setTimeout(()=>setMenu(false),20);
+  }
+
+  /* If a target already has an onclick handler, call it directly only when
+     the browser has not generated the synthetic click yet. This fallback
+     repairs local-file/iOS cases where click is suppressed after transforms. */
+  if(target.matches('a[href^="#"]')){
+    e.preventDefault();
+    const id=target.getAttribute('href');
+    const dest=q(id);
+    if(dest)dest.scrollIntoView({behavior:'smooth',block:'start'});
+    return;
+  }
+
+  if(target.matches('.castMember')){
+    e.preventDefault();
+    qa('.castMember.touch-open').forEach(x=>{if(x!==target)x.classList.remove('touch-open')});
+    target.classList.toggle('touch-open');
+    return;
+  }
+
+  // Let normal click happen first; if it does not, fire a fallback click.
+  const stamp=performance.now();
+  target.dataset.touchStamp=String(stamp);
+  setTimeout(()=>{
+    if(target.dataset.lastNativeClick!==String(stamp)){
+      try{target.click()}catch(err){}
+    }
+  },35);
+},true);
+
+/* mark native click delivery, preventing duplicate fallback actions */
+document.addEventListener('click',e=>{
+  const target=e.target.closest(
+    '[data-contact],[data-page],[data-page-close],[data-quick],[data-tool],[data-game-open],'+
+    '.case,.roadmapCard,.faqQ,.step,.v5Enter,#v5SoundToggle'
+  );
+  if(target&&target.dataset.touchStamp){
+    target.dataset.lastNativeClick=target.dataset.touchStamp;
+  }
+},true);
+
+/* Characters in sections are decorative on mobile/tablet; tapping nearby
+   content therefore always reaches the real control. Character identity is
+   still available in the final cast where it has dedicated hit targets. */
+
+/* Ensure closed overlays are actually inert in browsers that preserve
+   hit-testing for transformed fixed layers. */
+const inertSync=()=>{
+  const pairs=[
+    [q('#mobileNav'),'open'],
+    [q('#dayMenu'),'open'],
+    ...qa('.modal').map(x=>[x,'open']),
+    [q('#carePage'),'open']
   ];
-  
-  swipeContainers.forEach(selector => {
-    const el = document.querySelector(selector);
-    if (el) el.classList.add('v21Swipe');
+  pairs.forEach(([el,state])=>{
+    if(!el)return;
+    if(el.classList.contains(state)){
+      el.removeAttribute('inert');
+      el.setAttribute('aria-hidden','false');
+    }else{
+      el.setAttribute('inert','');
+      if(el.id!=='mobileNav')el.setAttribute('aria-hidden','true');
+    }
   });
+};
+inertSync();
+const mo=new MutationObserver(inertSync);
+qa('#mobileNav,#dayMenu,.modal,#carePage').filter(Boolean).forEach(el=>mo.observe(el,{attributes:true,attributeFilter:['class']}));
 
-  // Emotional touch response (gives cards a slight press-down effect on phones)
-  document.querySelectorAll('.toolCard, .clientKitCard, .studioCard, .arcadeCard, .usPrinciple, .step, .case').forEach(card => {
-    card.addEventListener('pointerdown', () => card.classList.add('touchActive'), {passive: true});
-    const off = () => card.classList.remove('touchActive');
-    card.addEventListener('pointerup', off, {passive: true});
-    card.addEventListener('pointercancel', off, {passive: true});
-  });
+/* Prevent 300ms/double-tap quirks on functional controls. */
+qa('button,a,.case,.toolCard,.arcadeCard,.clientKitCard,.usPrinciple,.step,.faqQ').forEach(el=>{
+  el.style.touchAction='manipulation';
+});
 })();
 </script>
 
-<script id="desktop-mouse-drag-scroll">
+
+<script id="v21-faithful-touch">
 (()=>{
-  // Enable mouse click-and-drag swiping for desktop users
-  const sliders = document.querySelectorAll('.v21Swipe');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+const q=(s,p=document)=>p.querySelector(s),qa=(s,p=document)=>[...p.querySelectorAll(s)];
 
-  sliders.forEach(slider => {
-    slider.addEventListener('mousedown', (e) => {
-      // Only apply this to actual mouse clicks, let touch screens handle themselves natively
-      if (e.pointerType === 'touch') return; 
-      isDown = true;
-      slider.style.cursor = 'grabbing';
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.style.cursor = 'pointer';
-    });
-    
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.style.cursor = 'pointer';
-    });
-    
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault(); // Stop text highlighting while dragging
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5; // Drag speed multiplier
-      slider.scrollLeft = scrollLeft - walk;
-    });
+/* Mark only the existing desktop card groups as swipe areas. */
+[
+  '.usPrinciples','.toolGrid','.clientKitGrid','.studioGrid','.arcadeGrid','.steps'
+].forEach(sel=>q(sel)?.classList.add('v21Swipe'));
+
+/* Existing desktop hero animation and belief scroll-highlight stay untouched.
+   This only adds touch-specific character acknowledgement and card tactility. */
+const sections=qa('.hero,.belief,.work,.system,.lab,.studio,.arcade,.careTeaser,.process,.final');
+const cio=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const c=e.target.querySelector(':scope > .premiumChar');
+    if(!c)return;
+    c.classList.remove('v21Hello');
+    void c.offsetWidth;
+    c.classList.add('v21Hello','v21Name');
+    setTimeout(()=>c.classList.remove('v21Name'),1500);
   });
+},{threshold:.28});
+sections.forEach(s=>cio.observe(s));
+
+/* Swipe cards receive the same "active" emotional response hover gives on desktop. */
+qa('.toolCard,.clientKitCard,.studioCard,.arcadeCard,.usPrinciple,.step,.case').forEach(card=>{
+  card.addEventListener('pointerdown',()=>card.classList.add('touchActive'),{passive:true});
+  const off=()=>card.classList.remove('touchActive');
+  card.addEventListener('pointerup',off,{passive:true});
+  card.addEventListener('pointercancel',off,{passive:true});
+});
+
+/* Ensure menu is usable on both device files even when opened locally. */
+const menu=q('#menu'),nav=q('#mobileNav');
+if(menu&&nav){
+  menu.addEventListener('pointerup',e=>{
+    if(e.pointerType==='mouse')return;
+    e.preventDefault();e.stopImmediatePropagation();
+    const open=!nav.classList.contains('open');
+    nav.classList.toggle('open',open);
+    menu.textContent=open?'×':'☰';
+  },true);
+  qa('a,button',nav).forEach(x=>x.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰'}));
+}
 })();
 </script>
+<style id="v21-touch-active">
+@media(pointer:coarse){
+  .toolCard.touchActive,.clientKitCard.touchActive,.studioCard.touchActive,
+  .arcadeCard.touchActive,.usPrinciple.touchActive,.step.touchActive,.case.touchActive{
+    transform:scale(.985)!important;
+    filter:brightness(1.04)
+  }
+}
+</style>
 
 </body>
 </html>
