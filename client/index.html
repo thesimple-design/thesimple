@@ -1595,6 +1595,29 @@ canvas { max-width: 100%; }
   })();
 </script>
 
+<!-- --- FIX: Restore Clean "VIEW STORY" Text --- -->
+<style id="restore-clean-case-text">
+  /* 1. Prevent the text from inheriting the arrow button's yellow background */
+  .work .case:after {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 2. Reveal cleanly without rotation or black text on tap/hover */
+  .work .case:hover:after, 
+  .work .case:active:after, 
+  .work .case.touchActive:after, 
+  .work .case.inView:after {
+    opacity: 0.5 !important; /* Restores the subtle grey look */
+    transform: none !important; /* Strips the 45-degree rotation */
+    background: transparent !important;
+    color: inherit !important; /* Restores the original text color */
+    box-shadow: none !important;
+  }
+</style>
+
 </head>
 <body>
 
