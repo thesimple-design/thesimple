@@ -2911,7 +2911,7 @@ const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>Array.from(p.quer
 // Single source of truth for the public contact address — used by the
 // footer link and the contact-form mailto fallback below, so both always
 // agree. (Plain JS has no enum keyword; a const is the equivalent here.)
-const CONTACT_EMAIL='pooja@thesimple.design';
+const CONTACT_EMAIL='akhileswar@thesimple.design';
 const footerMail=$('#footerMail');if(footerMail){footerMail.href='mailto:'+CONTACT_EMAIL;footerMail.textContent=CONTACT_EMAIL}
 const safe=(fn)=>{try{return fn()}catch(e){console.error(e);return null}};
 const toast=m=>{const t=$('#toast');if(!t)return;t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2200)};
