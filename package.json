@@ -2,6 +2,7 @@
   "name": "thesimple",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "workspaces": [
     "client",
     "server"
@@ -10,6 +11,9 @@
     "dev": "concurrently -k -n CLIENT,SERVER -c cyan,magenta \"npm run dev -w client\" \"npm run dev -w server\"",
     "build": "npm run build -w client",
     "start": "npm run start -w server"
+  },
+  "dependencies": {
+    "resend": "^6.19.0"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"
