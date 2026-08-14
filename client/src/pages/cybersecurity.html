@@ -148,6 +148,47 @@ footer{border-top:1px solid var(--line);padding:34px 0}.foot{display:flex;justif
   }
 </style>
 
+<style id="swipeable-attack-surface">
+  @media (max-width: 767px) {
+    /* 1. Make the container horizontally scrollable */
+    .surfaceMap {
+      overflow-x: auto !important;
+      overscroll-behavior-x: contain !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .surfaceMap::-webkit-scrollbar { display: none !important; }
+    
+    /* 2. Pin the header so it doesn't scroll away when swiping */
+    .surfaceMap .surfaceHead {
+      position: sticky !important;
+      left: 0 !important;
+      /* Constrain the sticky header to the visible screen width */
+      max-width: calc(100vw - 24px) !important; 
+      background: #090c12 !important; 
+      z-index: 10 !important;
+      
+      /* Stack the title and stats vertically on mobile so they aren't squished */
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 16px !important;
+    }
+
+    /* Make the stats flow horizontally to save vertical space */
+    .surfaceMap .surfaceStats {
+      display: flex !important;
+      gap: 14px !important;
+      flex-wrap: wrap !important;
+    }
+
+    /* 3. Force the graph and the info strip to be wide enough to swipe */
+    .surfaceMap .attackRail, 
+    .surfaceMap .evidenceStrip {
+      min-width: 800px !important; 
+    }
+  }
+</style>
+
 </head><body>
 <div id="progress"></div>
 <nav class="nav"><a class="brand" href="#top"><i></i> thesimple</a><div class="navlinks"><a href="#research">Research</a><a href="#jtbd">JTBD</a><a href="#public">Public</a><a href="#dashboard">Dashboard</a><a href="#people">People</a><a href="#platform">Platform</a><a href="#analytics">Analytics</a></div><div class="right"><button onclick="document.querySelector('#research').scrollIntoView({behavior:'smooth'})">Start with research</button></div></nav>
