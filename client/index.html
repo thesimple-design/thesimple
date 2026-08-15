@@ -3817,6 +3817,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 .experienceBillboardV11 .expGridV7 .expMark img,.experienceBillboardV11 .expGridV7 .verifiedFinancialLogo{max-width:150px!important;max-height:58px!important;width:auto!important;height:auto!important;object-fit:contain!important;transform:none!important}
 .experienceBillboardV11 .expGridV7 .expMark:hover{transform:translateY(-3px)!important;z-index:4!important}
 .experienceBillboardV11 .expGridV7 .expMark:hover img,.experienceBillboardV11 .expGridV7 .expMark:hover .verifiedFinancialLogo{transform:scale(1.045)!important}
+/* "Selected client work / across the founder's career." must stay on exactly its two authored lines.
+   Earlier rules size this heading by vw alone, so at real laptop widths (~1280-1920px) the second
+   line still wraps a third time. Scope the font-size to the box it actually has (via colWidth-safe
+   vw+px formula) instead, and use the #founderExperience id so this reliably wins the cascade. */
+@media(min-width:981px){#founderExperience .experienceTitleV17 h3{font-size:clamp(32px,3.3vw - 1px,64px)!important;max-width:900px!important;white-space:normal!important;line-height:.88!important}}
 /* Human room: memories live in two side lanes, never below the main interaction */
 .careRoom>.memorySkyV17{position:absolute!important;inset:0!important;width:100%!important;max-width:none!important;height:100%!important;margin:0!important;border:0!important;pointer-events:none!important;z-index:1!important;overflow:hidden!important}
 .careRoom>.memorySkyV17:before{content:"YOUR PRIVATE MEMORY SKY"!important;left:50%!important;top:auto!important;bottom:24px!important;color:rgba(255,255,255,.28)!important}
