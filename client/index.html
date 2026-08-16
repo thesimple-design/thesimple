@@ -3883,5 +3883,104 @@ document.addEventListener('DOMContentLoaded',()=>{
 })();
 </script>
 
+<style id="founder-wall-grid-fix">
+/* The founder-experience logo wall (.experienceBillboardV11) scatters logos
+   using hand-picked left/top percentages tuned for a fixed 15-logo layout.
+   There are actually 16 logos, several later breakpoints tried to switch it
+   to a real CSS grid but never set display:grid, so those attempts silently
+   did nothing and the broken scatter kept rendering - causing logos to
+   overlap each other and spill past the card edge on tablet/mobile.
+   This replaces it with an actual working grid, contained within the card,
+   for tablet and mobile widths. Desktop is untouched. */
+@media (max-width: 1000px) {
+  .experienceBillboardV11 .expFieldV7 {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 18px !important;
+    display: block !important;
+  }
+ .experienceBillboardV11 .expGridV7 {
+    display: grid !important;
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important; left: auto !important; right: auto !important; bottom: auto !important;
+    grid-auto-flow: column !important;
+    grid-template-rows: repeat(3, auto) !important;
+    grid-template-columns: none !important;
+    grid-auto-columns: minmax(45%, 1fr) !important;
+    align-content: start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    transform: none !important;
+    contain: none !important;
+    margin-bottom: 16px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .experienceBillboardV11 .expGridV7::-webkit-scrollbar { display: none !important; }
+
+.experienceBillboardV11 .expGridV7 .expMark:nth-child(n) {
+    position: relative !important;
+    left: auto !important; top: auto !important; right: auto !important; bottom: auto !important;
+    transform: none !important;
+    width: 100% !important; height: auto !important;
+    min-height: 80px !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+    padding: 10px 8px !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    scroll-snap-align: start !important;
+}
+  .experienceBillboardV11 .expGridV7 .expMark img {
+    max-width: 90% !important;
+    max-height: 40px !important;
+    width: auto !important; height: auto !important;
+    filter: grayscale(1) brightness(0) invert(1) opacity(.85) !important;
+  }
+  .experienceBillboardV11 .expGridV7 .expMark:hover,
+  .experienceBillboardV11 .expGridV7 .expMark.active,
+  .experienceBillboardV11 .expGridV7 .expMark:focus-visible,
+  .experienceBillboardV11 .expGridV7 .expMark.billboard-pulse {
+    transform: translateY(-3px) !important;
+  }
+  .experienceBillboardV11 .expGridV7 .expMark:hover img,
+  .experienceBillboardV11 .expGridV7 .expMark.active img,
+  .experienceBillboardV11 .expGridV7 .expMark.billboard-pulse img {
+    filter: none !important;
+  }
+  .experienceBillboardV11 .expGridV7 .expMarkName { display: none !important; }
+  .experienceBillboardV11 .expSpotV7 {
+    position: relative !important;
+    left: auto !important; right: auto !important; bottom: auto !important; top: auto !important;
+    height: auto !important; min-height: 0 !important;
+    width: 100% !important;
+    display: block !important;
+    padding: 14px !important;
+  }
+  .experienceBillboardV11 .expSpotV7:before {
+    position: static !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+  .experienceBillboardV11 .expSpotV7 h4 { font-size: 16px !important; margin: 6px 0 !important; }
+  .experienceBillboardV11 .expSpotV7 p {
+    font-size: 11px !important;
+    display: block !important;
+    white-space: normal !important;
+    -webkit-line-clamp: unset !important;
+  }
+}
+}
+</style>
 </body>
 </html>
