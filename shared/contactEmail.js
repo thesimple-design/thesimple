@@ -27,8 +27,6 @@ export async function sendContactEmail({ name, email, type, budget, challenge })
   const { error } = await resend.emails.send({
     from: `thesimple.design <${process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev'}>`,
     to: process.env.CONTACT_TO_EMAIL,
-    // TODO: temporary CC for review — requested to be removed later.
-    cc: 'pooja@thesimple.design',
     replyTo: email,
     subject: `New project inquiry — ${name}${type ? ` (${type})` : ''}`,
     html: `
