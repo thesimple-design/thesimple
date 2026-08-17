@@ -150,7 +150,7 @@ footer{background:#08080b;color:white;border-top:1px solid rgba(255,255,255,.13)
 .presetGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.presetBtn{padding:15px;border-radius:16px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.04);color:white;text-align:left;cursor:pointer}.presetBtn.active{border-color:var(--cyan);background:rgba(80,216,255,.12)}.timerBar{display:flex;gap:8px;align-items:center;margin:20px 0}.timerBar button{border:1px solid rgba(255,255,255,.15);border-radius:999px;background:transparent;color:white;padding:10px 13px;cursor:pointer}.timerBar button.active{background:var(--acid);color:#09090c}.radarSummary{padding:20px;border-radius:20px;background:linear-gradient(135deg,rgba(223,255,67,.08),rgba(80,216,255,.06));border:1px solid rgba(223,255,67,.18);margin-top:18px}.radarColumns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.radarPanel{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:17px}.radarPanel h4{margin:0 0 12px}.signalItem{padding:12px 0;border-top:1px solid rgba(255,255,255,.1)}.signalItem:first-child{border:0}.signalItem small{display:block;color:rgba(255,255,255,.4);margin-top:5px}.sourceChip{display:inline-flex;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.08);font:500 8px 'DM Mono';margin-right:5px}
 .receiveStage{margin-top:70px;border-radius:34px;overflow:hidden;border:1px solid rgba(0,0,0,.13);background:#0b0b10;color:white;box-shadow:0 40px 120px rgba(20,18,40,.15)}.receiveNav{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid rgba(255,255,255,.12)}.receiveTab{min-height:130px;padding:20px;border:0;border-right:1px solid rgba(255,255,255,.1);background:transparent;color:white;text-align:left;cursor:pointer;transition:.35s}.receiveTab span,.receiveTab b,.receiveTab small{display:block}.receiveTab span{font:500 9px 'DM Mono';color:rgba(255,255,255,.35)}.receiveTab b{font-size:16px;margin:20px 0 6px}.receiveTab small{color:rgba(255,255,255,.42);line-height:1.4}.receiveTab:hover,.receiveTab.active{background:rgba(223,255,67,.08)}.receiveTab.active{box-shadow:inset 0 3px 0 var(--acid)}.receiveWorld{display:grid;grid-template-columns:1.15fr .85fr;min-height:560px}.receiveVisual{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,rgba(128,107,255,.22),transparent 45%),linear-gradient(135deg,#11111a,#08080c)}.receiveOrbit{position:absolute;width:330px;height:330px;border:1px solid rgba(255,255,255,.18);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);animation:receiveSpin 18s linear infinite}.receiveOrbit:before,.receiveOrbit:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.12)}.receiveOrbit:before{inset:45px}.receiveOrbit:after{inset:95px;background:radial-gradient(circle at 35% 25%,white,var(--acid) 7%,var(--violet) 34%,transparent 69%);border:0;animation:receivePulse 5s ease-in-out infinite}.receiveCards i{position:absolute;width:150px;height:92px;border:1px solid rgba(255,255,255,.15);border-radius:16px;background:rgba(255,255,255,.06);backdrop-filter:blur(15px);animation:floatCard 6s ease-in-out infinite}.receiveCards i:nth-child(1){left:9%;top:18%}.receiveCards i:nth-child(2){right:8%;top:30%;animation-delay:-2s}.receiveCards i:nth-child(3){left:22%;bottom:12%;animation-delay:-4s}.receiveSignal{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--acid);box-shadow:0 0 30px var(--acid);offset-path:path('M 80 300 C 180 40 520 40 620 300 C 520 520 180 520 80 300');animation:signalPath 8s linear infinite}.receiveCopy{padding:50px 44px;border-left:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:center}.receiveCopy h3{font-size:clamp(34px,4vw,62px);line-height:.94;letter-spacing:-.065em;margin:20px 0}.receiveCopy p{line-height:1.75;color:rgba(255,255,255,.56)}.receiveOutputs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.receiveOutputs span{padding:9px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.14);font-size:10px;color:rgba(255,255,255,.62)}.lightMini{align-self:flex-start}.studioWhy{margin-top:120px}
 @keyframes receiveSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes receivePulse{50%{transform:scale(1.14) rotate(12deg)}}@keyframes floatCard{50%{transform:translateY(-18px) rotate(3deg)}}@keyframes signalPath{to{offset-distance:100%}}
-.faq{padding:130px 0;background:var(--paper)}.faqHead{display:grid;grid-template-columns:.35fr 1.2fr .8fr;gap:40px;align-items:end;margin-bottom:55px}.faqHead h2{margin:0;font-size:clamp(50px,7vw,108px);line-height:.88;letter-spacing:-.075em}.faqHead p{color:var(--muted);line-height:1.7}.faqGrid{border-top:1px solid var(--line)}.faqItem{padding:0;border-bottom:1px solid var(--line);border-top:0}.faqQ{padding:27px 0;align-items:center}.faqQ>span{display:flex;align-items:center;gap:20px}.faqQ small{font:500 9px 'DM Mono';color:var(--violet)}.faqQ b{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.35s}.faqItem.open .faqQ b{transform:rotate(45deg);background:var(--ink);color:white}.faqA{padding-right:80px}.faqItem.open .faqA{max-height:220px;padding:0 80px 25px 58px}
+.faq{padding:130px 0;background:var(--paper)}.faqHead{display:grid;grid-template-columns:.35fr 1.2fr .8fr;gap:40px;align-items:end;margin-bottom:55px}.faqHead h2{margin:0;font-size:clamp(50px,7vw,108px);line-height:.88;letter-spacing:-.075em}.faqHead p{color:var(--muted);line-height:1.7}.faqGrid{border-top:1px solid var(--line)}.faqItem{padding:0;border-bottom:1px solid var(--line);border-top:0}.faqQ{padding:27px 0;align-items:center}.faqQ>span{display:flex;align-items:center;gap:20px}.faqQ small{font:500 9px 'DM Mono';color:var(--violet)}.faqQ b{width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.35s}.faqItem.open .faqQ b{transform:rotate(45deg);background:var(--ink);color:white}.faqA{padding-right:80px}.faqItem.open .faqA{max-height:220px;padding:0 80px 25px 58px}
 .finalCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.8}.futureFrames i{position:absolute;width:240px;height:150px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:rgba(255,255,255,.035);backdrop-filter:blur(12px);animation:futureFloat 8s ease-in-out infinite}.futureFrames i:nth-child(1){left:5%;top:18%;transform:rotate(-8deg)}.futureFrames i:nth-child(2){right:4%;top:15%;animation-delay:-2s;transform:rotate(7deg)}.futureFrames i:nth-child(3){left:13%;bottom:10%;animation-delay:-4s;transform:rotate(5deg)}.futureFrames i:nth-child(4){right:12%;bottom:9%;animation-delay:-6s;transform:rotate(-6deg)}@keyframes futureFloat{50%{translate:0 -25px;opacity:.65}}
 .cityHud{display:flex;justify-content:space-between;gap:10px;margin:16px 0;font:500 10px 'DM Mono'}.cityCanvas{width:100%;height:58vh;min-height:420px;border-radius:22px;border:1px solid rgba(255,255,255,.15);background:#07080e;touch-action:none}
 @media(max-width:900px){.roadmap90{grid-template-columns:1fr 1fr}.roadmapIntro{grid-column:1/-1}.receiveNav{grid-template-columns:1fr 1fr}.receiveWorld{grid-template-columns:1fr}.receiveVisual{min-height:420px}.receiveCopy{border-left:0;border-top:1px solid rgba(255,255,255,.12)}.faqHead{grid-template-columns:1fr}.radarColumns{grid-template-columns:1fr}.presetGrid{grid-template-columns:1fr 1fr}}
@@ -792,21 +792,56 @@ html{background:#050507}body{background:#050507}.grain{opacity:.05;mix-blend-mod
   .castMember:nth-child(10){left:80%;bottom:22px;top:auto}
 }
 @media(max-width:767px){
+  /* Kito (the hero section's creature). An unconditional (no media query) desktop
+     !important rule pins every .pc-* character's size/position and wins over the
+     site's own older mobile tiers regardless of breakpoint, so on phones Kito was
+     rendering at his full 180px desktop size with a stray right:-20px!important
+     from an old ≤680px tier pushing him half off the right edge — overlapping
+     "Use something free", the sound dock, and the "Clarity is not minimalism" card
+     below. Reference's true mobile value (v21-mobile-390) tucks him small into the
+     corner instead. */
+  .pc-hero{
+    width:74px!important;right:7px!important;bottom:44px!important;
+    top:auto!important;opacity:.92!important
+  }
+  /* The remaining 8 section mascots — same unconditional-desktop-!important problem
+     as Kito above (several also carry a stray left/right offset from the old ≤680px
+     tier), so all get the same reference (v21-mobile-390) fix: small, tucked corner
+     placement instead of full desktop size. Section layout itself is untouched.
+     (.pc-belief is set below, together with the rest of the 01 section's redesign.) */
+  /* top values below are measured against each section's own kicker line (e.g. "03 /
+     selected transformations"), not the reference's — the reference also rewrites each
+     section's own mobile padding/layout (out of scope here, mascots only), which shifts
+     where the kicker actually lands, so its top offsets don't line up with this file's
+     unmodified section spacing. Sitting the mascot beside the kicker instead of ~150px
+     above it with dead space in between. */
+  .pc-work{width:54px!important;right:10px!important;top:110px!important;left:auto!important;bottom:auto!important;opacity:.6!important}
+  .pc-system{width:56px!important;right:10px!important;top:45px!important;left:auto!important;bottom:auto!important;opacity:.62!important}
+  .pc-lab{width:54px!important;right:10px!important;top:110px!important;left:auto!important;bottom:auto!important;opacity:.6!important}
+  .pc-studio{width:54px!important;right:9px!important;top:130px!important;left:auto!important;bottom:auto!important;opacity:.58!important}
+  .pc-arcade{width:54px!important;right:11px!important;top:90px!important;left:auto!important;bottom:auto!important;opacity:.62!important}
+  .pc-care{width:58px!important;left:12px!important;right:auto!important;bottom:18px!important;top:auto!important;opacity:.66!important}
+  .pc-process{width:54px!important;right:11px!important;top:110px!important;left:auto!important;bottom:auto!important;opacity:.6!important}
   /* Lumi (the "final" section's floating creature), ported from the same
      reference/thesimple_mobile.html "v21-mobile-390" pass as the cast grid below. */
   .pc-final{
-    width:56px!important;right:10px!important;top:28px!important;
+    width:56px!important;right:10px!important;top:13px!important;
     left:auto!important;bottom:auto!important;opacity:.6!important
   }
   /* Character name tags are hover-only (display:none below on old mobile CSS), so Lumi's
-     name never had a way to appear on touch. Reference doesn't make it tap-triggered — on
-     touch it briefly introduces itself the moment its section scrolls into view instead
-     (tagline stays hidden, name only), then fades back out ~1.5s later. */
-  .premiumChar .charIdentity{display:block!important;bottom:-11px;transform:translate(-50%,4px) scale(.9)}
-  .premiumChar.v21Name .charIdentity{opacity:1!important;transform:translate(-50%,0) scale(1)!important}
+     name never had a way to appear on touch. On touch it briefly introduces itself —
+     full name and tagline — the moment its section scrolls into view instead, then
+     fades back out ~1.5s later. Centered-on-character (left:50%/translateX(-50%), the
+     desktop positioning) made the pill overflow off whichever screen edge the character
+     sits near once it's wide enough for the full tagline, so on mobile it anchors to the
+     character's own edge instead and grows inward — right edge for the (mostly)
+     right-positioned characters, left edge for the one left-positioned one (pc-care). */
+  .premiumChar .charIdentity{display:block!important;left:auto!important;right:0!important;bottom:-11px;transform:translateY(4px) scale(.9)}
+  .premiumChar.v21Name .charIdentity{opacity:1!important;transform:translateY(0) scale(1)!important}
+  .pc-care .charIdentity{left:0!important;right:auto!important}
   .premiumChar.v21Hello svg{animation:v21Hello .75s cubic-bezier(.16,1,.3,1)}
   .premiumChar .charIdentity b{font-size:7px}
-  .premiumChar .charIdentity span{display:none}
+  .premiumChar .charIdentity span{display:block;font-size:7px}
   /* True final mobile layout, ported from reference/thesimple_mobile.html's
      "v21-mobile-390" pass — a 3-column grid (last of 10 characters centered
      alone on its own row) instead of hand-placed absolute positions. */
@@ -836,6 +871,47 @@ html{background:#050507}body{background:#050507}.grain{opacity:.05;mix-blend-mod
   .castMember .castName{font-size:7px;padding:6px 8px}
   .castMember.touch-open .castName{opacity:1;transform:translate(-50%,0)}
   .castMember:hover{transform:none!important}
+  /* FAQ: desktop's .faq keeps 130px padding top+bottom and 27px per-question
+     padding regardless of viewport (no prior mobile override touched them), so
+     on a 390px screen the section carried roughly 100px more empty top/bottom
+     space than the reference's mobile-fitted numbers — most visible as a big
+     gap after the 5th/last question. Reference (v21-mobile-390) values ported
+     as-is; the answer box's own inner padding also drops its desktop-sized
+     58px/80px left/right so text uses the narrow screen instead of wrapping
+     into extra lines that made the open 5th answer taller than it needed to be. */
+  .faq{padding:72px 0 78px!important}
+  .faqHead{grid-template-columns:1fr!important;gap:12px!important}
+  .faqQ{padding:18px 0!important;font-size:15px!important}
+  .faqItem.open .faqA{max-height:220px!important;padding:0 10px 22px 0!important}
+  /* 01 / what changes when we join — ported wholesale from reference
+     (thesimple_mobile.html's "v21-mobile-390" pass), section-scoped only as asked.
+     Orbi (.pc-belief) is a direct child of .belief itself, not of the sticky inner
+     wrapper below it, so it's positioned against the tall (1180px+) section rather
+     than the pinned 100vh .beliefSticky — as the section scrolls past underneath
+     the pinned text, Orbi (fixed near the section's own top edge) travels through
+     the viewport with it instead of staying still, which is the top-to-bottom
+     scroll motion asked for. No JS needed — it falls out of the existing sticky
+     layout once the mascot's positioning matches the reference here. */
+  .belief{height:130vh!important;min-height:980px!important}
+  .beliefSticky{height:100vh!important;min-height:844px!important;position:sticky!important;top:0!important;align-items:flex-start!important;padding-top:96px!important}
+  .beliefGrid{grid-template-columns:1fr!important;gap:26px!important;align-items:center!important}
+  .beliefAside{position:relative!important;padding-right:58px!important;max-width:none!important}
+  .beliefAside .sectionNo{font-size:8px!important}
+  .beliefAside h3{font-size:33px!important;line-height:1.01!important;letter-spacing:-.055em!important;margin:15px 0!important;max-width:286px!important}
+  .beliefAside p{font-size:13px!important;line-height:1.55!important;max-width:305px!important}
+  .beliefProof{grid-template-columns:1fr 1fr!important;gap:8px!important;margin-top:18px!important;max-width:none!important}
+  .beliefProof span{padding:13px!important;min-height:88px!important;border-radius:16px!important}
+  .beliefText{font-size:39px!important;line-height:.98!important;letter-spacing:-.06em!important;max-width:328px!important;position:relative!important;z-index:3!important}
+  .meaningOrb{width:255px!important;height:255px!important;right:-145px!important;top:56%!important;opacity:.48!important}
+  .orbCaption{display:none!important}
+  .pc-belief{width:56px!important;right:12px!important;top:85px!important;left:auto!important;bottom:auto!important;opacity:.72!important}
+  /* 03 / HOW THESIMPLE WORKS — desktop's .system keeps 150px top padding on mobile
+     (no prior mobile override touched it), leaving a big blank gap above the kicker.
+     Reference (v21-mobile-390) shrinks this to 76px top / 82px bottom. */
+  .system{padding:76px 0 82px!important;overflow:hidden!important}
+  .systemIntro{grid-template-columns:1fr!important;gap:14px!important}
+  .systemIntro h2{font-size:42px!important;line-height:.93!important;max-width:315px!important}
+  .systemIntro p{font-size:13.5px!important;line-height:1.55!important}
 }
 @keyframes v21Hello{
   0%,100%{transform:translateY(0) rotate(0)}
@@ -1808,6 +1884,40 @@ body.ownership-open{overflow:hidden}
       height: auto !important;
       padding-bottom: 40px !important;
     }
+  }
+</style>
+<style id="belief-overlap-fix-mobile">
+  @media (max-width: 767px) {
+    /* belief-overlap-fix (above) unconditionally un-stuck .beliefSticky and forced
+       .belief to auto-height for every viewport up to 1020px — needed back when the
+       mobile section had no layout of its own and the desktop sticky math (190vh
+       section pinning 100vh of content) simply didn't fit a phone, overlapping the
+       next section. Reference's mobile pass (v21-mobile-390) fixes the same overlap
+       with its own matched height:165vh / sticky:100vh pair sized for a phone, and
+       that pairing is also what makes Orbi travel through the viewport as the
+       section scrolls (see the belief-section block earlier in this media query),
+       so on phones specifically it's restored here instead. Tablet (768–1020px)
+       keeps the older fix untouched — this section's redesign is mobile-only.
+       Selectors below repeat the culprit rule's own "section.belief, .belief"
+       grouping — plain ".belief" has lower specificity than "section.belief", so
+       even with !important and later source order a plain selector here would
+       still lose the tie to the rule above.
+       align-items was center, but centering a flex item taller than its own
+       844px box doesn't split the overflow evenly the way it would for a
+       shorter item — it pinned the kicker flush to y:0, directly behind the
+       fixed nav, for the section's whole scrolled-through duration. flex-start
+       + a fixed padding-top gives it deliberate, predictable clearance instead.
+       .belief's own height/min-height are also trimmed (165vh/1180px →
+       130vh/980px) to shorten the dead scroll runway before the section
+       releases into 03 — Orbi still travels the same way, just over less
+       distance. */
+    section.belief, .belief{height:130vh!important;min-height:980px!important;padding-bottom:0!important}
+    section.belief .beliefSticky, .beliefSticky{
+      position:sticky!important;height:100vh!important;min-height:844px!important;
+      top:0!important;overflow:hidden!important;display:flex!important;
+      align-items:flex-start!important;padding-top:96px!important
+    }
+    .beliefText{padding-bottom:0!important}
   }
 </style>
 
