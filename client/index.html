@@ -3487,16 +3487,16 @@ function updateSoundLabel(){if(!title)return;title.textContent=soundOn?'Adaptive
 function makeGain(v){const g=audio.createGain();g.gain.value=v;return g}
 function osc(freq,type='sine',gain=.02,detune=0){const o=audio.createOscillator(),g=makeGain(gain);o.type=type;o.frequency.value=freq;o.detune.value=detune;o.connect(g).connect(musicBus);o.start();return {o,g}}
 function noiseBuffer(){const len=audio.sampleRate*4,b=audio.createBuffer(1,len,audio.sampleRate),d=b.getChannelData(0);let x=0;for(let i=0;i<len;i++){x=.985*x+(Math.random()*2-1)*.12;d[i]=x}return b}
-function startAudio(){if(soundOn)return;audio=new (window.AudioContext||window.webkitAudioContext)();master=makeGain(.0001);musicBus=makeGain(1);fxBus=makeGain(1);const comp=audio.createDynamicsCompressor();comp.threshold.value=-14;comp.knee.value=18;comp.ratio.value=4;comp.attack.value=.01;comp.release.value=.35;musicBus.connect(comp);fxBus.connect(comp);comp.connect(master).connect(audio.destination);master.gain.exponentialRampToValueAtTime(.065*volume+.006,audio.currentTime+1.2);soundOn=true;remixAudio();scheduleBells();updateSoundLabel()}
+function startAudio(){if(soundOn)return;audio=new (window.AudioContext||window.webkitAudioContext)();master=makeGain(.0001);musicBus=makeGain(1);fxBus=makeGain(1);const comp=audio.createDynamicsCompressor();comp.threshold.value=-14;comp.knee.value=18;comp.ratio.value=4;comp.attack.value=.01;comp.release.value=.35;musicBus.connect(comp);fxBus.connect(comp);comp.connect(master).connect(audio.destination);master.gain.exponentialRampToValueAtTime(.22*volume+.025,audio.currentTime+1.2);soundOn=true;remixAudio();scheduleBells();updateSoundLabel()}
 function stopNodes(){drone.forEach(n=>{try{n.o.stop()}catch{};try{n.g.disconnect()}catch{}});drone=[];if(noiseNode){try{noiseNode.stop()}catch{};noiseNode=null}}
-function remixAudio(){if(!audio||!soundOn)return;stopNodes();const p=dayPart(), rainy=weather.rain>0||weather.code>=51&&weather.code<=82, storm=weather.code>=95;let base=p==='morning'?110:p==='afternoon'?98:p==='evening'?82:p==='dawn'?92:55;base*=Math.pow(2,currentChapter/24);drone=[osc(base,'sine',.035),osc(base*1.5,'triangle',.018,-7),osc(base*2,'sine',.010,6),osc(base*.5,'sine',.022)];const src=audio.createBufferSource(),filter=audio.createBiquadFilter();noiseNode=src;src.buffer=noiseBuffer();src.loop=true;filter.type='lowpass';filter.frequency.value=rainy?2200:weather.wind>14?1200:520;rainGain=makeGain(rainy ? .065 : .008);windGain=rainGain;src.connect(filter).connect(rainGain).connect(musicBus);src.start();if(storm){fxTone(base*4,.18,.18,'sawtooth',.15)}}
+function remixAudio(){if(!audio||!soundOn)return;stopNodes();const p=dayPart(), rainy=weather.rain>0||weather.code>=51&&weather.code<=82, storm=weather.code>=95;let base=p==='morning'?110:p==='afternoon'?98:p==='evening'?82:p==='dawn'?92:55;base*=Math.pow(2,currentChapter/24);drone=[osc(base,'sine',.05),osc(base*1.5,'triangle',.026,-7),osc(base*2,'sine',.014,6),osc(base*.5,'sine',.032)];const src=audio.createBufferSource(),filter=audio.createBiquadFilter();noiseNode=src;src.buffer=noiseBuffer();src.loop=true;filter.type='lowpass';filter.frequency.value=rainy?2200:weather.wind>14?1200:520;rainGain=makeGain(rainy ? .09 : .014);windGain=rainGain;src.connect(filter).connect(rainGain).connect(musicBus);src.start();if(storm){fxTone(base*4,.18,.18,'sawtooth',.15)}}
 function fxTone(freq,dur=.12,gain=.055,type='sine',delay=0){if(!audio||!soundOn)return;const t=audio.currentTime+delay,o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(gain,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g).connect(fxBus);o.start(t);o.stop(t+dur+.03)}
 function hoverSound(el){const idx=(el.dataset.v5note?+el.dataset.v5note:Math.abs((el.textContent||'x').length))%5;const p=dayPart(),scale=(p==='night'||p==='deep night')?[0,3,5,7,10]:[0,2,4,7,9];const f=220*Math.pow(2,(scale[idx]-9)/12);fxTone(f,.11,.038,'sine')}
 function clickSound(){fxTone(132,.13,.075,'triangle');fxTone(396,.24,.055,'sine',.035)}
 function sectionSound(i){if(i===currentChapter)return;currentChapter=i;if(soundOn){const f=110*Math.pow(2,(i%7)/12);fxTone(f,.4,.055,'sine');fxTone(f*1.5,.65,.025,'triangle',.08);remixAudio()}}
 function scheduleBells(){clearTimeout(bellTimer);if(!soundOn)return;const p=dayPart(),notes=(p==='night'||p==='deep night')?[0,3,7,10,14]:[0,4,7,11,14];const base=p==='night'?164:220;const play=()=>{if(!soundOn)return;const n=notes[Math.floor(Math.random()*notes.length)],f=base*Math.pow(2,n/12);fxTone(f,1.5,.018,'sine');if(Math.random()>.62)fxTone(f*2,1.1,.009,'sine',.12);bellTimer=setTimeout(play,3500+Math.random()*6500)};bellTimer=setTimeout(play,2400)}
-function setVolume(v){volume=v;const inp=qs('#v5Volume');if(inp)inp.value=Math.round(v*100);if(master&&audio){master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(v*.085+.006):.0001,audio.currentTime+.12)}}
-function muteToggle(){if(!audio){startAudio();return}soundOn=!soundOn;master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(volume*.085+.006):.0001,audio.currentTime+.18);if(soundOn){scheduleBells();remixAudio()}else clearTimeout(bellTimer);updateSoundLabel()}
+function setVolume(v){volume=v;const inp=qs('#v5Volume');if(inp)inp.value=Math.round(v*100);if(master&&audio){master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(v*.22+.025):.0001,audio.currentTime+.12)}}
+function muteToggle(){if(!audio){startAudio();return}soundOn=!soundOn;master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(volume*.22+.025):.0001,audio.currentTime+.18);if(soundOn){scheduleBells();remixAudio()}else clearTimeout(bellTimer);updateSoundLabel()}
 qs('#v5Volume')?.addEventListener('input',e=>setVolume(+e.target.value/100));qs('#v5SoundToggle')?.addEventListener('click',muteToggle);
 function enter(withSound){if(withSound){startAudio();requestAtmosphere()}else{palette();requestAtmosphere();updateSoundLabel()}}
 enter(true);
@@ -3555,135 +3555,15 @@ const ah=qs('.arcadeHead h2');if(ah)ah.innerHTML='Three worlds.<br><span style="
 const ap=qs('.arcadeHead p');if(ap)ap.textContent='The games stay. They are part of the studio personality — daily attention, memory and motion experiments with local progress and replay value.';
 })();
 </script>
-<script id="v10-cinematic-audio">
-(()=>{
-'use strict';
-let ctx=null, master=null, dry=null, verb=null, delay=null, delayGain=null, ambience=null;
-let active=false, userVol=.72, chapter=0, timer=0, pulseTimer=0, nodes=[];
-const $=s=>document.querySelector(s);
-const day=()=>{const h=new Date().getHours();return h<5?'deep':h<7?'dawn':h<12?'morning':h<17?'day':h<20?'golden':'night'};
-const roots={deep:41.2,dawn:55,morning:65.4,day:55,golden:49,night:41.2};
-const modes={
-  deep:[0,3,7,10,14], dawn:[0,2,7,9,14], morning:[0,4,7,11,14],
-  day:[0,2,7,9,14], golden:[0,4,7,9,14], night:[0,3,7,10,14]
-};
-
-function gain(v=1){const g=ctx.createGain();g.gain.value=v;return g}
-function impulse(seconds=5,decay=3.5){
-  const len=Math.floor(ctx.sampleRate*seconds),b=ctx.createBuffer(2,len,ctx.sampleRate);
-  for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<len;i++){const env=Math.pow(1-i/len,decay);d[i]=(Math.random()*2-1)*env*(.65+Math.random()*.35)}}
-  return b
-}
-function route(node,wet=.25){
-  node.connect(dry);
-  const wg=gain(wet);node.connect(wg);wg.connect(verb);
-}
-function osc(f,type='sine',v=.02,det=0,pan=0){
-  const o=ctx.createOscillator(),g=gain(.0001),p=ctx.createStereoPanner();
-  o.type=type;o.frequency.value=f;o.detune.value=det;p.pan.value=pan;
-  o.connect(g);g.connect(p);route(p,.45);o.start();
-  g.gain.exponentialRampToValueAtTime(Math.max(.0002,v),ctx.currentTime+2.2);
-  nodes.push({o,g,p});return {o,g,p}
-}
-function softNote(f,when,dur=4,v=.035,pan=0){
-  const o=ctx.createOscillator(),g=gain(.0001),p=ctx.createStereoPanner(),lp=ctx.createBiquadFilter();
-  o.type='sine';o.frequency.setValueAtTime(f,when);o.frequency.exponentialRampToValueAtTime(f*1.002,when+dur);
-  lp.type='lowpass';lp.frequency.value=1800;p.pan.value=pan;
-  o.connect(lp);lp.connect(g);g.connect(p);route(p,.7);
-  g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(v,when+.45);g.gain.exponentialRampToValueAtTime(.0001,when+dur);
-  o.start(when);o.stop(when+dur+.1)
-}
-function shimmer(f,when,v=.014){
-  [1,2,3.01].forEach((m,i)=>{
-    const o=ctx.createOscillator(),g=gain(.0001),p=ctx.createStereoPanner();
-    o.type=i?'sine':'triangle';o.frequency.value=f*m;p.pan.value=(i-1)*.55;
-    o.connect(g);g.connect(p);route(p,.9);
-    g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(v/(i+1),when+.18+i*.12);
-    g.gain.exponentialRampToValueAtTime(.0001,when+3.2+i*.8);o.start(when);o.stop(when+4.4)
-  })
-}
-function noiseBed(){
-  const len=ctx.sampleRate*3,b=ctx.createBuffer(2,len,ctx.sampleRate);
-  for(let c=0;c<2;c++){const d=b.getChannelData(c);let z=0;for(let i=0;i<len;i++){z=z*.992+(Math.random()*2-1)*.055;d[i]=z}}
-  const src=ctx.createBufferSource(),f=ctx.createBiquadFilter(),g=gain(.013);
-  src.buffer=b;src.loop=true;f.type='lowpass';f.frequency.value=day()==='night'||day()==='deep'?380:620;
-  src.connect(f);f.connect(g);route(g,.5);src.start();ambience=src;
-}
-function buildWorld(){
-  nodes.forEach(n=>{try{n.o.stop()}catch(e){}});nodes=[];
-  if(ambience){try{ambience.stop()}catch(e){}}
-  const part=day(),root=roots[part]*Math.pow(2,(chapter%6)/24),ints=modes[part];
-  // Wide orchestral-synth floor: fifths, octave and suspended colour.
-  osc(root,'sine',.040,-7,-.5);
-  osc(root*2,'sine',.022,5,.45);
-  osc(root*Math.pow(2,7/12),'triangle',.015,-4,.12);
-  osc(root*.5,'sine',.028,0,0);
-  osc(root*Math.pow(2,ints[1]/12),'sine',.012,7,-.24);
-  noiseBed();
-}
-function scoreLoop(){
-  clearTimeout(timer);if(!active)return;
-  const part=day(),ints=modes[part],root=roots[part]*2*Math.pow(2,(chapter%5)/24);
-  const n=ints[Math.floor(Math.random()*ints.length)];
-  const f=root*Math.pow(2,n/12);
-  const now=ctx.currentTime+.05;
-  softNote(f,now,4.2+Math.random()*3,.022+Math.random()*.016,Math.random()*1.5-.75);
-  if(Math.random()>.54) shimmer(f*2,now+.55,.010);
-  // occasional resolving second note makes it feel composed, not random.
-  if(Math.random()>.65){const n2=ints[(ints.indexOf(n)+2)%ints.length];softNote(root*Math.pow(2,n2/12),now+1.8,4,.014,-.4)}
-  timer=setTimeout(scoreLoop,2800+Math.random()*4200)
-}
-function heartbeat(){
-  clearTimeout(pulseTimer);if(!active)return;
-  const now=ctx.currentTime,root=roots[day()]*.5;
-  [0,.19].forEach((off,i)=>{
-    const o=ctx.createOscillator(),g=gain(.0001),lp=ctx.createBiquadFilter();
-    o.type='sine';o.frequency.setValueAtTime(root*1.7,now+off);o.frequency.exponentialRampToValueAtTime(root*.72,now+off+.18);
-    lp.type='lowpass';lp.frequency.value=170;
-    o.connect(lp);lp.connect(g);g.connect(dry);
-    g.gain.setValueAtTime(.0001,now+off);g.gain.exponentialRampToValueAtTime(i?.012:.02,now+off+.02);g.gain.exponentialRampToValueAtTime(.0001,now+off+.28);
-    o.start(now+off);o.stop(now+off+.3)
-  });
-  pulseTimer=setTimeout(heartbeat,6500+Math.random()*6500)
-}
-function start(){
-  if(active){ctx?.resume();return}
-  ctx=new (window.AudioContext||window.webkitAudioContext)();
-  master=gain(.0001);dry=gain(.78);verb=ctx.createConvolver();verb.buffer=impulse(5.5,3.1);
-  const vg=gain(.62),comp=ctx.createDynamicsCompressor();
-  comp.threshold.value=-20;comp.knee.value=24;comp.ratio.value=3.2;comp.attack.value=.02;comp.release.value=.7;
-  delay=ctx.createDelay(2);delay.delayTime.value=.42;delayGain=gain(.16);
-  dry.connect(comp);verb.connect(vg);vg.connect(comp);
-  dry.connect(delay);delay.connect(delayGain);delayGain.connect(verb);
-  comp.connect(master).connect(ctx.destination);
-  master.gain.exponentialRampToValueAtTime(.29*userVol+.018,ctx.currentTime+2.8);
-  active=true;buildWorld();scoreLoop();heartbeat();
-  const ttl=$('#v5SoundTitle');if(ttl)ttl.textContent='Cinematic world · '+day();
-}
-function mute(on){
-  if(!ctx){if(on)start();return}
-  active=on;
-  master.gain.cancelScheduledValues(ctx.currentTime);
-  master.gain.linearRampToValueAtTime(on?(.29*userVol+.018):.0001,ctx.currentTime+.45);
-  if(on){ctx.resume();buildWorld();scoreLoop();heartbeat()}else{clearTimeout(timer);clearTimeout(pulseTimer)}
-}
-function setVol(v){userVol=v;if(master&&ctx&&active)master.gain.linearRampToValueAtTime(.29*v+.018,ctx.currentTime+.18)}
-
-setTimeout(start,20);
-addEventListener('pointerdown',()=>{if(ctx&&ctx.state==='suspended')ctx.resume()},{once:true,passive:true});
-addEventListener('keydown',()=>{if(ctx&&ctx.state==='suspended')ctx.resume()},{once:true});
-$('#v5Volume')?.addEventListener('input',e=>setVol(+e.target.value/100));
-$('#v5SoundToggle')?.addEventListener('click',()=>setTimeout(()=>mute(!active),10));
-
-// Scene scoring: harmony changes subtly as visitors move through chapters.
-const secs=['#top','#founder','#belief','#work','#system','#lab','#studio','#arcade','#care','.process','#insights','.final'].map(x=>$(x)).filter(Boolean);
-const io=new IntersectionObserver(es=>{let best=null;es.forEach(e=>{if(e.isIntersecting&&(!best||e.intersectionRatio>best.intersectionRatio))best=e});if(best){const n=secs.indexOf(best.target);if(n!==chapter){chapter=n;if(ctx&&active){buildWorld();shimmer(110*Math.pow(2,(n%7)/12),ctx.currentTime+.15,.012)}}}},{threshold:[.35,.55,.7]});
-secs.forEach(x=>io.observe(x));
-
-// Pointer movement very lightly changes stereo width, almost subconscious.
-addEventListener('pointermove',e=>{if(!ctx||!active)return;const x=e.clientX/innerWidth-.5;nodes.forEach((n,i)=>{if(n.p)n.p.pan.setTargetAtTime(Math.max(-.9,Math.min(.9,x*(i%2?1:-1)*.8)),ctx.currentTime,.15)})},{passive:true});
-})();
-</script>
+<!-- v10-cinematic-audio removed: it was a second, entirely separate ambient-audio
+     engine (its own AudioContext, its own gain chain) running alongside
+     experience-v5-js's. Both started "on" automatically and both had their own
+     click handler on #v5SoundToggle, so a single click muted BOTH at once — the
+     toggle could only make things quieter, never louder, and the combined output
+     was faint enough to go unnoticed either way. experience-v5-js's engine (kept,
+     gain boosted below) already covers the same ground: weather/time-driven
+     ambience, section-reactive changes, hover/click sfx — so this duplicate is
+     deleted rather than patched. See git history if the original is ever needed. -->
 <script id="v10-kito-interaction">
 (()=>{
   const foxes=[...document.querySelectorAll('.kitoFoxSvg')];
