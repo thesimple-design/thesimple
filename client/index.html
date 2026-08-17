@@ -3501,10 +3501,23 @@ qs('#v5Volume')?.addEventListener('input',e=>setVolume(+e.target.value/100));qs(
 function enter(withSound){if(withSound){startAudio();requestAtmosphere()}else{palette();requestAtmosphere();updateSoundLabel()}}
 enter(true);
 // Autoplay policies suspend a freshly created AudioContext until a user gesture;
-// resume it silently on the visitor's first interaction instead of gating the page behind a click.
-const resumeAudioOnce=()=>{if(audio&&audio.state==='suspended')audio.resume()};
-addEventListener('pointerdown',resumeAudioOnce,{once:true,passive:true});
-addEventListener('keydown',resumeAudioOnce,{once:true});
+// resume it silently on the visitor's first interaction instead of gating the page
+// behind a click. Mobile Chrome in particular is inconsistent about which gesture
+// type actually counts as "activation" for unlocking Web Audio — pointerdown alone
+// worked in desktop/emulated testing but a real visitor reported still hearing
+// nothing on mobile Chrome, so this now also listens for click/touchend (the two
+// other gestures browsers commonly require) and keeps retrying on every
+// interaction (instead of giving up after one, via {once:true}) until the context
+// actually reports "running", in case the first attempt doesn't take.
+const resumeAudioAttempt=()=>{
+  if(!audio||audio.state==='running')return;
+  audio.resume().then(()=>{
+    if(audio.state==='running'){
+      ['pointerdown','click','touchend','keydown'].forEach(t=>removeEventListener(t,resumeAudioAttempt));
+    }
+  }).catch(()=>{});
+};
+['pointerdown','click','touchend','keydown'].forEach(t=>addEventListener(t,resumeAudioAttempt,{passive:true}));
 /* atmosphere canvas — V6 capped + visibility-aware */
 const cv=qs('#v5Atmosphere'),ctx=cv?.getContext('2d',{alpha:false}),dots=[];let dpr=1,atmoLast=0,atmoRunning=true;
 function size(){if(!cv)return;const mobile=innerWidth<800;dpr=Math.min(devicePixelRatio,mobile?1:1.25);cv.width=Math.round(innerWidth*dpr);cv.height=Math.round(innerHeight*dpr);cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';ctx.setTransform(dpr,0,0,dpr,0,0);dots.length=0;const count=mobile?42:Math.min(82,Math.floor(innerWidth*innerHeight/18000));for(let i=0;i<count;i++)dots.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:.45+Math.random()*1.5,z:.2+Math.random()*.8,p:Math.random()*6.28})}
