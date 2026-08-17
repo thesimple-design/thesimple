@@ -912,6 +912,26 @@ html{background:#050507}body{background:#050507}.grain{opacity:.05;mix-blend-mod
   .systemIntro{grid-template-columns:1fr!important;gap:14px!important}
   .systemIntro h2{font-size:42px!important;line-height:.93!important;max-width:315px!important}
   .systemIntro p{font-size:13.5px!important;line-height:1.55!important}
+  /* Music dock: collapses to just the orb by default on mobile, expands to the
+     exact original mobile pill (unchanged design, see the plain #v5SoundDock
+     rules a few lines up in this file) when tapped — toggled by v5SoundOpen
+     below via a small script near the end of the body. */
+  #v5SoundDock{
+    width:54px!important;height:54px!important;min-width:0!important;
+    padding:10px!important;border-radius:50%!important;
+    display:grid!important;grid-template-columns:1fr!important;place-items:center!important;
+    overflow:hidden!important;
+    transition:width .4s var(--ease),height .4s var(--ease),border-radius .4s var(--ease)
+  }
+  #v5SoundDock .v5SoundText,#v5SoundDock .v5SoundToggle{display:none!important}
+  #v5SoundDock.v5SoundOpen{
+    width:230px!important;height:auto!important;padding:10px!important;
+    border-radius:20px!important;grid-template-columns:auto 1fr auto!important;
+    place-items:normal!important;align-items:center!important
+  }
+  #v5SoundDock.v5SoundOpen .v5SoundText{display:block!important}
+  #v5SoundDock.v5SoundOpen .v5SoundToggle{display:block!important}
+  .v5SoundOrb{cursor:pointer}
 }
 @keyframes v21Hello{
   0%,100%{transform:translateY(0) rotate(0)}
@@ -4219,6 +4239,24 @@ const start=()=>{clearInterval(timer);timer=setInterval(pulse,2400)}; start();
     });
   },{threshold:.28});
   sections.forEach(s=>cio.observe(s));
+})();
+</script>
+<script id="v5-sound-dock-collapse">
+(()=>{
+  'use strict';
+  // Mobile-only visually (see #v5SoundDock's collapsed/.v5SoundOpen rules in the
+  // ≤767px media query) — tapping the orb expands the dock to its normal design,
+  // tapping the orb again or tapping anywhere outside collapses it back. Inert on
+  // desktop since the CSS there never reads the v5SoundOpen class.
+  const dock=document.getElementById('v5SoundDock');
+  const orb=dock&&dock.querySelector('.v5SoundOrb');
+  if(!dock||!orb)return;
+  orb.addEventListener('click',()=>dock.classList.toggle('v5SoundOpen'));
+  document.addEventListener('click',e=>{
+    if(dock.classList.contains('v5SoundOpen')&&!dock.contains(e.target)){
+      dock.classList.remove('v5SoundOpen');
+    }
+  });
 })();
 </script>
 </body>
