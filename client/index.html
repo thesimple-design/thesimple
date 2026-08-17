@@ -927,7 +927,7 @@ html{background:#050507}body{background:#050507}.grain{opacity:.05;mix-blend-mod
      reported, the fix needs to come from a different angle than overflow or
      height (e.g. reducing/restructuring the stacked mobile content itself),
      not another guess at either of those two properties. */
-  .heroMeta{display:block!important}
+  .heroMeta{display:block!important;margin-bottom:24px!important}
   .hero{height:125svh!important;min-height:880px!important}
   /* Music dock: collapses to just the orb by default on mobile, expands to the
      exact original mobile pill (unchanged design, see the plain #v5SoundDock
@@ -3862,9 +3862,15 @@ const ap=qs('.arcadeHead p');if(ap)ap.textContent='The games stay. They are part
 })();
 </script>
 <script>/* SITE CONFIG: replace the value below with the founder LinkedIn profile URL. */
-const FOUNDER_LINKEDIN_URL = "";
-const founderLinkedIn = document.getElementById('founderLinkedIn');
-if(founderLinkedIn){ founderLinkedIn.addEventListener('click',e=>{ if(!FOUNDER_LINKEDIN_URL){ e.preventDefault(); if(typeof toast==='function') toast('Add the founder LinkedIn URL in FOUNDER_LINKEDIN_URL.'); } }); if(FOUNDER_LINKEDIN_URL) founderLinkedIn.href=FOUNDER_LINKEDIN_URL; }
+const FOUNDER_LINKEDIN_URL = "https://www.linkedin.com/in/akhileswar-r-946b69152/";
+/* This script tag sits earlier in the document than #founderLinkedIn (it's
+   inside the ownership modal, further down), so getElementById returned null
+   and the href silently stayed "#" — deferred to DOMContentLoaded so it runs
+   after the anchor actually exists, regardless of source order. */
+document.addEventListener('DOMContentLoaded',()=>{
+  const founderLinkedIn = document.getElementById('founderLinkedIn');
+  if(founderLinkedIn){ founderLinkedIn.addEventListener('click',e=>{ if(!FOUNDER_LINKEDIN_URL){ e.preventDefault(); if(typeof toast==='function') toast('Add the founder LinkedIn URL in FOUNDER_LINKEDIN_URL.'); } }); if(FOUNDER_LINKEDIN_URL) founderLinkedIn.href=FOUNDER_LINKEDIN_URL; }
+});
 </script>
 <script>(()=>{const marks=[...document.querySelectorAll('.expMark')],tag=document.getElementById('expTag'),title=document.getElementById('expTitle'),copy=document.getElementById('expCopy');if(!marks.length)return;function activate(m){marks.forEach(x=>x.classList.toggle('active',x===m));if(tag)tag.textContent=m.dataset.tag||'';if(title)title.textContent=m.dataset.title||'';if(copy)copy.textContent=m.dataset.copy||'';}marks.forEach(m=>{m.addEventListener('mouseenter',()=>activate(m));m.addEventListener('focus',()=>activate(m));m.addEventListener('click',()=>activate(m));});})();</script>
 <script id="v16-local-init">
