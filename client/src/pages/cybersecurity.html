@@ -189,7 +189,176 @@ footer{border-top:1px solid var(--line);padding:34px 0}.foot{display:flex;justif
   }
 </style>
 
-</head><body>
+<style id="evidence-card-text-fix">
+  @media (max-width: 1050px) {
+    /* 1. Un-stick the source tag so it flows naturally below the text */
+    .evidenceCard .sourceTag {
+      position: relative !important;
+      bottom: auto !important;
+      display: block !important;
+      margin-top: 24px !important;
+    }
+    
+    /* 2. Restore normal padding to the card now that the tag isn't pinned */
+    .evidenceCard {
+      padding-bottom: 22px !important; 
+      height: auto !important;
+    }
+  }
+</style>
+
+<!-- --- FIX: Responsive Evidence Map --- -->
+<style id="responsive-evidence-map-fix">
+  @media (max-width: 767px) {
+    /* 1. Make node widths fluid so they fit side-by-side without crashing */
+    .eNode {
+      width: 44% !important;
+      padding: 10px 12px !important;
+    }
+
+    /* 2. Allow text to wrap naturally over multiple lines */
+    .eNode b {
+      white-space: normal !important;
+      font-size: 9.5px !important;
+      line-height: 1.25 !important;
+    }
+    .eNode small {
+      white-space: normal !important;
+      line-height: 1.3 !important;
+      font-size: 7.5px !important;
+    }
+
+    /* 3. Lock the four corners to the edges of the box */
+    .en1 { left: 4% !important; top: 8% !important; }
+    .en2 { right: 4% !important; top: 8% !important; left: auto !important; }
+    .en3 { left: 4% !important; bottom: 8% !important; top: auto !important; }
+    .en4 { right: 4% !important; bottom: 8% !important; left: auto !important; top: auto !important; }
+
+    /* 4. Perfectly center the middle "Organisation" node */
+    .en5 {
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 48% !important; /* Make the center one slightly wider for emphasis */
+      z-index: 5 !important;
+    }
+
+    /* 5. Fix hover state for the centered node so it doesn't jump out of place */
+    .en5:hover {
+      transform: translate(-50%, calc(-50% - 6px)) !important;
+    }
+  }
+</style>
+
+<!-- --- FIX: Align and Space the CTA Button on Mobile --- -->
+<style id="result-cta-alignment-fix">
+  @media (max-width: 1050px) {
+    /* 1. Remove the desktop border that looks weird when stacked */
+    .resultSummary {
+      border-right: none !important;
+      padding-bottom: 32px !important; /* Adds breathing room before the map starts */
+    }
+
+    /* 2. Add a healthy gap above the button and force it to the left */
+    .resultCTA {
+      margin-top: 36px !important; /* The gap between the stats and the button */
+      display: flex !important;
+      justify-content: flex-start !important; /* Sticks it to the left */
+      width: 100% !important;
+    }
+
+    /* 3. Ensure the button itself stays its natural size and doesn't stretch */
+    .resultCTA button {
+      width: auto !important;
+    }
+  }
+</style>
+
+<!-- --- FIX: Analytics Section Mobile Typography --- -->
+<style id="analytics-mobile-type-fix">
+  @media (max-width: 767px) {
+    /* 1. Scale down the oversized subsection headings */
+    .activationV3 h4, 
+    .cohortV3 h4, 
+    .moduleV3 h4, 
+    .velocityV3 h4 {
+      font-size: 24px !important;
+      line-height: 1.1 !important;
+      margin-bottom: 12px !important;
+    }
+
+    /* 2. Make the explanatory captions readable */
+    .analyticsCaptionV3 {
+      font-size: 11px !important;
+      line-height: 1.5 !important;
+    }
+
+    /* 3. Fix the "actual ->" labels next to the bars */
+    .moduleBarV3 b {
+      font-size: 10px !important;
+      white-space: nowrap !important;
+    }
+    
+    /* Give the labels a tiny bit more room so they don't wrap */
+    .moduleBarV3 {
+      grid-template-columns: 110px 1fr 60px !important; 
+    }
+
+    /* 4. Increase the legibility of the labels inside the velocity chart */
+    .velocityPlotV3 svg g text {
+      font-size: 12px !important;
+    }
+
+    /* 5. Fix the tiny text and button in the bottom footer block */
+    .analyticsFootV3 p {
+      font-size: 11px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 16px !important;
+    }
+    
+    .analyticsFootV3 button {
+      font-size: 11px !important;
+      padding: 12px 16px !important;
+      width: 100% !important; /* Make the button full width on mobile */
+    }
+    
+    /* Stack the footer text and button naturally */
+    .analyticsFootV3 {
+      grid-template-columns: 1fr !important;
+      padding: 20px 24px !important;
+    }
+  }
+</style>
+
+<!-- --- FIX: Value Ladder Text Size --- -->
+<style id="value-ladder-text-fix">
+  @media (max-width: 767px) {
+    /* 1. Make the bar a little taller to comfortably fit larger text */
+    .ladderTrackV3 {
+      height: 56px !important; 
+    }
+
+    /* 2. Increase the size of the main title (e.g., "Domain scanned") */
+    .ladderTrackV3 b {
+      font-size: 13px !important;
+      top: 12px !important;
+    }
+
+    /* 3. Increase the size of the subtitle (e.g., "public proof started") */
+    .ladderTrackV3 span {
+      font-size: 9px !important;
+      bottom: 12px !important;
+    }
+
+    /* 4. Bump up the size of the "100 demo" text on the far right to match */
+    .ladderStepV3 em {
+      font-size: 10px !important;
+    }
+  }
+</style>
+
+</head>
+<body>
 <div id="progress"></div>
 <nav class="nav"><a class="brand" href="#top"><i></i> thesimple</a><div class="navlinks"><a href="#research">Research</a><a href="#jtbd">JTBD</a><a href="#public">Public</a><a href="#dashboard">Dashboard</a><a href="#people">People</a><a href="#platform">Platform</a><a href="#analytics">Analytics</a></div><div class="right"><button onclick="document.querySelector('#research').scrollIntoView({behavior:'smooth'})">Start with research</button></div></nav>
 
