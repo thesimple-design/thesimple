@@ -366,6 +366,23 @@
     .footerGrid { flex-direction: column !important; gap: 8px !important; }
   }
 </style>
+
+<!-- --- FIX: Prevent Hero Text Overlap on Mobile --- -->
+<style id="verity-hero-overlap-fix">
+  @media (max-width: 767px) {
+    /* 1. Increase the line-height so the bounding box actually contains the number */
+    .heroNum {
+      line-height: 0.9 !important;
+      margin-bottom: 16px !important;
+    }
+
+    /* 2. Give the headline text enough room to wrap without crushing itself */
+    .heroCopy h1 {
+      margin-top: 16px !important;
+      line-height: 1.05 !important;
+    }
+  }
+</style>
 </head>
 <body>
 <div id="progress"></div><div class="grain"></div><div class="cursor"></div><div class="dot"></div>

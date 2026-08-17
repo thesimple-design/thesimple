@@ -3686,10 +3686,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 (()=>{
  const wall=document.querySelector('.experienceBillboardV11 .expFieldV7');
  const marks=[...document.querySelectorAll('.experienceBillboardV11 .expGridV7 .expMark')];
+ const grid=document.querySelector('.experienceBillboardV11 .expGridV7');
  if(!wall||!marks.length)return;
  wall.addEventListener('pointermove',e=>{const r=wall.getBoundingClientRect();wall.style.setProperty('--wall-x',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');wall.style.setProperty('--wall-y',((e.clientY-r.top)/r.height*100).toFixed(1)+'%')});
- let idx=0,timer; const pulse=()=>{marks.forEach(m=>m.classList.remove('billboard-pulse')); const m=marks[idx%marks.length]; if(!m.matches(':hover')){m.classList.add('billboard-pulse'); setTimeout(()=>m.classList.remove('billboard-pulse'),1200)} idx++;};
- const start=()=>{clearInterval(timer);timer=setInterval(pulse,2400)}; start();
+ let idx=0,timer; const pulse=()=>{marks.forEach(m=>m.classList.remove('billboard-pulse')); const m=marks[idx%marks.length]; if(!m.matches(':hover')){m.classList.add('billboard-pulse'); setTimeout(()=>m.classList.remove('billboard-pulse'),1200)} const page=Math.floor((idx%marks.length)/6); if(grid) grid.scrollTo({left:page*grid.clientWidth,behavior:'smooth'}); idx++;};
+const start=()=>{clearInterval(timer);timer=setInterval(pulse,2400)}; start();
  marks.forEach(m=>{m.addEventListener('mouseenter',()=>clearInterval(timer));m.addEventListener('mouseleave',start)});
 })();
 </script>
