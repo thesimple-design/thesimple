@@ -916,18 +916,19 @@ html{background:#050507}body{background:#050507}.grain{opacity:.05;mix-blend-mod
   /* "Clarity is not minimalism" card (.heroMeta): display:none between 681–1020px
      (an old tablet-tier rule) made it vanish entirely on some phones; even where
      it did show (≤680px), .hero's fixed height + overflow:hidden wasn't tall
-     enough for the fully-stacked mobile hero content (kicker, huge heading,
-     copy, buttons, then this card last) on shorter-screen phones, so the card's
-     bottom got clipped off. A first attempt just raised the height/min-height —
-     that passed every emulated-viewport test here, but a real iPhone still
-     reported it cut off (real device chrome/Dynamic Type/safe-area quirks that
-     Chromium's emulation doesn't reproduce), so guessing a bigger magic number
-     again isn't reliable. Switched to overflow:visible instead, so content can
-     never be destructively clipped regardless of exact height — safe here since
-     .heroCinema (the decorative sphere/lake shapes) has its own independent
-     overflow:hidden already, so nothing decorative bleeds into the next section. */
+     enough for the fully-stacked mobile hero content on shorter-screen phones,
+     so the card's bottom got clipped off. Raising height/min-height passed
+     every emulated-viewport test here but a real iPhone still reported it cut
+     off, so a follow-up attempt switched .hero to overflow:visible — that made
+     it WORSE on a real iPhone 17 Pro (the card became entirely invisible, not
+     just clipped), so it's reverted back to overflow:hidden here. Whatever
+     that real-device failure was, it's specific to changing overflow on this
+     sticky section and isn't reproducible in emulation — if clipping is still
+     reported, the fix needs to come from a different angle than overflow or
+     height (e.g. reducing/restructuring the stacked mobile content itself),
+     not another guess at either of those two properties. */
   .heroMeta{display:block!important}
-  .hero{height:160svh!important;min-height:1050px!important;overflow:visible!important}
+  .hero{height:125svh!important;min-height:880px!important}
   /* Music dock: collapses to just the orb by default on mobile, expands to the
      exact original mobile pill (unchanged design, see the plain #v5SoundDock
      rules a few lines up in this file) when tapped — toggled by v5SoundOpen
