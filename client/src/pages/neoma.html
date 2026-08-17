@@ -362,6 +362,157 @@ button,input{font:inherit} button{cursor:pointer}.wrap{width:min(1460px,calc(100
   }
 </style>
 
+<!-- --- FIX: Final Colleague Feedback Polish --- -->
+<style id="noema-feedback-fixes">
+  @media (max-width: 767px) {
+    /* 1. Fix Topbar Text Overlap */
+    .brand span { display: none !important; } /* Hides 'Global Intelligence OS' on mobile */
+
+    /* 2. Live Analyst Session Tab Spacing */
+    .liveTag {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      transform: none !important;
+      align-self: flex-start !important;
+      margin-bottom: 20px !important; /* Increases gap below the tab */
+    }
+
+    /* 3. Discovery Section: Text Sizes & Arrow Gaps */
+    .relay { gap: 8px !important; } /* Reduces gap between boxes */
+    .relayStep { padding: 12px 10px !important; }
+    .relayStep b { font-size: 11px !important; margin-top: 8px !important; } /* Reduces title size */
+    .relayStep span { font-size: 10px !important; line-height: 1.4 !important; } /* Reduces description size */
+    .relayStep:not(:last-child):after {
+      right: -8px !important; /* Pulls arrow closer */
+      font-size: 15px !important;
+    }
+
+    /* 4. Direction Matrix Horizontal Scroll Fix */
+    .directionMatrix {
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .directionMatrix::-webkit-scrollbar { display: none !important; }
+    .dmRow {
+      min-width: 600px !important; /* Forces the table to stay wide and scrollable */
+      overflow-x: visible !important;
+    }
+
+    /* 5. Workbench: Fix Uneven/Squished Text Bubbles */
+    .answerMeta {
+      margin-left: 0 !important; /* Removes massive desktop indent */
+      flex-wrap: nowrap !important; /* Stops them from wrapping into a grid */
+      overflow-x: auto !important; /* Makes the row of bubbles swipeable */
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+      padding-bottom: 8px !important;
+    }
+    .answerMeta::-webkit-scrollbar { display: none !important; }
+    .answerMeta span {
+      white-space: nowrap !important; /* Forces the text onto one line so they remain pills */
+    }
+  }
+</style>
+
+<!-- --- FIX: Final Colleague Spacing & Arrow Polish --- -->
+<style id="final-spacing-polish">
+  @media (max-width: 767px) {
+    
+    /* 1. Fix: Perfectly center the arrows between the boxes */
+    .relay, .flow { 
+      gap: 16px !important; /* Consistent gap between cards */
+    }
+    .relayStep:not(:last-child):after,
+    .flowStep:not(:last-child):after {
+      right: -8px !important; /* Pulls exactly to the middle of the 16px gap */
+      transform: translate(50%, -50%) !important; /* Shifts the arrow by half its own width to perfectly dead-center it */
+      font-size: 16px !important;
+      color: #636d7e !important;
+    }
+
+    /* 2. Fix: Reduce text size inside Discovery/Flow boxes so spacing isn't awkward */
+    .relayStep, .flowStep {
+      padding: 14px 12px !important; /* Tighter padding */
+    }
+    .relayStep b, .flowStep b { 
+      font-size: 10px !important; /* Scaled down title */
+      margin-top: 6px !important; 
+    }
+    .relayStep span, .flowStep p { 
+      font-size: 9px !important; /* Scaled down subtitle */
+      line-height: 1.35 !important; 
+    }
+
+    /* 3. Fix: Increase the gap below the "LIVE ANALYST SESSION" tab */
+    .liveTag {
+      margin-bottom: 32px !important; /* Increased from 20px to push the text down further */
+    }
+
+    /* 4. Fix: Even out the text bubbles (like "18 evidence items") */
+    .answerMeta {
+      gap: 8px !important;
+    }
+    .answerMeta span {
+      padding: 6px 10px !important;
+      font-size: 10px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      white-space: nowrap !important; /* Forces perfect pill shapes */
+    }
+  }
+</style>
+
+<!-- --- FIX: Video Feedback - Discovery Text & Centered Arrows --- -->
+<style id="video-feedback-fixes">
+  @media (max-width: 767px) {
+    
+    /* 1. Fix the massive Discovery Titles */
+    .discoveryTop h3 {
+      font-size: 34px !important; /* Overrides the massive 13vw size */
+      line-height: 1.1 !important;
+      margin-bottom: 12px !important;
+    }
+
+    /* 2. Shrink the text inside the boxes slightly so they don't look cramped */
+    .relayStep, .flowStep {
+      padding: 16px 14px !important;
+    }
+    .relayStep b, .flowStep b {
+      font-size: 12px !important;
+      margin-top: 6px !important;
+    }
+    .relayStep span, .flowStep p {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+
+    /* 3. Foolproof, perfectly centered arrows */
+    .relay, .flow {
+      gap: 20px !important; /* Sets a strict, even gap between the cards */
+    }
+    .relayStep:not(:last-child):after,
+    .flowStep:not(:last-child):after {
+      content: "→" !important;
+      display: block !important;
+      position: absolute !important;
+      top: 50% !important;
+      right: 0px !important; /* Pushes the arrow exactly into the 20px gap */
+      width: -100px !important; /* Makes the arrow wrapper take up the full gap */
+      text-align: center !important; /* Perfectly centers the arrow inside the gap */
+      transform: translateY(-50%) !important; /* Only centers it vertically */
+      font-size: 16px !important;
+      color: #636d7e !important;
+    }
+
+    /* 4. Increase spacing under Live Analyst tab */
+    .liveTag {
+      margin-bottom: 36px !important; /* Pushes the thoughts further down */
+    }
+    
+  }
+</style>
 
 </head>
 <body>
@@ -579,17 +730,53 @@ $('#wbSend')?.addEventListener('click',()=>{const v=$('#wbInput').value.trim();i
       .mobile-scroll-container .landscape,
       .mobile-scroll-container .braid,
       .mobile-scroll-container svg {
-          min-width: 750px !important; /* Force chart wide enough to scroll */
+          min-width: 750px !important;
       }
-      /* Live Analyst Section */
+
+      /* Global Spacing & Typography Fixes */
+      .wrap { width: calc(100% - 24px) !important; }
+      .hero, .keynoteFold, .storySpine, .evidenceV5, .researchDeep, .externalResearch, .section, .launchHero { 
+        padding-top: 80px !important; 
+        padding-bottom: 80px !important; 
+        min-height: auto !important; 
+      }
+      
+      /* FIX 1: Reduce Discovery titles so they don't look awkwardly large or spaced out */
+      .heroCopy h1, .keynoteStatement h2, .launchTitle, .discoveryTop h3, .corridor h3 {
+        font-size: 32px !important; 
+        line-height: 1.1 !important;
+        letter-spacing: -0.03em !important;
+      }
+      .head h2 { font-size: 38px !important; line-height: 1.1 !important; }
+      .keynoteStatement .n { font-size: 26vw !important; line-height: 0.8 !important; }
+      
+      /* Restore the Topbar */
+      .topbar {
+        display: flex !important;
+        width: calc(100% - 20px) !important;
+        height: 56px !important;
+        padding: 0 14px !important;
+        top: 10px !important;
+      }
+      .nav { display: none !important; } 
+      .topbar .btn { font-size: 10px !important; padding: 8px 12px !important; }
+
+      /* FIX 2: Increase spacing after the Live Analyst Session tab */
       .humanMoment {
           height: auto !important;
           min-height: 480px !important;
           display: flex !important;
           flex-direction: column !important;
-          padding: 60px 16px 80px !important;
-          gap: 12px !important;
+          padding: 70px 16px 80px !important; 
+          gap: 24px !important; /* Generous gap pushing thoughts down */
       }
+      .liveTag {
+          position: relative !important;
+          top: auto !important; left: auto !important;
+          transform: none !important;
+          margin-bottom: 12px !important;
+      }
+      .humanPortrait { background-position: top center !important; }
       .thought {
           position: relative !important;
           width: 100% !important;
@@ -600,22 +787,20 @@ $('#wbSend')?.addEventListener('click',()=>{const v=$('#wbInput').value.trim();i
           animation: none !important;
           margin: 0 !important;
       }
-      .liveTag { top: 16px !important; }
       .voiceWave { bottom: 16px !important; }
 
       /* Tabs over graphs fix */
       .dvFilters {
           position: relative !important;
-          top: auto !important;
-          right: auto !important;
+          top: auto !important; right: auto !important;
           margin: 16px 0 !important;
           flex-wrap: wrap !important;
       }
       .dvCard > p { margin-bottom: 0 !important; }
 
-      /* -------------------------------------------
-         Architecture & Discovery Carousels 
-         ------------------------------------------- */
+      /* --------------------------------------------------
+         FIX 3: Architecture & Discovery Carousels + Arrows 
+         -------------------------------------------------- */
       .flow, .relay { 
           display: flex !important;
           flex-direction: row !important;
@@ -632,40 +817,72 @@ $('#wbSend')?.addEventListener('click',()=>{const v=$('#wbInput').value.trim();i
           max-width: 85% !important;
           scroll-snap-align: center !important;
           position: relative !important;
+          padding: 16px 14px !important;
       }
+      .relayStep b, .flowStep b { font-size: 11px !important; }
+      .relayStep span, .flowStep p { font-size: 10px !important; }
 
-      /* Right-pointing arrows between blocks */
+      /* Perfectly dead-center the arrows between the cards */
       .flowStep:not(:last-child):after,
       .relayStep:not(:last-child):after {
           content: "→" !important;
-          display: block !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
           position: absolute !important;
-          right: -14px !important;
-          left: auto !important;
-          top: 50% !important;
-          bottom: auto !important;
-          transform: translateY(-50%) !important;
-          font-size: 18px !important;
+          left: 100% !important;
+          top: 0 !important;
+          bottom: 0 !important;
+          width: 20px !important;
+          transform: none !important;
+          font-size: 16px !important;
           color: #636d7e !important;
           z-index: 10 !important;
       }
+
+      /* Stack Desktop Grids Neatly */
+      .beforeAfter, .journeyStage, .researchPanel, .proofLab, .decisionProof, .decisionVizGrid, .corridorWrap {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      .arrowBig { transform: rotate(90deg) !important; margin: 10px 0 !important; }
+
+      /* Decision Workbench UI Fixes */
+      .wbBody { display: block !important; }
+      .chatRail, .systemRail { display: none !important; } 
+      .decisionCanvas { margin: 12px 0 !important; border-radius: 16px !important; border-left: none !important; border-right: none !important; }
+      .decisionCards { grid-template-columns: 1fr !important; }
+      .nextMove { display: flex !important; flex-direction: column !important; padding: 0 16px 16px !important; }
+      .promptBar { margin: 16px 0 0 !important; }
+
+      /* Journey / Steps Fixes */
+      .jStep { grid-template-columns: 1fr !important; gap: 12px !important; padding: 20px !important; }
+      .jNum { font-size: 52px !important; line-height: 1 !important; }
+      .jProof { grid-template-columns: 1fr !important; }
+
+      /* Counterfactual Lab Box */
+      .counterResult { grid-template-columns: 1fr !important; text-align: center !important; gap: 24px !important; }
+      .scoreOrb { margin: 0 auto !important; }
+      .why { position: relative !important; text-align: left !important; grid-template-columns: 1fr !important; }
+      .why em { position: absolute !important; right: 10px !important; top: 12px !important; }
       
-      .relay::-webkit-scrollbar { display: none !important; }
-      .relayStep {
-          flex: 0 0 85% !important;
-          scroll-snap-align: center !important;
-      }
-      .relayStep:not(:last-child):after {
-          display: block !important;
-          content: "→" !important;
-          position: absolute !important;
-          right: -12px !important;
-          top: 50% !important;
-          transform: translateY(-50%) !important;
-          font-size: 16px !important;
-          color: #4b5567 !important;
-          z-index: 10 !important;
-      }
+     @media (max-width: 767px) {
+    /* Un-squish the workbench top header bar */
+    .wbTop {
+      height: auto !important;
+      padding: 12px 14px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 6px !important;
+    }
+    .wbTop > div:last-child {
+      text-align: left !important;
+    }
+  } 
+  
+  
   }
 </style>
 
