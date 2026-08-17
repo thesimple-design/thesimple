@@ -150,7 +150,7 @@ footer{background:#08080b;color:white;border-top:1px solid rgba(255,255,255,.13)
 .presetGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.presetBtn{padding:15px;border-radius:16px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.04);color:white;text-align:left;cursor:pointer}.presetBtn.active{border-color:var(--cyan);background:rgba(80,216,255,.12)}.timerBar{display:flex;gap:8px;align-items:center;margin:20px 0}.timerBar button{border:1px solid rgba(255,255,255,.15);border-radius:999px;background:transparent;color:white;padding:10px 13px;cursor:pointer}.timerBar button.active{background:var(--acid);color:#09090c}.radarSummary{padding:20px;border-radius:20px;background:linear-gradient(135deg,rgba(223,255,67,.08),rgba(80,216,255,.06));border:1px solid rgba(223,255,67,.18);margin-top:18px}.radarColumns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.radarPanel{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:17px}.radarPanel h4{margin:0 0 12px}.signalItem{padding:12px 0;border-top:1px solid rgba(255,255,255,.1)}.signalItem:first-child{border:0}.signalItem small{display:block;color:rgba(255,255,255,.4);margin-top:5px}.sourceChip{display:inline-flex;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.08);font:500 8px 'DM Mono';margin-right:5px}
 .receiveStage{margin-top:70px;border-radius:34px;overflow:hidden;border:1px solid rgba(0,0,0,.13);background:#0b0b10;color:white;box-shadow:0 40px 120px rgba(20,18,40,.15)}.receiveNav{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid rgba(255,255,255,.12)}.receiveTab{min-height:130px;padding:20px;border:0;border-right:1px solid rgba(255,255,255,.1);background:transparent;color:white;text-align:left;cursor:pointer;transition:.35s}.receiveTab span,.receiveTab b,.receiveTab small{display:block}.receiveTab span{font:500 9px 'DM Mono';color:rgba(255,255,255,.35)}.receiveTab b{font-size:16px;margin:20px 0 6px}.receiveTab small{color:rgba(255,255,255,.42);line-height:1.4}.receiveTab:hover,.receiveTab.active{background:rgba(223,255,67,.08)}.receiveTab.active{box-shadow:inset 0 3px 0 var(--acid)}.receiveWorld{display:grid;grid-template-columns:1.15fr .85fr;min-height:560px}.receiveVisual{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,rgba(128,107,255,.22),transparent 45%),linear-gradient(135deg,#11111a,#08080c)}.receiveOrbit{position:absolute;width:330px;height:330px;border:1px solid rgba(255,255,255,.18);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);animation:receiveSpin 18s linear infinite}.receiveOrbit:before,.receiveOrbit:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.12)}.receiveOrbit:before{inset:45px}.receiveOrbit:after{inset:95px;background:radial-gradient(circle at 35% 25%,white,var(--acid) 7%,var(--violet) 34%,transparent 69%);border:0;animation:receivePulse 5s ease-in-out infinite}.receiveCards i{position:absolute;width:150px;height:92px;border:1px solid rgba(255,255,255,.15);border-radius:16px;background:rgba(255,255,255,.06);backdrop-filter:blur(15px);animation:floatCard 6s ease-in-out infinite}.receiveCards i:nth-child(1){left:9%;top:18%}.receiveCards i:nth-child(2){right:8%;top:30%;animation-delay:-2s}.receiveCards i:nth-child(3){left:22%;bottom:12%;animation-delay:-4s}.receiveSignal{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--acid);box-shadow:0 0 30px var(--acid);offset-path:path('M 80 300 C 180 40 520 40 620 300 C 520 520 180 520 80 300');animation:signalPath 8s linear infinite}.receiveCopy{padding:50px 44px;border-left:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:center}.receiveCopy h3{font-size:clamp(34px,4vw,62px);line-height:.94;letter-spacing:-.065em;margin:20px 0}.receiveCopy p{line-height:1.75;color:rgba(255,255,255,.56)}.receiveOutputs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.receiveOutputs span{padding:9px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.14);font-size:10px;color:rgba(255,255,255,.62)}.lightMini{align-self:flex-start}.studioWhy{margin-top:120px}
 @keyframes receiveSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes receivePulse{50%{transform:scale(1.14) rotate(12deg)}}@keyframes floatCard{50%{transform:translateY(-18px) rotate(3deg)}}@keyframes signalPath{to{offset-distance:100%}}
-.faq{padding:130px 0;background:var(--paper)}.faqHead{display:grid;grid-template-columns:.35fr 1.2fr .8fr;gap:40px;align-items:end;margin-bottom:55px}.faqHead h2{margin:0;font-size:clamp(50px,7vw,108px);line-height:.88;letter-spacing:-.075em}.faqHead p{color:var(--muted);line-height:1.7}.faqGrid{border-top:1px solid var(--line)}.faqItem{padding:0;border-bottom:1px solid var(--line);border-top:0}.faqQ{padding:27px 0;align-items:center}.faqQ>span{display:flex;align-items:center;gap:20px}.faqQ small{font:500 9px 'DM Mono';color:var(--violet)}.faqQ b{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.35s}.faqItem.open .faqQ b{transform:rotate(45deg);background:var(--ink);color:white}.faqA{padding-right:80px}.faqItem.open .faqA{max-height:220px;padding:0 80px 25px 58px}
+.faq{padding:130px 0;background:var(--paper)}.faqHead{display:grid;grid-template-columns:.35fr 1.2fr .8fr;gap:40px;align-items:end;margin-bottom:55px}.faqHead h2{margin:0;font-size:clamp(50px,7vw,108px);line-height:.88;letter-spacing:-.075em}.faqHead p{color:var(--muted);line-height:1.7}.faqGrid{border-top:1px solid var(--line)}.faqItem{padding:0;border-bottom:1px solid var(--line);border-top:0}.faqQ{padding:27px 0;align-items:center}.faqQ>span{display:flex;align-items:center;gap:20px}.faqQ small{font:500 9px 'DM Mono';color:var(--violet)}.faqQ b{width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.35s}.faqItem.open .faqQ b{transform:rotate(45deg);background:var(--ink);color:white}.faqA{padding-right:80px}.faqItem.open .faqA{max-height:220px;padding:0 80px 25px 58px}
 .finalCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.8}.futureFrames i{position:absolute;width:240px;height:150px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:rgba(255,255,255,.035);backdrop-filter:blur(12px);animation:futureFloat 8s ease-in-out infinite}.futureFrames i:nth-child(1){left:5%;top:18%;transform:rotate(-8deg)}.futureFrames i:nth-child(2){right:4%;top:15%;animation-delay:-2s;transform:rotate(7deg)}.futureFrames i:nth-child(3){left:13%;bottom:10%;animation-delay:-4s;transform:rotate(5deg)}.futureFrames i:nth-child(4){right:12%;bottom:9%;animation-delay:-6s;transform:rotate(-6deg)}@keyframes futureFloat{50%{translate:0 -25px;opacity:.65}}
 .cityHud{display:flex;justify-content:space-between;gap:10px;margin:16px 0;font:500 10px 'DM Mono'}.cityCanvas{width:100%;height:58vh;min-height:420px;border-radius:22px;border:1px solid rgba(255,255,255,.15);background:#07080e;touch-action:none}
 @media(max-width:900px){.roadmap90{grid-template-columns:1fr 1fr}.roadmapIntro{grid-column:1/-1}.receiveNav{grid-template-columns:1fr 1fr}.receiveWorld{grid-template-columns:1fr}.receiveVisual{min-height:420px}.receiveCopy{border-left:0;border-top:1px solid rgba(255,255,255,.12)}.faqHead{grid-template-columns:1fr}.radarColumns{grid-template-columns:1fr}.presetGrid{grid-template-columns:1fr 1fr}}
@@ -171,7 +171,7 @@ footer{background:#08080b;color:white;border-top:1px solid rgba(255,255,255,.13)
 .case,.toolCard,.arcadeCard,.studioCard,.receiveTab,.journeyStep,.wowBtn,.navCta{transform:translateZ(0);backface-visibility:hidden}
 .casePreview{will-change:transform,opacity}
 #v5Atmosphere{image-rendering:auto;contain:strict}
-body.perf-scrolling .orbRing,body.perf-scrolling .receiveOrbit,body.perf-scrolling .receiveCards i,body.perf-scrolling .futureFrames i,body.perf-scrolling .meaningOrb:before,body.perf-scrolling .v5GateFog{animation-play-state:paused!important}
+body.perf-scrolling .orbRing,body.perf-scrolling .receiveOrbit,body.perf-scrolling .receiveCards i,body.perf-scrolling .futureFrames i,body.perf-scrolling .meaningOrb:before{animation-play-state:paused!important}
 @media(max-width:900px){.heroCinema:after,.work:before{filter:none!important}.meaningOrb{filter:none!important}.receiveCards i{backdrop-filter:none!important}.toolCard{transform-style:flat!important}}
 
 /* NIKO — an actual animated brand character, not an orb */
@@ -201,16 +201,12 @@ body.perf-scrolling .orbRing,body.perf-scrolling .receiveOrbit,body.perf-scrolli
 </style>
 <style id="experience-v5">
 :root{--v5-acid:#dfff43;--v5-ink:#050507;--v5-glass:rgba(8,8,12,.58);--v5-line:rgba(255,255,255,.14);--v5-mx:50vw;--v5-my:50vh;--v5-ambient:#765cff;--v5-weather:#50d8ff}
-html{background:#050507}body{background:#050507}body.v5-entering{overflow:hidden}.grain{opacity:.05;mix-blend-mode:soft-light}.wrap{width:min(1580px,calc(100% - 64px))}
+html{background:#050507}body{background:#050507}.grain{opacity:.05;mix-blend-mode:soft-light}.wrap{width:min(1580px,calc(100% - 64px))}
 /* persistent living world */
 #v5Atmosphere{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;background:#050507}
 #v5WorldWash{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at var(--v5-mx) var(--v5-my),color-mix(in srgb,var(--v5-ambient) 17%,transparent),transparent 31%),linear-gradient(180deg,rgba(5,5,7,.16),rgba(5,5,7,.55));transition:background 1.2s ease}
 #v5SectionRail{position:fixed;right:18px;top:50%;z-index:480;transform:translateY(-50%);display:grid;gap:8px;padding:10px 7px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(7,7,10,.38);backdrop-filter:blur(18px)}
 #v5SectionRail i{display:block;width:5px;height:18px;border-radius:99px;background:rgba(255,255,255,.18);transition:.45s cubic-bezier(.16,1,.3,1)}#v5SectionRail i.on{height:42px;background:var(--v5-acid);box-shadow:0 0 22px rgba(223,255,67,.55)}
-/* entrance */
-#v5Gate{position:fixed;inset:0;z-index:2500;background:#050507;color:white;display:grid;place-items:center;overflow:hidden;transition:opacity .9s cubic-bezier(.16,1,.3,1),visibility .9s}
-#v5Gate.out{opacity:0;visibility:hidden;pointer-events:none}.v5GateCanvas{position:absolute;inset:0;width:100%;height:100%}.v5GateFog{position:absolute;inset:-25%;background:radial-gradient(circle at 68% 38%,rgba(128,107,255,.38),transparent 25%),radial-gradient(circle at 30% 72%,rgba(80,216,255,.18),transparent 28%);filter:blur(30px);animation:v5gatefog 10s ease-in-out infinite alternate}@keyframes v5gatefog{to{transform:translate(5vw,-3vh) rotate(5deg) scale(1.08)}}
-.v5GateInner{position:relative;z-index:3;width:min(1500px,calc(100% - 72px));display:grid;grid-template-columns:1.4fr .6fr;align-items:end;gap:8vw}.v5GateEyebrow{font:500 10px 'DM Mono';letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.48)}.v5GateInner h1{font-size:clamp(74px,11vw,180px);line-height:.77;letter-spacing:-.095em;font-weight:560;margin:24px 0 38px}.v5GateInner h1 em{display:block;font-style:normal;color:var(--v5-acid)}.v5GateRight{padding-bottom:16px}.v5GateRight p{font-size:17px;line-height:1.6;color:rgba(255,255,255,.62);max-width:440px}.v5GateActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.v5Enter{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:16px 20px;background:rgba(255,255,255,.07);color:white;cursor:pointer;font-size:12px;font-weight:800;transition:.4s cubic-bezier(.16,1,.3,1)}.v5Enter.primary{background:white;color:#07070a}.v5Enter:hover{transform:translateY(-5px) scale(1.02);background:var(--v5-acid);color:#07070a;border-color:var(--v5-acid)}.v5GateHint{margin-top:16px;font:400 9px 'DM Mono';letter-spacing:.08em;color:rgba(255,255,255,.38)}
 /* sonic console */
 #v5SoundDock{position:fixed;left:18px;bottom:18px;z-index:520;min-width:275px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:rgba(7,7,10,.64);color:white;backdrop-filter:blur(22px);padding:13px 14px;display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:center;box-shadow:0 18px 60px rgba(0,0,0,.28)}.v5SoundOrb{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff 0 4%,var(--v5-weather) 12%,var(--v5-ambient) 45%,#111 72%);box-shadow:0 0 30px color-mix(in srgb,var(--v5-ambient) 45%,transparent);animation:v5soundpulse 3.5s ease-in-out infinite}@keyframes v5soundpulse{50%{transform:scale(1.12);filter:saturate(1.3)}}.v5SoundText b,.v5SoundText span{display:block}.v5SoundText b{font-size:10px}.v5SoundText span{font:400 8px 'DM Mono';color:rgba(255,255,255,.43);margin-top:3px;max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.v5SoundToggle{width:34px;height:34px;border:1px solid rgba(255,255,255,.16);border-radius:50%;background:transparent;color:white;cursor:pointer}.v5Volume{grid-column:2/4;width:100%;accent-color:var(--v5-acid);height:2px;margin:0}
 /* character / brand IP */
@@ -238,8 +234,8 @@ html{background:#050507}body{background:#050507}body.v5-entering{overflow:hidden
 .faq{background:#ece9e1}.final{height:130vh;background:#040406}.finalInner h2{font-size:clamp(70px,11vw,176px)}
 /* interaction ripples */
 .v5Ripple{position:fixed;z-index:2000;pointer-events:none;width:14px;height:14px;border-radius:50%;border:1px solid rgba(223,255,67,.9);transform:translate(-50%,-50%) scale(.2);animation:v5rip .75s cubic-bezier(.16,1,.3,1) forwards}@keyframes v5rip{to{opacity:0;transform:translate(-50%,-50%) scale(8)}}
-@media(max-width:1000px){#v5SectionRail{display:none}.v5GateInner{grid-template-columns:1fr}.v5GateRight{max-width:560px}.hero h1 .line:nth-child(2),.hero h1 .line:nth-child(3){margin-left:0}.steps{grid-template-columns:1fr 1fr}.step{min-height:300px}.arcadeCard:nth-child(n){transform:none}.arcadeCard:nth-child(2){transform:none}}
-@media(max-width:680px){.wrap{width:min(100% - 28px,1580px)}#v5Gate{align-items:end;padding-bottom:26px}.v5GateInner{width:calc(100% - 30px)}.v5GateInner h1{font-size:17vw;margin:18px 0 28px}.v5GateRight p{font-size:14px}.v5GateActions{display:grid}.v5Enter{width:100%}#v5SoundDock{left:10px;bottom:10px;min-width:0;width:215px;padding:10px}.v5SoundText span{max-width:108px}.v5Volume{display:none}#v5Companion{right:8px;bottom:9px;width:72px;height:72px}.hero{height:125svh;min-height:780px}.heroSticky{align-items:flex-end;padding-bottom:70px}.heroCinema:before{width:135vw;height:135vw;right:-66vw;top:13vh}.heroCinema:after{width:100vw;height:28vw;right:-18vw;bottom:25vh}.hero h1{font-size:18vw}.wordStage{min-width:4.5em}.heroGrid{grid-template-columns:1fr}.heroMeta{display:block;border-left:0;padding:16px 18px;margin:18px 0 0;border:1px solid rgba(255,255,255,.15);border-radius:20px;background:rgba(255,255,255,.04)}.heroMeta b{font-size:22px;margin:6px 0}.heroMeta p{font-size:11px;max-width:100%}.belief{height:175vh}.case{grid-template-columns:36px 1fr 42px;min-height:140px;padding:22px 15px}.case h3{font-size:30px}.caseArrow{width:36px;height:36px}.toolCard{min-height:490px}.arcadeGrid{grid-template-columns:1fr}.arcadeCard{min-height:350px}.arcadeCard h3{margin-top:105px}.steps{grid-template-columns:1fr}.step{min-height:250px}.carePortal{height:440px}.final{min-height:760px}}
+@media(max-width:1000px){#v5SectionRail{display:none}.hero h1 .line:nth-child(2),.hero h1 .line:nth-child(3){margin-left:0}.steps{grid-template-columns:1fr 1fr}.step{min-height:300px}.arcadeCard:nth-child(n){transform:none}.arcadeCard:nth-child(2){transform:none}}
+@media(max-width:680px){.wrap{width:min(100% - 28px,1580px)}#v5SoundDock{left:10px;bottom:10px;min-width:0;width:215px;padding:10px}.v5SoundText span{max-width:108px}.v5Volume{display:none}#v5Companion{right:8px;bottom:9px;width:72px;height:72px}.hero{height:125svh;min-height:780px}.heroSticky{align-items:flex-end;padding-bottom:70px}.heroCinema:before{width:135vw;height:135vw;right:-66vw;top:13vh}.heroCinema:after{width:100vw;height:28vw;right:-18vw;bottom:25vh}.hero h1{font-size:18vw}.wordStage{min-width:4.5em}.heroGrid{grid-template-columns:1fr}.heroMeta{display:block;border-left:0;padding:16px 18px;margin:18px 0 0;border:1px solid rgba(255,255,255,.15);border-radius:20px;background:rgba(255,255,255,.04)}.heroMeta b{font-size:22px;margin:6px 0}.heroMeta p{font-size:11px;max-width:100%}.belief{height:175vh}.case{grid-template-columns:36px 1fr 42px;min-height:140px;padding:22px 15px}.case h3{font-size:30px}.caseArrow{width:36px;height:36px}.toolCard{min-height:490px}.arcadeGrid{grid-template-columns:1fr}.arcadeCard{min-height:350px}.arcadeCard h3{margin-top:105px}.steps{grid-template-columns:1fr}.step{min-height:250px}.carePortal{height:440px}.final{min-height:760px}}
 @media(prefers-reduced-motion:reduce){#v5Companion,.v5Creature,.v5Halo,.v5SoundOrb,.heroCinema:before,.heroCinema:after{animation:none!important}}
 </style>
 <style id="v10-fox-delivery-audio">
@@ -778,6 +774,169 @@ html{background:#050507}body{background:#050507}body.v5-entering{overflow:hidden
   .castMember:nth-child(6){left:2%;bottom:45px}.castMember:nth-child(7){left:20%;bottom:55px}
   .castMember:nth-child(8){left:39%;bottom:42px}.castMember:nth-child(9){left:58%;bottom:55px}.castMember:nth-child(10){left:78%;bottom:42px}
   .castFinaleHeader b{font-size:16px}
+}
+/* character cast finale — mobile responsive design ported from reference/thesimple_mobile.html (v14 device-specific art direction); castFinale only, nothing else touched */
+@media(min-width:768px) and (max-width:1179px){
+  .castFinale{min-height:470px;width:min(100% - 36px,1040px)}
+  .castStage{inset:78px 20px 20px}
+  .castMember{width:96px!important}
+  .castMember:nth-child(1){left:3%;bottom:175px}
+  .castMember:nth-child(2){left:22%;bottom:192px}
+  .castMember:nth-child(3){left:41%;bottom:173px}
+  .castMember:nth-child(4){left:60%;bottom:190px}
+  .castMember:nth-child(5){left:79%;bottom:172px}
+  .castMember:nth-child(6){left:3%;bottom:22px}
+  .castMember:nth-child(7){left:22%;bottom:38px}
+  .castMember:nth-child(8){left:41%;bottom:20px}
+  .castMember:nth-child(9){left:60%;bottom:37px}
+  .castMember:nth-child(10){left:80%;bottom:22px;top:auto}
+}
+@media(max-width:767px){
+  /* Kito (the hero section's creature). An unconditional (no media query) desktop
+     !important rule pins every .pc-* character's size/position and wins over the
+     site's own older mobile tiers regardless of breakpoint, so on phones Kito was
+     rendering at his full 180px desktop size with a stray right:-20px!important
+     from an old ≤680px tier pushing him half off the right edge — overlapping
+     "Use something free", the sound dock, and the "Clarity is not minimalism" card
+     below. Reference's true mobile value (v21-mobile-390) tucks him small into the
+     corner instead. */
+  .pc-hero{
+    width:74px!important;right:7px!important;bottom:44px!important;
+    top:auto!important;opacity:.92!important
+  }
+  /* The remaining 8 section mascots — same unconditional-desktop-!important problem
+     as Kito above (several also carry a stray left/right offset from the old ≤680px
+     tier), so all get the same reference (v21-mobile-390) fix: small, tucked corner
+     placement instead of full desktop size. Section layout itself is untouched.
+     (.pc-belief is set below, together with the rest of the 01 section's redesign.) */
+  /* top values below are measured against each section's own kicker line (e.g. "03 /
+     selected transformations"), not the reference's — the reference also rewrites each
+     section's own mobile padding/layout (out of scope here, mascots only), which shifts
+     where the kicker actually lands, so its top offsets don't line up with this file's
+     unmodified section spacing. Sitting the mascot beside the kicker instead of ~150px
+     above it with dead space in between. */
+  .pc-work{width:54px!important;right:10px!important;top:110px!important;left:auto!important;bottom:auto!important;opacity:.6!important}
+  .pc-system{width:56px!important;right:10px!important;top:45px!important;left:auto!important;bottom:auto!important;opacity:.62!important}
+  .pc-lab{width:54px!important;right:10px!important;top:110px!important;left:auto!important;bottom:auto!important;opacity:.6!important}
+  .pc-studio{width:54px!important;right:9px!important;top:130px!important;left:auto!important;bottom:auto!important;opacity:.58!important}
+  .pc-arcade{width:54px!important;right:11px!important;top:90px!important;left:auto!important;bottom:auto!important;opacity:.62!important}
+  .pc-care{width:58px!important;left:12px!important;right:auto!important;bottom:18px!important;top:auto!important;opacity:.66!important}
+  .pc-process{width:54px!important;right:11px!important;top:110px!important;left:auto!important;bottom:auto!important;opacity:.6!important}
+  /* Lumi (the "final" section's floating creature), ported from the same
+     reference/thesimple_mobile.html "v21-mobile-390" pass as the cast grid below. */
+  .pc-final{
+    width:56px!important;right:10px!important;top:13px!important;
+    left:auto!important;bottom:auto!important;opacity:.6!important
+  }
+  /* Character name tags are hover-only (display:none below on old mobile CSS), so Lumi's
+     name never had a way to appear on touch. On touch it briefly introduces itself —
+     full name and tagline — the moment its section scrolls into view instead, then
+     fades back out ~1.5s later. Centered-on-character (left:50%/translateX(-50%), the
+     desktop positioning) made the pill overflow off whichever screen edge the character
+     sits near once it's wide enough for the full tagline, so on mobile it anchors to the
+     character's own edge instead and grows inward — right edge for the (mostly)
+     right-positioned characters, left edge for the one left-positioned one (pc-care). */
+  .premiumChar .charIdentity{display:block!important;left:auto!important;right:0!important;bottom:-11px;transform:translateY(4px) scale(.9)}
+  .premiumChar.v21Name .charIdentity{opacity:1!important;transform:translateY(0) scale(1)!important}
+  .pc-care .charIdentity{left:0!important;right:auto!important}
+  .premiumChar.v21Hello svg{animation:v21Hello .75s cubic-bezier(.16,1,.3,1)}
+  .premiumChar .charIdentity b{font-size:7px}
+  .premiumChar .charIdentity span{display:block;font-size:7px}
+  /* True final mobile layout, ported from reference/thesimple_mobile.html's
+     "v21-mobile-390" pass — a 3-column grid (last of 10 characters centered
+     alone on its own row) instead of hand-placed absolute positions. */
+  .castFinale{
+    width:calc(100% - 56px)!important;
+    min-height:0!important;height:auto!important;
+    margin:38px auto 0!important;padding:22px 15px!important;
+    border-radius:22px!important
+  }
+  .castFinaleHeader{
+    position:relative!important;left:auto!important;top:auto!important;
+    margin-bottom:22px!important
+  }
+  .castFinaleHeader b{font-size:18px!important}
+  .castStage{
+    position:relative!important;inset:auto!important;
+    display:grid!important;grid-template-columns:repeat(3,1fr)!important;
+    gap:18px 8px!important
+  }
+  .castMember,.castMember:nth-child(n){
+    position:relative!important;left:auto!important;right:auto!important;
+    top:auto!important;bottom:auto!important;width:68px!important;
+    max-width:68px!important;margin:auto!important;
+    opacity:1!important;transform:none!important
+  }
+  .castMember:nth-child(10){grid-column:2!important}
+  .castMember .castName{font-size:7px;padding:6px 8px}
+  .castMember.touch-open .castName{opacity:1;transform:translate(-50%,0)}
+  .castMember:hover{transform:none!important}
+  /* FAQ: desktop's .faq keeps 130px padding top+bottom and 27px per-question
+     padding regardless of viewport (no prior mobile override touched them), so
+     on a 390px screen the section carried roughly 100px more empty top/bottom
+     space than the reference's mobile-fitted numbers — most visible as a big
+     gap after the 5th/last question. Reference (v21-mobile-390) values ported
+     as-is; the answer box's own inner padding also drops its desktop-sized
+     58px/80px left/right so text uses the narrow screen instead of wrapping
+     into extra lines that made the open 5th answer taller than it needed to be. */
+  .faq{padding:72px 0 78px!important}
+  .faqHead{grid-template-columns:1fr!important;gap:12px!important}
+  .faqQ{padding:18px 0!important;font-size:15px!important}
+  .faqItem.open .faqA{max-height:220px!important;padding:0 10px 22px 0!important}
+  /* 01 / what changes when we join — ported wholesale from reference
+     (thesimple_mobile.html's "v21-mobile-390" pass), section-scoped only as asked.
+     Orbi (.pc-belief) is a direct child of .belief itself, not of the sticky inner
+     wrapper below it, so it's positioned against the tall (1180px+) section rather
+     than the pinned 100vh .beliefSticky — as the section scrolls past underneath
+     the pinned text, Orbi (fixed near the section's own top edge) travels through
+     the viewport with it instead of staying still, which is the top-to-bottom
+     scroll motion asked for. No JS needed — it falls out of the existing sticky
+     layout once the mascot's positioning matches the reference here. */
+  .belief{height:130vh!important;min-height:980px!important}
+  .beliefSticky{height:100vh!important;min-height:844px!important;position:sticky!important;top:0!important;align-items:flex-start!important;padding-top:96px!important}
+  .beliefGrid{grid-template-columns:1fr!important;gap:26px!important;align-items:center!important}
+  .beliefAside{position:relative!important;padding-right:58px!important;max-width:none!important}
+  .beliefAside .sectionNo{font-size:8px!important}
+  .beliefAside h3{font-size:33px!important;line-height:1.01!important;letter-spacing:-.055em!important;margin:15px 0!important;max-width:286px!important}
+  .beliefAside p{font-size:13px!important;line-height:1.55!important;max-width:305px!important}
+  .beliefProof{grid-template-columns:1fr 1fr!important;gap:8px!important;margin-top:18px!important;max-width:none!important}
+  .beliefProof span{padding:13px!important;min-height:88px!important;border-radius:16px!important}
+  .beliefText{font-size:39px!important;line-height:.98!important;letter-spacing:-.06em!important;max-width:328px!important;position:relative!important;z-index:3!important}
+  .meaningOrb{width:255px!important;height:255px!important;right:-145px!important;top:56%!important;opacity:.48!important}
+  .orbCaption{display:none!important}
+  .pc-belief{width:56px!important;right:12px!important;top:85px!important;left:auto!important;bottom:auto!important;opacity:.72!important}
+  /* 03 / HOW THESIMPLE WORKS — desktop's .system keeps 150px top padding on mobile
+     (no prior mobile override touched it), leaving a big blank gap above the kicker.
+     Reference (v21-mobile-390) shrinks this to 76px top / 82px bottom. */
+  .system{padding:76px 0 82px!important;overflow:hidden!important}
+  .systemIntro{grid-template-columns:1fr!important;gap:14px!important}
+  .systemIntro h2{font-size:42px!important;line-height:.93!important;max-width:315px!important}
+  .systemIntro p{font-size:13.5px!important;line-height:1.55!important}
+  /* Music dock: collapses to just the orb by default on mobile, expands to the
+     exact original mobile pill (unchanged design, see the plain #v5SoundDock
+     rules a few lines up in this file) when tapped — toggled by v5SoundOpen
+     below via a small script near the end of the body. */
+  #v5SoundDock{
+    width:54px!important;height:54px!important;min-width:0!important;
+    padding:10px!important;border-radius:50%!important;
+    display:grid!important;grid-template-columns:1fr!important;place-items:center!important;
+    overflow:hidden!important;
+    transition:width .4s var(--ease),height .4s var(--ease),border-radius .4s var(--ease)
+  }
+  #v5SoundDock .v5SoundText,#v5SoundDock .v5SoundToggle{display:none!important}
+  #v5SoundDock.v5SoundOpen{
+    width:230px!important;height:auto!important;padding:10px!important;
+    border-radius:20px!important;grid-template-columns:auto 1fr auto!important;
+    place-items:normal!important;align-items:center!important
+  }
+  #v5SoundDock.v5SoundOpen .v5SoundText{display:block!important}
+  #v5SoundDock.v5SoundOpen .v5SoundToggle{display:block!important}
+  .v5SoundOrb{cursor:pointer}
+}
+@keyframes v21Hello{
+  0%,100%{transform:translateY(0) rotate(0)}
+  40%{transform:translateY(-8px) rotate(-3deg)}
+  72%{transform:translateY(-2px) rotate(2deg)}
 }
 @media(prefers-reduced-motion:reduce){
   .castMember,.castFinale.in .castMember{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
@@ -1328,7 +1487,7 @@ html{background:#050507}body{background:#050507}body.v5-entering{overflow:hidden
 .ownershipIcon{width:17px;height:17px;position:relative;display:inline-block}
 .ownershipIcon i{position:absolute;width:9px;height:9px;border:1px solid currentColor;border-radius:50%;top:2px}
 .ownershipIcon i:first-child{left:0}.ownershipIcon i:last-child{right:0;top:6px}.ownershipIcon:after{content:"";position:absolute;width:7px;height:1px;background:currentColor;left:5px;top:8px;transform:rotate(26deg);opacity:.7}
-.mobileOwnershipBtn{border:0;background:transparent;color:white;text-align:left;font-size:40px;font-weight:700;letter-spacing:-.06em;padding:5px}
+.mobileOwnershipBtn{border:0;background:transparent;color:white;text-align:left;font-size:40px;font-weight:700;letter-spacing:-.06em;padding:5px;display:flex;align-items:center;gap:16px}.mobileOwnershipBtn .ownershipIcon{flex:none;transform:scale(1.6);transform-origin:left center}.mobileOwnershipArrow{font-size:20px;font-weight:600}
 
 /* Modal */
 .ownershipModal{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:22px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s var(--ease),visibility .35s}
@@ -1616,6 +1775,18 @@ body.ownership-open{overflow:hidden}
      filter: none !important;
   }
 </style>
+<style id="perfect-cast-hover-fix-mobile">
+  /* The fix above is unconditional (no media query) and was tuned for desktop, so its
+     min-height:440px!important / 100vh!important pin the cast card and .final section to
+     desktop proportions on phones too — leaving a huge empty gap before the footer once the
+     mobile-only card layout above (ported from reference/thesimple_mobile.html) is shorter
+     than that. This restores this section's own natural mobile sizing without touching the
+     desktop-oriented fix itself. castFinale/.final only — nothing else changed. */
+  @media(max-width:767px){
+    section.final, .final { min-height: auto !important; padding-bottom: 50px !important; }
+    .castFinale { min-height: 0 !important; height: auto !important; margin-bottom: 0 !important; }
+  }
+</style>
 <style id="final-overlap-fix">
   /* 1. Un-stick the text container so it scrolls naturally above the card */
   .finalSticky {
@@ -1635,6 +1806,17 @@ body.ownership-open{overflow:hidden}
   /* 3. Add a little extra breathing room above the character card */
   .castFinale {
     margin-top: 40px !important;
+  }
+</style>
+<style id="final-overlap-fix-mobile">
+  /* final-overlap-fix above is unconditional and pads .finalSticky by 15vh top / 6vh bottom —
+     tuned for desktop, but on phones 15vh is 100px+ of dead space pushing the "next scene"
+     heading away from Lumi. Reference's true mobile value (v21-mobile-390) is a small fixed pad. */
+  @media(max-width:767px){
+    .finalSticky{
+      position:relative!important;top:auto!important;height:auto!important;min-height:0!important;
+      padding:76px 0 56px!important
+    }
   }
 </style>
 
@@ -1724,6 +1906,40 @@ body.ownership-open{overflow:hidden}
     }
   }
 </style>
+<style id="belief-overlap-fix-mobile">
+  @media (max-width: 767px) {
+    /* belief-overlap-fix (above) unconditionally un-stuck .beliefSticky and forced
+       .belief to auto-height for every viewport up to 1020px — needed back when the
+       mobile section had no layout of its own and the desktop sticky math (190vh
+       section pinning 100vh of content) simply didn't fit a phone, overlapping the
+       next section. Reference's mobile pass (v21-mobile-390) fixes the same overlap
+       with its own matched height:165vh / sticky:100vh pair sized for a phone, and
+       that pairing is also what makes Orbi travel through the viewport as the
+       section scrolls (see the belief-section block earlier in this media query),
+       so on phones specifically it's restored here instead. Tablet (768–1020px)
+       keeps the older fix untouched — this section's redesign is mobile-only.
+       Selectors below repeat the culprit rule's own "section.belief, .belief"
+       grouping — plain ".belief" has lower specificity than "section.belief", so
+       even with !important and later source order a plain selector here would
+       still lose the tie to the rule above.
+       align-items was center, but centering a flex item taller than its own
+       844px box doesn't split the overflow evenly the way it would for a
+       shorter item — it pinned the kicker flush to y:0, directly behind the
+       fixed nav, for the section's whole scrolled-through duration. flex-start
+       + a fixed padding-top gives it deliberate, predictable clearance instead.
+       .belief's own height/min-height are also trimmed (165vh/1180px →
+       130vh/980px) to shorten the dead scroll runway before the section
+       releases into 03 — Orbi still travels the same way, just over less
+       distance. */
+    section.belief, .belief{height:130vh!important;min-height:980px!important;padding-bottom:0!important}
+    section.belief .beliefSticky, .beliefSticky{
+      position:sticky!important;height:100vh!important;min-height:844px!important;
+      top:0!important;overflow:hidden!important;display:flex!important;
+      align-items:flex-start!important;padding-top:96px!important
+    }
+    .beliefText{padding-bottom:0!important}
+  }
+</style>
 
 <style id="mobile-swipe-carousels">
   @media (max-width: 767px) {
@@ -1789,10 +2005,6 @@ body.ownership-open{overflow:hidden}
 </head>
 <body>
 <div id="v5WorldWash"></div><div aria-hidden="true" class="v6ChapterFlash"></div><canvas aria-hidden="true" id="v5Atmosphere"></canvas>
-<div aria-label="Enter thesimple experience" id="v5Gate" role="dialog">
-<canvas class="v5GateCanvas" id="v5GateCanvas"></canvas><div class="v5GateFog"></div>
-<div class="v5GateInner"><div><div class="v5GateEyebrow">thesimple · a living product studio</div><h1>Don’t browse.<em>Enter the signal.</em></h1></div><div class="v5GateRight"><p>The site responds to your time, local weather, movement and attention. Sound is generative — there is no repeating background track.</p><div class="v5GateActions"><button class="v5Enter primary" id="v5EnterSound">Enter with the world on ↗︎</button><button class="v5Enter" id="v5EnterQuiet">Enter quietly</button></div><div class="v5GateHint">Location is optional · used only to shape local atmosphere</div></div></div>
-</div>
 <div aria-hidden="true" id="v5SectionRail"></div>
 <div id="v5SoundDock"><div class="v5SoundOrb"></div><div class="v5SoundText"><b id="v5SoundTitle">World muted</b><span id="v5SoundMeta">local time · awaiting atmosphere</span></div><button aria-label="Toggle sound" class="v5SoundToggle" id="v5SoundToggle">♫</button><input aria-label="Sound volume" class="v5Volume" id="v5Volume" max="100" min="0" type="range" value="72"/><div class="v10AudioBadge"><span>CINEMATIC GENERATIVE SCORE · WEATHER / TIME / SCENE</span><i><b></b><b></b><b></b><b></b></i></div></div>
 <button aria-label="Meet NIKO, thesimple’s signal hunter" class="niko" data-mode="idle" data-mood="hello" id="v5Companion">
@@ -1820,7 +2032,7 @@ body.ownership-open{overflow:hidden}
 <div id="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursorDot"></div><div class="cursorLabel"></div><div class="toast" id="toast"></div>
 <nav class="nav" id="nav"><a class="brand" href="#top">thesimple<i></i></a><div class="navlinks"><button aria-label="Open ownership model" class="navOwnershipBtn" id="ownershipBtn" type="button"><span aria-hidden="true" class="ownershipIcon"><i></i><i></i></span><span>Full ownership</span></button><a href="#work">Work</a><a href="#system">Why us</a><a href="#lab">Open Lab</a><a href="#insights">Insights</a><a href="#studio">Studio</a><button class="dayBtn" id="dayBtn">For your day ↓</button></div><div class="navright"><button class="navCta magnetic" data-contact=""><span>Start a conversation ↗︎</span></button><button aria-label="Open menu" class="menu" id="menu">☰</button></div></nav>
 <div class="dayMenu" id="dayMenu"><button data-page="care"><span class="dayIcon">✦</span><span><b>No-transaction room</b><small>A private space to pause, remember and feel held</small></span></button><button data-quick="music"><span class="dayIcon">♫</span><span><b>Play a focus mix</b><small>Music, ambient layers and a live instrument</small></span></button><button data-quick="game"><span class="dayIcon">◉</span><span><b>Signal / Noise</b><small>A one-minute attention game</small></span></button><button data-quick="orbitGame"><span class="dayIcon">◎</span><span><b>Constellation</b><small>Watch the stars, remember the pattern, build the sky</small></span></button><button data-quick="cityGame"><span class="dayIcon">▰</span><span><b>Night Drive</b><small>Drive through the city, complete quests and collect coins</small></span></button></div>
-<div class="mobileNav" id="mobileNav"><button class="mobileOwnershipBtn" id="mobileOwnershipBtn" type="button">Full ownership ↗︎</button><a href="#work">Work</a><a href="#system">Why us</a><a href="#lab">Open Lab</a><a href="#insights">Insights</a><a href="#studio">Studio</a><button data-page="care">No-transaction room</button><button data-contact="">Start a conversation</button></div>
+<div class="mobileNav" id="mobileNav"><button class="mobileOwnershipBtn" id="mobileOwnershipBtn" type="button"><span aria-hidden="true" class="ownershipIcon"><i></i><i></i></span><span>Full ownership</span><span class="mobileOwnershipArrow">↗︎</span></button><a href="#work">Work</a><a href="#system">Why us</a><a href="#lab">Open Lab</a><a href="#insights">Insights</a><a href="#studio">Studio</a><button data-page="care">No-transaction room</button><button data-contact="">Start a conversation</button></div>
 <header class="hero" id="top"><div aria-hidden="true" class="premiumChar pc-hero"><span class="charLedge"></span><span class="charIdentity"><b>Kito</b><span>Curiosity · finds the clear path</span></span>
 <svg aria-label="Cheerful fox finding the clear path" role="img" viewbox="0 0 300 260">
 <defs>
@@ -2962,7 +3174,7 @@ more information than ever.</h3><div class="caseMeta">A global enterprise intell
 </div>
 </div>
 </section>
-<footer><div class="wrap"><div class="footerGrid"><div><div class="footerBrand">thesimple.</div><p style="color:rgba(255,255,255,.5);max-width:420px;line-height:1.6;font-size:13px">An independent product innovation company working from Bangalore with teams around the world.</p></div><div class="footerCol"><b>Explore</b><a href="#experience">Experience</a><a href="#work">Work</a><a href="#system">Connected system</a><a href="#lab">Open Lab</a><a href="#insights">Insights</a><a href="#care">Care</a></div><div class="footerCol"><b>Connect</b><a href="mailto:hey@thesimple.design">projects@thesimple.design</a><a href="https://www.linkedin.com/company/thesimple-design" rel="noreferrer" target="_blank">LinkedIn</a><a href="tel:+919515956046">+91 95159 56046</a></div><div class="footerCol"><b>Now</b><span>Bangalore, India</span><span>Working globally</span><span id="clock">IST</span></div></div><div class="footerBottom"><span>© 2026 thesimple</span><span>Private tools by design</span><span>Made with clarity and unreasonable care</span></div></div></footer>
+<footer><div class="wrap"><div class="footerGrid"><div><div class="footerBrand">thesimple.</div><p style="color:rgba(255,255,255,.5);max-width:420px;line-height:1.6;font-size:13px">An independent product innovation company working from Bangalore with teams around the world.</p></div><div class="footerCol"><b>Explore</b><a href="#experience">Experience</a><a href="#work">Work</a><a href="#system">Connected system</a><a href="#lab">Open Lab</a><a href="#insights">Insights</a><a href="#care">Care</a></div><div class="footerCol"><b>Connect</b><a href="mailto:hey@thesimple.design">hey@thesimple.design</a><a href="https://www.linkedin.com/in/akhileswar-r-946b69152/" rel="noreferrer" target="_blank">LinkedIn</a><a href="tel:+919515956046">+91 95159 56046</a></div><div class="footerCol"><b>Now</b><span>Bangalore, India</span><span>Working globally</span><span id="clock">IST</span></div></div><div class="footerBottom"><span>© 2026 thesimple</span><span>Private tools by design</span><span>Made with clarity and unreasonable care</span></div></div></footer>
 <div class="modal" id="contactModal"><div class="modalBox"><button class="modalClose" data-close="">×</button><div class="sectionNo" style="color:var(--acid)">Start with the difficult part</div><h2>What should become possible?</h2><p class="modalLead">No prepared brief is required. Describe the part that is unclear, expensive, slow, fragmented or important.</p><form id="contactForm"><div class="formGrid"><div class="field"><label>Name</label><input name="name" required=""/></div><div class="field"><label>Email</label><input name="email" required="" type="email"/></div><div class="field"><label>Project type</label><select name="type"><option>New digital product</option><option>Enterprise platform</option><option>Product rescue or redesign</option><option>AI-enabled workflow</option><option>MVP design and build</option><option>Other difficult problem</option></select></div><div class="field"><label>Working investment range</label><select name="budget"><option>Still defining</option><option>₹10L–₹25L</option><option>₹25L–₹50L</option><option>₹50L–₹1Cr</option><option>₹1Cr+</option></select></div><div class="field full"><label>The difficult part</label><textarea name="challenge" placeholder="What is happening, why does it matter, and what has not worked yet?" required="" rows="6"></textarea></div></div><button class="wowBtn primary" style="margin-top:15px"><span>Prepare project email ↗︎</span></button></form></div></div>
 <div class="modal" id="toolModal"><div class="modalBox" id="toolContent"></div></div>
 <div aria-hidden="true" class="pageExperience" id="carePage"><button class="pageBack" data-page-close="">← Back to thesimple</button><div class="careRoom"><canvas id="careCanvas"></canvas><div class="natureWorldV17" aria-hidden="true"><div class="natureSunV17"></div><div class="natureMountainV17 m1"></div><div class="natureMountainV17 m2"></div><div class="natureLakeV17"></div><div class="natureBranchV17 branch1"></div><div class="natureBranchV17 branch2"></div><div class="natureFirefliesV17"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="roomWindow"><div class="roomMoon"></div><div class="roomRain"></div></div><div class="roomLamp"></div><div class="roomChair"></div><div class="roomContent"><span class="mono">A HUMAN ROOM</span><h1>Keep a little<br/>of what matters.</h1><p>A private, nature-led corner of the site for memory and stillness. Nothing leaves this browser. No productivity score. No transaction. Just something human.</p><div class="roomChoices"><button data-room="memory"><b>Keep a good memory</b><span>Write a moment worth keeping. It becomes a floating light in your private memory sky.</span></button><button data-room="breathe"><b>Sit for one minute</b><span>Choose a landscape, then spend sixty seconds with its rhythm.</span></button></div><div class="roomPanel" id="roomPanel"><div class="roomWelcome"><b>Your quiet corner is ready.</b><p>Keep a memory or choose a one-minute nature pause. Everything stays on this device.</p></div></div><div class="careConstellation memorySkyV17" id="careConstellation"></div></div></div></div>
@@ -3261,8 +3473,7 @@ const cards=$$('.arcadeCard');if(cards[0])cards[0].insertAdjacentHTML('beforeend
 (()=>{
 'use strict';
 const qs=(s,p=document)=>p.querySelector(s),qsa=(s,p=document)=>Array.from(p.querySelectorAll(s));
-document.body.classList.add('v5-entering');
-const root=document.documentElement, gate=qs('#v5Gate'), title=qs('#v5SoundTitle'), meta=qs('#v5SoundMeta');
+const root=document.documentElement, title=qs('#v5SoundTitle'), meta=qs('#v5SoundMeta');
 let pointer={x:innerWidth*.55,y:innerHeight*.45,tx:innerWidth*.55,ty:innerHeight*.45};
 let weather={code:0,cloud:25,wind:4,rain:0,temp:null,isDay:null,label:'local atmosphere'};
 let audio=null, master=null, musicBus=null, fxBus=null, drone=[], noiseNode=null, rainGain=null, windGain=null, bellTimer=null, soundOn=false, currentChapter=0, volume=.72;
@@ -3276,20 +3487,37 @@ function updateSoundLabel(){if(!title)return;title.textContent=soundOn?'Adaptive
 function makeGain(v){const g=audio.createGain();g.gain.value=v;return g}
 function osc(freq,type='sine',gain=.02,detune=0){const o=audio.createOscillator(),g=makeGain(gain);o.type=type;o.frequency.value=freq;o.detune.value=detune;o.connect(g).connect(musicBus);o.start();return {o,g}}
 function noiseBuffer(){const len=audio.sampleRate*4,b=audio.createBuffer(1,len,audio.sampleRate),d=b.getChannelData(0);let x=0;for(let i=0;i<len;i++){x=.985*x+(Math.random()*2-1)*.12;d[i]=x}return b}
-function startAudio(){if(soundOn)return;audio=new (window.AudioContext||window.webkitAudioContext)();master=makeGain(.0001);musicBus=makeGain(1);fxBus=makeGain(1);const comp=audio.createDynamicsCompressor();comp.threshold.value=-14;comp.knee.value=18;comp.ratio.value=4;comp.attack.value=.01;comp.release.value=.35;musicBus.connect(comp);fxBus.connect(comp);comp.connect(master).connect(audio.destination);master.gain.exponentialRampToValueAtTime(.065*volume+.006,audio.currentTime+1.2);soundOn=true;remixAudio();scheduleBells();updateSoundLabel()}
+function startAudio(){if(soundOn)return;audio=new (window.AudioContext||window.webkitAudioContext)();master=makeGain(.0001);musicBus=makeGain(1);fxBus=makeGain(1);const comp=audio.createDynamicsCompressor();comp.threshold.value=-14;comp.knee.value=18;comp.ratio.value=4;comp.attack.value=.01;comp.release.value=.35;musicBus.connect(comp);fxBus.connect(comp);comp.connect(master).connect(audio.destination);master.gain.exponentialRampToValueAtTime(.36*volume+.04,audio.currentTime+1.2);soundOn=true;remixAudio();scheduleBells();updateSoundLabel()}
 function stopNodes(){drone.forEach(n=>{try{n.o.stop()}catch{};try{n.g.disconnect()}catch{}});drone=[];if(noiseNode){try{noiseNode.stop()}catch{};noiseNode=null}}
-function remixAudio(){if(!audio||!soundOn)return;stopNodes();const p=dayPart(), rainy=weather.rain>0||weather.code>=51&&weather.code<=82, storm=weather.code>=95;let base=p==='morning'?110:p==='afternoon'?98:p==='evening'?82:p==='dawn'?92:55;base*=Math.pow(2,currentChapter/24);drone=[osc(base,'sine',.035),osc(base*1.5,'triangle',.018,-7),osc(base*2,'sine',.010,6),osc(base*.5,'sine',.022)];const src=audio.createBufferSource(),filter=audio.createBiquadFilter();noiseNode=src;src.buffer=noiseBuffer();src.loop=true;filter.type='lowpass';filter.frequency.value=rainy?2200:weather.wind>14?1200:520;rainGain=makeGain(rainy ? .065 : .008);windGain=rainGain;src.connect(filter).connect(rainGain).connect(musicBus);src.start();if(storm){fxTone(base*4,.18,.18,'sawtooth',.15)}}
+function remixAudio(){if(!audio||!soundOn)return;stopNodes();const p=dayPart(), rainy=weather.rain>0||weather.code>=51&&weather.code<=82, storm=weather.code>=95;let base=p==='morning'?110:p==='afternoon'?98:p==='evening'?82:p==='dawn'?92:55;base*=Math.pow(2,currentChapter/24);drone=[osc(base,'sine',.078),osc(base*1.5,'triangle',.04,-7),osc(base*2,'sine',.022,6),osc(base*.5,'sine',.05)];const src=audio.createBufferSource(),filter=audio.createBiquadFilter();noiseNode=src;src.buffer=noiseBuffer();src.loop=true;filter.type='lowpass';filter.frequency.value=rainy?2200:weather.wind>14?1200:520;rainGain=makeGain(rainy ? .13 : .02);windGain=rainGain;src.connect(filter).connect(rainGain).connect(musicBus);src.start();if(storm){fxTone(base*4,.18,.18,'sawtooth',.15)}}
 function fxTone(freq,dur=.12,gain=.055,type='sine',delay=0){if(!audio||!soundOn)return;const t=audio.currentTime+delay,o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(gain,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g).connect(fxBus);o.start(t);o.stop(t+dur+.03)}
 function hoverSound(el){const idx=(el.dataset.v5note?+el.dataset.v5note:Math.abs((el.textContent||'x').length))%5;const p=dayPart(),scale=(p==='night'||p==='deep night')?[0,3,5,7,10]:[0,2,4,7,9];const f=220*Math.pow(2,(scale[idx]-9)/12);fxTone(f,.11,.038,'sine')}
 function clickSound(){fxTone(132,.13,.075,'triangle');fxTone(396,.24,.055,'sine',.035)}
 function sectionSound(i){if(i===currentChapter)return;currentChapter=i;if(soundOn){const f=110*Math.pow(2,(i%7)/12);fxTone(f,.4,.055,'sine');fxTone(f*1.5,.65,.025,'triangle',.08);remixAudio()}}
 function scheduleBells(){clearTimeout(bellTimer);if(!soundOn)return;const p=dayPart(),notes=(p==='night'||p==='deep night')?[0,3,7,10,14]:[0,4,7,11,14];const base=p==='night'?164:220;const play=()=>{if(!soundOn)return;const n=notes[Math.floor(Math.random()*notes.length)],f=base*Math.pow(2,n/12);fxTone(f,1.5,.018,'sine');if(Math.random()>.62)fxTone(f*2,1.1,.009,'sine',.12);bellTimer=setTimeout(play,3500+Math.random()*6500)};bellTimer=setTimeout(play,2400)}
-function setVolume(v){volume=v;const inp=qs('#v5Volume');if(inp)inp.value=Math.round(v*100);if(master&&audio){master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(v*.085+.006):.0001,audio.currentTime+.12)}}
-function muteToggle(){if(!audio){startAudio();return}soundOn=!soundOn;master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(volume*.085+.006):.0001,audio.currentTime+.18);if(soundOn){scheduleBells();remixAudio()}else clearTimeout(bellTimer);updateSoundLabel()}
+function setVolume(v){volume=v;const inp=qs('#v5Volume');if(inp)inp.value=Math.round(v*100);if(master&&audio){master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(v*.36+.04):.0001,audio.currentTime+.12)}}
+function muteToggle(){if(!audio){startAudio();return}soundOn=!soundOn;master.gain.cancelScheduledValues(audio.currentTime);master.gain.linearRampToValueAtTime(soundOn?(volume*.36+.04):.0001,audio.currentTime+.18);if(soundOn){scheduleBells();remixAudio()}else clearTimeout(bellTimer);updateSoundLabel()}
 qs('#v5Volume')?.addEventListener('input',e=>setVolume(+e.target.value/100));qs('#v5SoundToggle')?.addEventListener('click',muteToggle);
-function enter(withSound){document.body.classList.remove('v5-entering');gate?.classList.add('out');sessionStorage.setItem('v5Entered','1');if(withSound){startAudio();requestAtmosphere()}else{palette();requestAtmosphere();updateSoundLabel()}setTimeout(()=>gate?.remove(),1100)}
-qs('#v5EnterSound')?.addEventListener('click',()=>enter(true));qs('#v5EnterQuiet')?.addEventListener('click',()=>enter(false));
-if(sessionStorage.getItem('v5Entered')){document.body.classList.remove('v5-entering');gate?.remove();palette();requestAtmosphere()}
+function enter(withSound){if(withSound){startAudio();requestAtmosphere()}else{palette();requestAtmosphere();updateSoundLabel()}}
+enter(true);
+// Autoplay policies suspend a freshly created AudioContext until a user gesture;
+// resume it silently on the visitor's first interaction instead of gating the page
+// behind a click. Mobile Chrome in particular is inconsistent about which gesture
+// type actually counts as "activation" for unlocking Web Audio — pointerdown alone
+// worked in desktop/emulated testing but a real visitor reported still hearing
+// nothing on mobile Chrome, so this now also listens for click/touchend (the two
+// other gestures browsers commonly require) and keeps retrying on every
+// interaction (instead of giving up after one, via {once:true}) until the context
+// actually reports "running", in case the first attempt doesn't take.
+const resumeAudioAttempt=()=>{
+  if(!audio||audio.state==='running')return;
+  audio.resume().then(()=>{
+    if(audio.state==='running'){
+      ['pointerdown','click','touchend','keydown'].forEach(t=>removeEventListener(t,resumeAudioAttempt));
+    }
+  }).catch(()=>{});
+};
+['pointerdown','click','touchend','keydown'].forEach(t=>addEventListener(t,resumeAudioAttempt,{passive:true}));
 /* atmosphere canvas — V6 capped + visibility-aware */
 const cv=qs('#v5Atmosphere'),ctx=cv?.getContext('2d',{alpha:false}),dots=[];let dpr=1,atmoLast=0,atmoRunning=true;
 function size(){if(!cv)return;const mobile=innerWidth<800;dpr=Math.min(devicePixelRatio,mobile?1:1.25);cv.width=Math.round(innerWidth*dpr);cv.height=Math.round(innerHeight*dpr);cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';ctx.setTransform(dpr,0,0,dpr,0,0);dots.length=0;const count=mobile?42:Math.min(82,Math.floor(innerWidth*innerHeight/18000));for(let i=0;i<count;i++)dots.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:.45+Math.random()*1.5,z:.2+Math.random()*.8,p:Math.random()*6.28})}
@@ -3298,8 +3526,6 @@ document.addEventListener('visibilitychange',()=>{atmoRunning=!document.hidden})
 addEventListener('pointermove',e=>{pointer.tx=e.clientX;pointer.ty=e.clientY;root.style.setProperty('--v5-mx',e.clientX+'px');root.style.setProperty('--v5-my',e.clientY+'px');if(audio&&soundOn&&drone[1])drone[1].o.detune.setTargetAtTime((e.clientX/innerWidth-.5)*22,audio.currentTime,.16)},{passive:true});
 function drawAtmo(t){requestAnimationFrame(drawAtmo);if(!atmoRunning||t-atmoLast<33)return;atmoLast=t;pointer.x+=(pointer.tx-pointer.x)*.08;pointer.y+=(pointer.ty-pointer.y)*.08;const p=dayPart();ctx.fillStyle=p==='morning'||p==='afternoon'?'#0b0b12':'#050508';ctx.fillRect(0,0,innerWidth,innerHeight);const rainy=weather.rain>0;for(const q of dots){q.p+=.006+q.z*.003;q.y+=.08+q.z*.12+(rainy?.85:0);q.x+=Math.sin(q.p)*.1+weather.wind*.001;if(q.y>innerHeight+12)q.y=-12;if(q.x>innerWidth+12)q.x=-12;if(q.x<-12)q.x=innerWidth+12;const dx=pointer.x-q.x,dy=pointer.y-q.y,dist2=dx*dx+dy*dy;if(dist2<19600){const k=(1-Math.sqrt(dist2)/140)*.008;q.x-=dx*k;q.y-=dy*k}ctx.globalAlpha=.16+q.z*.44;ctx.fillStyle=rainy?'#8ec9ff':'#ffffff';if(rainy)ctx.fillRect(q.x,q.y,Math.max(.6,q.r*.45),3+q.z*7);else{ctx.beginPath();ctx.arc(q.x,q.y,q.r,0,Math.PI*2);ctx.fill()}}ctx.globalAlpha=1}
 requestAnimationFrame(drawAtmo);
-/* gate canvas */
-const gc=qs('#v5GateCanvas'),gx=gc?.getContext('2d');function gsize(){if(!gc)return;gc.width=innerWidth*Math.min(devicePixelRatio,1.5);gc.height=innerHeight*Math.min(devicePixelRatio,1.5);gx.setTransform(Math.min(devicePixelRatio,1.5),0,0,Math.min(devicePixelRatio,1.5),0,0)}gsize();addEventListener('resize',gsize);let gt=0;let gateLast=0;function gdraw(t=0){if(!gx||!gate||!document.body.contains(gate))return;requestAnimationFrame(gdraw);if(t-gateLast<34)return;gateLast=t;gt+=.012;gx.clearRect(0,0,innerWidth,innerHeight);const cx=innerWidth*.73+Math.sin(gt)*28,cy=innerHeight*.43+Math.cos(gt*.7)*22;for(let r=300;r>15;r-=30){gx.strokeStyle=`rgba(${120+r%80},${100+r%100},255,${.015+(300-r)/16000})`;gx.lineWidth=1;gx.beginPath();gx.ellipse(cx,cy,r,r*.58,gt*.25,0,Math.PI*2);gx.stroke()}}requestAnimationFrame(gdraw);
 /* rail + chapter sonic transitions */
 const sections=[qs('.hero'),qs('.belief'),qs('.work'),qs('.system'),qs('.lab'),qs('.studio'),qs('.arcade'),qs('.careTeaser'),qs('.process'),qs('.faq'),qs('.final')].filter(Boolean),rail=qs('#v5SectionRail');if(rail)rail.innerHTML=sections.map(()=>'<i></i>').join('');const railDots=qsa('#v5SectionRail i');if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=sections.indexOf(e.target);railDots.forEach((d,n)=>d.classList.toggle('on',n===i));sectionSound(i);document.body.dataset.chapter=i}}),{threshold:.44});sections.forEach(s=>io.observe(s))}
 /* richer interactions */
@@ -3342,134 +3568,15 @@ const ah=qs('.arcadeHead h2');if(ah)ah.innerHTML='Three worlds.<br><span style="
 const ap=qs('.arcadeHead p');if(ap)ap.textContent='The games stay. They are part of the studio personality — daily attention, memory and motion experiments with local progress and replay value.';
 })();
 </script>
-<script id="v10-cinematic-audio">
-(()=>{
-'use strict';
-let ctx=null, master=null, dry=null, verb=null, delay=null, delayGain=null, ambience=null;
-let active=false, userVol=.72, chapter=0, timer=0, pulseTimer=0, nodes=[];
-const $=s=>document.querySelector(s);
-const day=()=>{const h=new Date().getHours();return h<5?'deep':h<7?'dawn':h<12?'morning':h<17?'day':h<20?'golden':'night'};
-const roots={deep:41.2,dawn:55,morning:65.4,day:55,golden:49,night:41.2};
-const modes={
-  deep:[0,3,7,10,14], dawn:[0,2,7,9,14], morning:[0,4,7,11,14],
-  day:[0,2,7,9,14], golden:[0,4,7,9,14], night:[0,3,7,10,14]
-};
-
-function gain(v=1){const g=ctx.createGain();g.gain.value=v;return g}
-function impulse(seconds=5,decay=3.5){
-  const len=Math.floor(ctx.sampleRate*seconds),b=ctx.createBuffer(2,len,ctx.sampleRate);
-  for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<len;i++){const env=Math.pow(1-i/len,decay);d[i]=(Math.random()*2-1)*env*(.65+Math.random()*.35)}}
-  return b
-}
-function route(node,wet=.25){
-  node.connect(dry);
-  const wg=gain(wet);node.connect(wg);wg.connect(verb);
-}
-function osc(f,type='sine',v=.02,det=0,pan=0){
-  const o=ctx.createOscillator(),g=gain(.0001),p=ctx.createStereoPanner();
-  o.type=type;o.frequency.value=f;o.detune.value=det;p.pan.value=pan;
-  o.connect(g);g.connect(p);route(p,.45);o.start();
-  g.gain.exponentialRampToValueAtTime(Math.max(.0002,v),ctx.currentTime+2.2);
-  nodes.push({o,g,p});return {o,g,p}
-}
-function softNote(f,when,dur=4,v=.035,pan=0){
-  const o=ctx.createOscillator(),g=gain(.0001),p=ctx.createStereoPanner(),lp=ctx.createBiquadFilter();
-  o.type='sine';o.frequency.setValueAtTime(f,when);o.frequency.exponentialRampToValueAtTime(f*1.002,when+dur);
-  lp.type='lowpass';lp.frequency.value=1800;p.pan.value=pan;
-  o.connect(lp);lp.connect(g);g.connect(p);route(p,.7);
-  g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(v,when+.45);g.gain.exponentialRampToValueAtTime(.0001,when+dur);
-  o.start(when);o.stop(when+dur+.1)
-}
-function shimmer(f,when,v=.014){
-  [1,2,3.01].forEach((m,i)=>{
-    const o=ctx.createOscillator(),g=gain(.0001),p=ctx.createStereoPanner();
-    o.type=i?'sine':'triangle';o.frequency.value=f*m;p.pan.value=(i-1)*.55;
-    o.connect(g);g.connect(p);route(p,.9);
-    g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(v/(i+1),when+.18+i*.12);
-    g.gain.exponentialRampToValueAtTime(.0001,when+3.2+i*.8);o.start(when);o.stop(when+4.4)
-  })
-}
-function noiseBed(){
-  const len=ctx.sampleRate*3,b=ctx.createBuffer(2,len,ctx.sampleRate);
-  for(let c=0;c<2;c++){const d=b.getChannelData(c);let z=0;for(let i=0;i<len;i++){z=z*.992+(Math.random()*2-1)*.055;d[i]=z}}
-  const src=ctx.createBufferSource(),f=ctx.createBiquadFilter(),g=gain(.013);
-  src.buffer=b;src.loop=true;f.type='lowpass';f.frequency.value=day()==='night'||day()==='deep'?380:620;
-  src.connect(f);f.connect(g);route(g,.5);src.start();ambience=src;
-}
-function buildWorld(){
-  nodes.forEach(n=>{try{n.o.stop()}catch(e){}});nodes=[];
-  if(ambience){try{ambience.stop()}catch(e){}}
-  const part=day(),root=roots[part]*Math.pow(2,(chapter%6)/24),ints=modes[part];
-  // Wide orchestral-synth floor: fifths, octave and suspended colour.
-  osc(root,'sine',.040,-7,-.5);
-  osc(root*2,'sine',.022,5,.45);
-  osc(root*Math.pow(2,7/12),'triangle',.015,-4,.12);
-  osc(root*.5,'sine',.028,0,0);
-  osc(root*Math.pow(2,ints[1]/12),'sine',.012,7,-.24);
-  noiseBed();
-}
-function scoreLoop(){
-  clearTimeout(timer);if(!active)return;
-  const part=day(),ints=modes[part],root=roots[part]*2*Math.pow(2,(chapter%5)/24);
-  const n=ints[Math.floor(Math.random()*ints.length)];
-  const f=root*Math.pow(2,n/12);
-  const now=ctx.currentTime+.05;
-  softNote(f,now,4.2+Math.random()*3,.022+Math.random()*.016,Math.random()*1.5-.75);
-  if(Math.random()>.54) shimmer(f*2,now+.55,.010);
-  // occasional resolving second note makes it feel composed, not random.
-  if(Math.random()>.65){const n2=ints[(ints.indexOf(n)+2)%ints.length];softNote(root*Math.pow(2,n2/12),now+1.8,4,.014,-.4)}
-  timer=setTimeout(scoreLoop,2800+Math.random()*4200)
-}
-function heartbeat(){
-  clearTimeout(pulseTimer);if(!active)return;
-  const now=ctx.currentTime,root=roots[day()]*.5;
-  [0,.19].forEach((off,i)=>{
-    const o=ctx.createOscillator(),g=gain(.0001),lp=ctx.createBiquadFilter();
-    o.type='sine';o.frequency.setValueAtTime(root*1.7,now+off);o.frequency.exponentialRampToValueAtTime(root*.72,now+off+.18);
-    lp.type='lowpass';lp.frequency.value=170;
-    o.connect(lp);lp.connect(g);g.connect(dry);
-    g.gain.setValueAtTime(.0001,now+off);g.gain.exponentialRampToValueAtTime(i?.012:.02,now+off+.02);g.gain.exponentialRampToValueAtTime(.0001,now+off+.28);
-    o.start(now+off);o.stop(now+off+.3)
-  });
-  pulseTimer=setTimeout(heartbeat,6500+Math.random()*6500)
-}
-function start(){
-  if(active){ctx?.resume();return}
-  ctx=new (window.AudioContext||window.webkitAudioContext)();
-  master=gain(.0001);dry=gain(.78);verb=ctx.createConvolver();verb.buffer=impulse(5.5,3.1);
-  const vg=gain(.62),comp=ctx.createDynamicsCompressor();
-  comp.threshold.value=-20;comp.knee.value=24;comp.ratio.value=3.2;comp.attack.value=.02;comp.release.value=.7;
-  delay=ctx.createDelay(2);delay.delayTime.value=.42;delayGain=gain(.16);
-  dry.connect(comp);verb.connect(vg);vg.connect(comp);
-  dry.connect(delay);delay.connect(delayGain);delayGain.connect(verb);
-  comp.connect(master).connect(ctx.destination);
-  master.gain.exponentialRampToValueAtTime(.29*userVol+.018,ctx.currentTime+2.8);
-  active=true;buildWorld();scoreLoop();heartbeat();
-  const ttl=$('#v5SoundTitle');if(ttl)ttl.textContent='Cinematic world · '+day();
-}
-function mute(on){
-  if(!ctx){if(on)start();return}
-  active=on;
-  master.gain.cancelScheduledValues(ctx.currentTime);
-  master.gain.linearRampToValueAtTime(on?(.29*userVol+.018):.0001,ctx.currentTime+.45);
-  if(on){ctx.resume();buildWorld();scoreLoop();heartbeat()}else{clearTimeout(timer);clearTimeout(pulseTimer)}
-}
-function setVol(v){userVol=v;if(master&&ctx&&active)master.gain.linearRampToValueAtTime(.29*v+.018,ctx.currentTime+.18)}
-
-$('#v5EnterSound')?.addEventListener('click',()=>setTimeout(start,20),{once:true});
-$('#v5EnterQuiet')?.addEventListener('click',()=>{active=false},{once:true});
-$('#v5Volume')?.addEventListener('input',e=>setVol(+e.target.value/100));
-$('#v5SoundToggle')?.addEventListener('click',()=>setTimeout(()=>mute(!active),10));
-
-// Scene scoring: harmony changes subtly as visitors move through chapters.
-const secs=['#top','#founder','#belief','#work','#system','#lab','#studio','#arcade','#care','.process','#insights','.final'].map(x=>$(x)).filter(Boolean);
-const io=new IntersectionObserver(es=>{let best=null;es.forEach(e=>{if(e.isIntersecting&&(!best||e.intersectionRatio>best.intersectionRatio))best=e});if(best){const n=secs.indexOf(best.target);if(n!==chapter){chapter=n;if(ctx&&active){buildWorld();shimmer(110*Math.pow(2,(n%7)/12),ctx.currentTime+.15,.012)}}}},{threshold:[.35,.55,.7]});
-secs.forEach(x=>io.observe(x));
-
-// Pointer movement very lightly changes stereo width, almost subconscious.
-addEventListener('pointermove',e=>{if(!ctx||!active)return;const x=e.clientX/innerWidth-.5;nodes.forEach((n,i)=>{if(n.p)n.p.pan.setTargetAtTime(Math.max(-.9,Math.min(.9,x*(i%2?1:-1)*.8)),ctx.currentTime,.15)})},{passive:true});
-})();
-</script>
+<!-- v10-cinematic-audio removed: it was a second, entirely separate ambient-audio
+     engine (its own AudioContext, its own gain chain) running alongside
+     experience-v5-js's. Both started "on" automatically and both had their own
+     click handler on #v5SoundToggle, so a single click muted BOTH at once — the
+     toggle could only make things quieter, never louder, and the combined output
+     was faint enough to go unnoticed either way. experience-v5-js's engine (kept,
+     gain boosted below) already covers the same ground: weather/time-driven
+     ambience, section-reactive changes, hover/click sfx — so this duplicate is
+     deleted rather than patched. See git history if the original is ever needed. -->
 <script id="v10-kito-interaction">
 (()=>{
   const foxes=[...document.querySelectorAll('.kitoFoxSvg')];
@@ -3980,5 +4087,70 @@ const start=()=>{clearInterval(timer);timer=setInterval(pulse,2400)}; start();
   }
 }
 </style>
+<script id="v21-touch-character-names">
+(()=>{
+  'use strict';
+  // Touch replacement for hover-only character naming — ported from
+  // reference/thesimple_mobile.html. Cast-finale characters (the "Different
+  // personalities" grid) still reveal their name tag on tap.
+  if(matchMedia('(pointer:coarse)').matches){
+    const closeAll=except=>{
+      document.querySelectorAll('.castMember.touch-open').forEach(el=>{
+        if(el!==except)el.classList.remove('touch-open');
+      });
+    };
+    document.querySelectorAll('.castMember').forEach(el=>{
+      el.addEventListener('click',e=>{
+        e.stopPropagation();
+        const open=!el.classList.contains('touch-open');
+        closeAll(el);
+        el.classList.toggle('touch-open',open);
+      });
+    });
+    document.addEventListener('click',()=>closeAll(null));
+  }
+})();
+</script>
+<script id="v21-premium-char-scroll-greet">
+(()=>{
+  'use strict';
+  // Lumi (and the other single premiumChar mascots) don't respond to tap on
+  // touch devices in the reference — instead each briefly introduces itself
+  // (name tag fades in, then out after ~1.5s) the moment its section scrolls
+  // into view, exactly like reference/thesimple_mobile.html's "v21-faithful-touch".
+  const q=(s,p=document)=>p.querySelector(s),qa=(s,p=document)=>[...p.querySelectorAll(s)];
+  const sections=qa('.hero,.belief,.work,.system,.lab,.studio,.arcade,.careTeaser,.process,.final');
+  const cio=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const c=e.target.querySelector(':scope > .premiumChar');
+      if(!c)return;
+      c.classList.remove('v21Hello');
+      void c.offsetWidth;
+      c.classList.add('v21Hello','v21Name');
+      setTimeout(()=>c.classList.remove('v21Name'),1500);
+    });
+  },{threshold:.28});
+  sections.forEach(s=>cio.observe(s));
+})();
+</script>
+<script id="v5-sound-dock-collapse">
+(()=>{
+  'use strict';
+  // Mobile-only visually (see #v5SoundDock's collapsed/.v5SoundOpen rules in the
+  // ≤767px media query) — tapping the orb expands the dock to its normal design,
+  // tapping the orb again or tapping anywhere outside collapses it back. Inert on
+  // desktop since the CSS there never reads the v5SoundOpen class.
+  const dock=document.getElementById('v5SoundDock');
+  const orb=dock&&dock.querySelector('.v5SoundOrb');
+  if(!dock||!orb)return;
+  orb.addEventListener('click',()=>dock.classList.toggle('v5SoundOpen'));
+  document.addEventListener('click',e=>{
+    if(dock.classList.contains('v5SoundOpen')&&!dock.contains(e.target)){
+      dock.classList.remove('v5SoundOpen');
+    }
+  });
+})();
+</script>
 </body>
 </html>
