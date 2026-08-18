@@ -880,6 +880,34 @@ $('#wbSend')?.addEventListener('click',()=>{const v=$('#wbInput').value.trim();i
     .wbTop > div:last-child {
       text-align: left !important;
     }
+
+    @media (max-width: 767px) {
+    /* Lock the table layout so columns align properly while scrolling */
+    .directionMatrix {
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .directionMatrix::-webkit-scrollbar { display: none !important; }
+    
+    .dmRow {
+      display: grid !important;
+      /* 6 columns total: 1 wider column for the label, 5 equal columns for the metrics */
+      grid-template-columns: 140px repeat(5, minmax(90px, 1fr)) !important;
+      min-width: 590px !important; /* Forces it to stay wide enough to read cleanly */
+    }
+
+    .dmRow > * {
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important; 
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+  }
+
   } 
   
   
