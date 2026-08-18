@@ -69,7 +69,7 @@
 .final{height:110vh;min-height:820px;background:#050608;position:relative}.finalSticky{height:100vh;position:sticky;top:0;display:grid;place-items:center}.final canvas{position:absolute;inset:0;width:100%;height:100%}.finalInner{text-align:center;position:relative;z-index:2;max-width:980px}.finalInner h2{font-size:clamp(56px,6.9vw,106px);line-height:.88;letter-spacing:-.078em;margin:16px 0}.finalInner h2 em{font-style:normal;color:var(--acid)}.finalInner p{max-width:690px;margin:auto;color:rgba(255,255,255,.5);line-height:1.7}
 footer{border-top:1px solid var(--line);padding:34px 0}.foot{display:flex;justify-content:space-between;gap:20px;color:rgba(255,255,255,.38);font-size:8px}.toast{position:fixed;z-index:12000;left:50%;bottom:20px;transform:translate(-50%,18px);opacity:0;background:#fff;color:#090a0e;padding:10px 13px;border-radius:999px;font-size:8px;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:1050px){.nav{grid-template-columns:1fr auto}.navlinks{display:none}.heroLayout,.split,.researchNote,.synthesis,.preloginGrid,.resultBody,.dashGrid,.peopleFlow,.attackPath,.itMagazine,.bitwatch,.infoLayout,.analyticsGrid,.brandPoster{grid-template-columns:1fr}.surfaceStage{height:650px}.sequence{grid-template-columns:1fr 1fr}.iaMap{min-height:820px}.dashboardShell .historyPanel{border-right:0;border-bottom:1px solid var(--line)}.vaptTop{grid-template-columns:1fr}.vaptIntro{border-right:0;border-bottom:1px solid var(--line)}.decision{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:1fr 1fr 1fr}.dataRow{grid-template-columns:100px 180px 1fr}.dataRow .spark{display:none}}
-@media(max-width:700px){.wrap{width:calc(100% - 22px)}.fold{padding:82px 0}.hero h1{font-size:15vw}.heroLayout{grid-template-columns:1fr}.heroStats,.sequence,.dashKPIs,.liveMetrics,.riskSummary,.vectorGrid,.vaptMatrix,.bwStats,.bwThreats,.typeSpecs,.funnel{grid-template-columns:1fr}.surfaceStage{height:700px}.stack3d{transform:translate(-50%,-50%) rotateX(62deg) rotateZ(-18deg) scale(.75)}.dataRow{grid-template-columns:1fr}.dataRow .big{font-size:40px}.wall{height:900px}.sticky{width:122px}.iaTrack{display:none}.iaStop{display:none}.iaLabel{position:static;transform:none;width:auto;margin:15px 0;text-align:left}.iaGate{position:static;transform:none;margin:20px auto}.brandPoster{grid-template-columns:1fr}.posterDark,.posterLight{min-height:430px}.evidenceMap{min-height:500px}.dashBottom{grid-template-columns:1fr 1fr}.vaptMatrix{grid-template-columns:1fr 1fr}.decision{grid-template-columns:1fr}.stateRow{grid-template-columns:70px 1fr}.stateRow>span{display:none}.bwThreats{position:static;margin-top:20px}.foot{flex-direction:column}}
+@media(max-width:700px){.wrap{width:calc(100% - 22px)}.fold{padding:82px 0}.hero h1{font-size:15vw}.heroLayout{grid-template-columns:1fr}.heroStats,.sequence,.dashKPIs,.liveMetrics,.riskSummary,.vectorGrid,.vaptMatrix,.bwStats,.bwThreats,.typeSpecs,.funnel{grid-template-columns:1fr}.surfaceStage{height:700px}.stack3d{transform:translate(-50%,-50%) rotateX(62deg) rotateZ(-18deg) scale(.75)}.dataRow{grid-template-columns:1fr}.dataRow .big{font-size:40px}.wall{height:900px}.sticky{width:122px}.iaTrack{display:none}.iaStop{display:none}.iaLabel{position:static;transform:none;width:auto;margin:15px 0;text-align:left}.iaGate{position:static;transform:none;margin:20px auto}.iaMap{min-height:0}.seq .mini{display:none}.seq{min-height:0;padding-bottom:20px}.brandPoster{grid-template-columns:1fr}.posterDark,.posterLight{min-height:430px}.evidenceMap{min-height:500px}.dashBottom{grid-template-columns:1fr 1fr}.vaptMatrix{grid-template-columns:1fr 1fr}.decision{grid-template-columns:1fr}.stateRow{grid-template-columns:70px 1fr}.stateRow>span{display:none}.bwThreats{position:static;margin-top:20px}.foot{flex-direction:column}}
 
 /* V7 refinement — sci-fi instrumentation, distinct compositions */
 .scoreArc{background:conic-gradient(from 270deg at 50% 100%,#ff4664 0 16%,#ff7d59 16% 32%,#ffd861 32% 49%,#34d98a 49% 62%,transparent 62%);filter:drop-shadow(0 0 22px rgba(111,113,255,.18));overflow:hidden}
@@ -353,6 +353,31 @@ footer{border-top:1px solid var(--line);padding:34px 0}.foot{display:flex;justif
     /* 4. Bump up the size of the "100 demo" text on the far right to match */
     .ladderStepV3 em {
       font-size: 10px !important;
+    }
+  }
+</style>
+
+<!-- --- FIX: "Scan company" button overflowing the search box --- -->
+<style id="hero-search-mobile-fix">
+  @media (max-width: 767px) {
+    /* .heroSearch is a single flex row (input + button) sized to a % of the
+       stage. The <input> never actually shrank with it — text inputs default
+       to min-width:auto, so flex:1 could grow it but not shrink it below its
+       intrinsic size — which left too little room for the button and pushed
+       it past the white box's right edge. Stacking them instead sidesteps the
+       whole min-width fight and gives the button room to read on one line. */
+    .heroSearch {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 8px !important;
+    }
+    .heroSearch input {
+      width: 100% !important;
+    }
+    .heroSearch button {
+      width: 100% !important;
+      padding: 12px 16px !important;
+      font-size: 11px !important;
     }
   }
 </style>
